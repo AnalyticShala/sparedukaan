@@ -29,5 +29,9 @@
     "axe-core": "^4.10.2",
     "playwright": "^1.49.0",
     "wrangler": "^4.40.0"
+  },
+  "packageManager": "pnpm@11.1.2",
+  "engines": {
+    "node": ">=22"
   }
 }

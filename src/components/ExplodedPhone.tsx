@@ -1,6 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type ComponentType } from 'react';
 import {
   motion,
+  useMotionTemplate,
   useMotionValueEvent,
   useReducedMotion,
   useScroll,
@@ -12,91 +13,131 @@ import type { CategoryId } from '../data/catalog';
 import { useSelection } from '../store/selection';
 import { useSmoothScroll } from '../lib/smoothScroll';
 import { Icon } from './Icon';
+import {
+  BackGlass,
+  Battery,
+  CameraModule,
+  ChargingPort,
+  DisplayPanel,
+  MainBoard,
+  MidFrame,
+  Speaker,
+  TemperedGlass,
+} from './PhoneParts';
 
-// Each layer of the phone. Assembled, every layer sits centred so they stack
-// into one phone; as the hero scrolls, each one travels to (tx, ty), rotates,
-// and scales. `delay` staggers the start so the glass lifts before the battery.
+// The phone is a stack of flat layers in one 3D space. Assembled, they sit on
+// top of each other and read as a phone seen from the front. As the hero
+// scrolls, the whole stack tilts into an isometric view and each layer slides
+// along the depth axis to its exploded position (a teardown diagram).
 interface Layer {
   id: string;
-  partId: string; // part type in the catalogue
+  partId: string;
   category: CategoryId;
   label: string;
   sub: string;
-  w: number;
-  h: number;
-  radius: number;
-  z: number;
-  skin: string; // css class for the look
-  tx: number;
-  ty: number;
-  rot: number;
-  scale: number;
-  delay: number;
+  Art: ComponentType;
+  depth: number; // exploded position along the depth axis, px (negative = behind)
+  side: 'left' | 'right'; // where the label sits
+  labelY: number; // label anchor, in the 260x540 layer space
 }
 
 const LAYERS: Layer[] = [
-  { id: 'cover', partId: 'cover', category: 'acc', label: 'Back cover', sub: 'accessory', w: 250, h: 490, radius: 36, z: 1, skin: 'skin-cover', tx: 500, ty: -110, rot: 10, scale: 0.55, delay: 0.05 },
-  { id: 'frame', partId: 'frame', category: 'parts', label: 'Frame / back panel', sub: 'body', w: 250, h: 490, radius: 36, z: 4, skin: 'skin-frame', tx: 0, ty: 0, rot: 0, scale: 0.72, delay: 0 },
-  { id: 'battery', partId: 'battery', category: 'parts', label: 'Battery', sub: 'with adhesive', w: 150, h: 230, radius: 14, z: 2, skin: 'skin-part', tx: 270, ty: -60, rot: -6, scale: 1, delay: 0.1 },
-  { id: 'camera', partId: 'camera', category: 'parts', label: 'Cameras', sub: 'rear / front', w: 120, h: 84, radius: 18, z: 2, skin: 'skin-camera', tx: -300, ty: -235, rot: -8, scale: 1, delay: 0.15 },
-  { id: 'speaker', partId: 'speaker', category: 'parts', label: 'Speaker', sub: 'loud / ear', w: 170, h: 54, radius: 12, z: 2, skin: 'skin-part', tx: 320, ty: 215, rot: 8, scale: 1, delay: 0.2 },
-  { id: 'mic', partId: 'speaker', category: 'parts', label: 'Mic', sub: 'bottom / top', w: 80, h: 44, radius: 10, z: 2, skin: 'skin-part', tx: 120, ty: 265, rot: -4, scale: 1, delay: 0.25 },
-  { id: 'port', partId: 'port', category: 'parts', label: 'Charging port', sub: 'flex board', w: 160, h: 64, radius: 12, z: 2, skin: 'skin-part', tx: 500, ty: 90, rot: 6, scale: 1, delay: 0.3 },
-  { id: 'display', partId: 'display', category: 'parts', label: 'Display', sub: 'OLED / LCD', w: 226, h: 466, radius: 28, z: 5, skin: 'skin-display', tx: -255, ty: 30, rot: 0, scale: 0.6, delay: 0.02 },
-  { id: 'glass', partId: 'glass', category: 'acc', label: 'Tempered glass', sub: 'accessory', w: 226, h: 466, radius: 28, z: 6, skin: 'skin-glass', tx: -500, ty: -70, rot: -12, scale: 0.52, delay: 0.08 },
+  { id: 'back', partId: 'frame', category: 'parts', label: 'Back glass', sub: 'back panel', Art: BackGlass, depth: -200, side: 'right', labelY: 300 },
+  { id: 'frame', partId: 'frame', category: 'parts', label: 'Mid-frame', sub: 'body, buttons', Art: MidFrame, depth: -150, side: 'right', labelY: 470 },
+  { id: 'board', partId: 'port', category: 'parts', label: 'Main board', sub: 'logic board', Art: MainBoard, depth: -100, side: 'right', labelY: 100 },
+  { id: 'battery', partId: 'battery', category: 'parts', label: 'Battery', sub: 'with adhesive', Art: Battery, depth: -50, side: 'left', labelY: 215 },
+  { id: 'camera', partId: 'camera', category: 'parts', label: 'Camera module', sub: 'rear lenses', Art: CameraModule, depth: -10, side: 'left', labelY: 76 },
+  { id: 'speaker', partId: 'speaker', category: 'parts', label: 'Loudspeaker', sub: 'bottom', Art: Speaker, depth: 30, side: 'right', labelY: 484 },
+  { id: 'port', partId: 'port', category: 'parts', label: 'Charging port', sub: 'USB-C sub-board', Art: ChargingPort, depth: 75, side: 'left', labelY: 500 },
+  { id: 'display', partId: 'display', category: 'parts', label: 'Display', sub: 'OLED / LCD', Art: DisplayPanel, depth: 135, side: 'right', labelY: 260 },
+  { id: 'glass', partId: 'glass', category: 'acc', label: 'Tempered glass', sub: 'accessory', Art: TemperedGlass, depth: 200, side: 'left', labelY: 180 },
 ];
 
+const TILT_X = 56; // degrees, final isometric tilt
+const TILT_Z = -24;
 const easeInOut = (t: number) => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t);
+
+const PERSPECTIVE = 1500;
+const PERSPECTIVE_ORIGIN_Y = -54; // 40% of 540, relative to centre
+const SCENE_W = 260;
+const SCENE_H = 540;
 
 function PhoneLayer({
   layer,
   progress,
-  spread,
   onPick,
   active,
 }: {
   layer: Layer;
   progress: MotionValue<number>;
-  spread: number;
   onPick: (l: Layer) => void;
   active: boolean;
 }) {
-  const range: [number, number] = [layer.delay, 1];
-  const x = useTransform(progress, range, [0, layer.tx * spread], { ease: easeInOut });
-  const y = useTransform(progress, range, [0, layer.ty * Math.min(1, spread + 0.25)], { ease: easeInOut });
-  const rotate = useTransform(progress, range, [0, layer.rot], { ease: easeInOut });
-  const scale = useTransform(progress, range, [1, layer.scale], { ease: easeInOut });
-  const shadow = useTransform(progress, range, [0, 1], { ease: easeInOut });
-  const boxShadow = useTransform(shadow, (s) => `0 ${18 * s}px ${44 * s}px rgba(42,26,18,${0.38 * s})`);
-  const labelOpacity = useTransform(progress, [0.6, 0.85], [0, 1]);
-  const labelY = useTransform(progress, [0.6, 0.85], [8, 0]);
-  // keep labels readable on layers that shrink as they explode
-  const labelScale = useTransform(scale, (s) => 1 / Math.max(0.3, s));
-
+  const z = useTransform(progress, [0.08, 1], [0, layer.depth], { ease: easeInOut });
+  const transform = useMotionTemplate`translateZ(${z}px)`;
   return (
     <motion.button
       type="button"
-      className={`phone-layer ${layer.skin}${active ? ' is-active' : ''}`}
+      className={`layer3d${active ? ' is-active' : ''}`}
       aria-label={`${layer.label}: start from this part`}
       onClick={() => onPick(layer)}
-      style={{
-        width: layer.w,
-        height: layer.h,
-        borderRadius: layer.radius,
-        zIndex: layer.z,
-        x,
-        y,
-        rotate,
-        scale,
-        boxShadow,
-      }}
+      style={{ transform }}
     >
-      <motion.span className="phone-layer__label" style={{ opacity: labelOpacity, y: labelY, scale: labelScale }}>
+      <layer.Art />
+    </motion.button>
+  );
+}
+
+// Labels live in a flat overlay above the 3D scene (so no layer can hide them)
+// and are positioned by projecting their anchor point with the same transform
+// the scene uses: translateY(lift) scale(grow) rotateX(rotX) rotateZ(rotZ) translateZ(depth).
+function LayerLabel({
+  layer,
+  progress,
+  rotX,
+  rotZ,
+  lift,
+  grow,
+  sceneScale,
+}: {
+  layer: Layer;
+  progress: MotionValue<number>;
+  rotX: MotionValue<number>;
+  rotZ: MotionValue<number>;
+  lift: MotionValue<number>;
+  grow: MotionValue<number>;
+  sceneScale: number;
+}) {
+  const z = useTransform(progress, [0.08, 1], [0, layer.depth], { ease: easeInOut });
+  const ax = (layer.side === 'left' ? 6 : SCENE_W - 6) - SCENE_W / 2;
+  const ay = layer.labelY - SCENE_H / 2;
+  const point = useTransform([rotX, rotZ, z, lift, grow], (v) => {
+    const [a, b, d, l, g] = v as number[];
+    const ra = (a * Math.PI) / 180;
+    const rb = (b * Math.PI) / 180;
+    const x1 = ax * Math.cos(rb) - ay * Math.sin(rb);
+    const y1 = ax * Math.sin(rb) + ay * Math.cos(rb);
+    const y2 = y1 * Math.cos(ra) - d * Math.sin(ra);
+    const z2 = y1 * Math.sin(ra) + d * Math.cos(ra);
+    const x3 = x1 * g;
+    const y3 = y2 * g + l;
+    const z3 = z2 * g;
+    const k = PERSPECTIVE / Math.max(200, PERSPECTIVE - z3);
+    const sx = x3 * k;
+    const sy = PERSPECTIVE_ORIGIN_Y + (y3 - PERSPECTIVE_ORIGIN_Y) * k;
+    return { x: sx * sceneScale, y: sy * sceneScale };
+  });
+  const x = useTransform(point, (p) => p.x);
+  const y = useTransform(point, (p) => p.y);
+  const opacity = useTransform(progress, [0.62, 0.85], [0, 1]);
+  return (
+    <motion.div className={`plabel plabel--${layer.side}`} style={{ x, y, opacity }} aria-hidden="true">
+      <span className="plabel__line" />
+      <span className="plabel__chip">
         <span>{layer.label}</span>
         <small>{layer.sub}</small>
-      </motion.span>
-      <span className="phone-layer__detail" aria-hidden="true" />
-    </motion.button>
+      </span>
+    </motion.div>
   );
 }
 
@@ -106,27 +147,32 @@ export default function ExplodedPhone() {
   const { sel, pickPart } = useSelection();
   const { scrollTo } = useSmoothScroll();
 
-  // 0 when the hero's top hits the viewport top, 1 when its bottom does.
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start start', 'end end'] });
-  // Spring smoothing removes the stepped feel of wheel events; still tracks scroll closely.
-  const smooth = useSpring(scrollYProgress, { stiffness: 140, damping: 28, mass: 0.5, restDelta: 0.0005 });
+  const smooth = useSpring(scrollYProgress, { stiffness: 120, damping: 26, mass: 0.6, restDelta: 0.0005 });
   const still = useTransform(() => 1);
   const progress = reduceMotion ? still : smooth;
+
+  const rotX = useTransform(progress, [0, 0.9], [0, TILT_X], { ease: easeInOut });
+  const rotZ = useTransform(progress, [0, 0.9], [0, TILT_Z], { ease: easeInOut });
+  const lift = useTransform(progress, [0, 1], [0, -30]);
+  const grow = useTransform(progress, [0, 1], [1, 1.12]);
+  const stackTransform = useMotionTemplate`translateY(${lift}px) scale(${grow}) rotateX(${rotX}deg) rotateZ(${rotZ}deg)`;
+  const shadowOpacity = useTransform(progress, [0.1, 0.8], [0.15, 0.6]);
+  const shadowScale = useTransform(progress, [0, 1], [0.6, 1.25]);
+
+  const [sceneScale, setSceneScale] = useState(0.8);
+  useEffect(() => {
+    const update = () => setSceneScale(window.innerWidth <= 640 ? 0.6 : 0.8);
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, []);
 
   const [opened, setOpened] = useState(false);
   useMotionValueEvent(progress, 'change', (v) => setOpened(v > 0.15));
   useEffect(() => {
     if (reduceMotion) setOpened(true);
   }, [reduceMotion]);
-
-  // Horizontal spread shrinks on narrow stages so parts stay inside the viewport.
-  const [spread, setSpread] = useState(1);
-  useEffect(() => {
-    const update = () => setSpread(Math.min(1, Math.max(0.42, (sectionRef.current?.clientWidth ?? 1280) / 1240)));
-    update();
-    window.addEventListener('resize', update);
-    return () => window.removeEventListener('resize', update);
-  }, []);
 
   const scrollHintOpacity = useTransform(progress, [0, 0.12], [1, 0]);
   const pickHintOpacity = useTransform(progress, [0.75, 0.95], [0, 1]);
@@ -160,16 +206,25 @@ export default function ExplodedPhone() {
         </div>
 
         <div className="hero__phone">
-          {LAYERS.map((l) => (
-            <PhoneLayer
-              key={l.id}
-              layer={l}
-              progress={progress}
-              spread={spread}
-              onPick={onPick}
-              active={sel.startedFrom === 'phone' && sel.partId === l.partId}
-            />
-          ))}
+          <motion.div className="phone3d__shadow" style={{ opacity: shadowOpacity, scale: shadowScale }} aria-hidden="true" />
+          <div className="phone3d__scene">
+            <motion.div className="phone3d" style={{ transform: stackTransform }}>
+              {LAYERS.map((l) => (
+                <PhoneLayer
+                  key={l.id}
+                  layer={l}
+                  progress={progress}
+                  onPick={onPick}
+                  active={sel.startedFrom === 'phone' && sel.partId === l.partId}
+                />
+              ))}
+            </motion.div>
+          </div>
+          <div className="plabels" aria-hidden="true">
+            {LAYERS.map((l) => (
+              <LayerLabel key={l.id} layer={l} progress={progress} rotX={rotX} rotZ={rotZ} lift={lift} grow={grow} sceneScale={sceneScale} />
+            ))}
+          </div>
 
           <motion.div className="hero__hint" style={{ opacity: scrollHintOpacity }} aria-hidden="true">
             <span>Scroll karo</span>

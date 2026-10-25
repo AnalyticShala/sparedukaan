@@ -1,7 +1,9 @@
-import { useEffect, useRef, useState, type ComponentType } from 'react';
+import { useEffect, useRef, useState, type ComponentType, type MouseEvent as ReactMouseEvent, type PointerEvent as ReactPointerEvent } from 'react';
 import {
+  animate,
   motion,
   useMotionTemplate,
+  useMotionValue,
   useMotionValueEvent,
   useReducedMotion,
   useScroll,
@@ -112,11 +114,12 @@ interface LabelPos {
   ay: number;
   cx: number;
   cy: number;
+  side: 'left' | 'right';
 }
 
-function projectAnchor(layer: Layer, p: number, sceneScale: number) {
-  const a = (TILT_X * easeInOut(clamp01(p / 0.9)) * Math.PI) / 180;
-  const b = (TILT_Z * easeInOut(clamp01(p / 0.9)) * Math.PI) / 180;
+function projectAnchor(layer: Layer, p: number, rotXDeg: number, rotZDeg: number, sceneScale: number) {
+  const a = (rotXDeg * Math.PI) / 180;
+  const b = (rotZDeg * Math.PI) / 180;
   const d = layer.depth * easeInOut(clamp01((p - 0.08) / 0.92));
   const l = -30 * p;
   const g = 1 + 0.12 * p;
@@ -133,13 +136,17 @@ function projectAnchor(layer: Layer, p: number, sceneScale: number) {
   return { x: x3 * k * sceneScale, y: (PERSPECTIVE_ORIGIN_Y + (y3 - PERSPECTIVE_ORIGIN_Y) * k) * sceneScale };
 }
 
-function layoutLabels(p: number, sceneScale: number, colX: number, maxY: number): LabelPos[] {
+function layoutLabels(p: number, rotXDeg: number, rotZDeg: number, sceneScale: number, colX: number, maxY: number): LabelPos[] {
+  // The side is chosen from where the part currently is on screen, so labels
+  // swap columns as the phone turns instead of crossing over it.
   const out: LabelPos[] = LAYERS.map((layer) => {
-    const pt = projectAnchor(layer, p, sceneScale);
-    return { ax: pt.x, ay: pt.y, cx: layer.side === 'left' ? -colX : colX, cy: pt.y };
+    const pt = projectAnchor(layer, p, rotXDeg, rotZDeg, sceneScale);
+    const side = pt.x < 0 ? 'left' : 'right';
+    return { ax: pt.x, ay: pt.y, cx: side === 'left' ? -colX : colX, cy: pt.y, side };
   });
   (['left', 'right'] as const).forEach((side) => {
-    const idx = LAYERS.map((l, i) => (l.side === side ? i : -1)).filter((i) => i >= 0).sort((i, j) => out[i].ay - out[j].ay);
+    const idx = out.map((l, i) => (l.side === side ? i : -1)).filter((i) => i >= 0).sort((i, j) => out[i].ay - out[j].ay);
+    if (idx.length === 0) return;
     // push down to keep the gap, then push back up if the column runs off the stage
     for (let k = 1; k < idx.length; k++) out[idx[k]].cy = Math.max(out[idx[k]].cy, out[idx[k - 1]].cy + LABEL_GAP);
     const last = idx[idx.length - 1];
@@ -149,16 +156,33 @@ function layoutLabels(p: number, sceneScale: number, colX: number, maxY: number)
   return out;
 }
 
-function LabelOverlay({ progress, sceneScale, stageW, stageH }: { progress: MotionValue<number>; sceneScale: number; stageW: number; stageH: number }) {
+function LabelOverlay({
+  progress,
+  rotX,
+  rotZ,
+  sceneScale,
+  stageW,
+  stageH,
+}: {
+  progress: MotionValue<number>;
+  rotX: MotionValue<number>;
+  rotZ: MotionValue<number>;
+  sceneScale: number;
+  stageW: number;
+  stageH: number;
+}) {
   const colX = Math.min(330, stageW / 2 - 100);
   const maxY = stageH / 2 - 60;
-  const layout = useTransform(progress, (p) => layoutLabels(p, sceneScale, colX, maxY));
+  const layout = useTransform([progress, rotX, rotZ], (v) => {
+    const [p, a, b] = v as number[];
+    return layoutLabels(p, a, b, sceneScale, colX, maxY);
+  });
   const opacity = useTransform(progress, [0.62, 0.85], [0, 1]);
   return (
     <motion.div className="plabels" style={{ opacity }} aria-hidden="true">
       <svg className="plabels__lines" width={stageW} height={stageH} viewBox={`${-stageW / 2} ${-stageH / 2} ${stageW} ${stageH}`}>
         {LAYERS.map((layer, i) => (
-          <LeaderLine key={layer.id} layout={layout} index={i} side={layer.side} />
+          <LeaderLine key={layer.id} layout={layout} index={i} />
         ))}
       </svg>
       {LAYERS.map((layer, i) => (
@@ -168,8 +192,8 @@ function LabelOverlay({ progress, sceneScale, stageW, stageH }: { progress: Moti
   );
 }
 
-function LeaderLine({ layout, index, side }: { layout: MotionValue<LabelPos[]>; index: number; side: 'left' | 'right' }) {
-  const x1 = useTransform(layout, (l) => l[index].cx + (side === 'left' ? 4 : -4));
+function LeaderLine({ layout, index }: { layout: MotionValue<LabelPos[]>; index: number }) {
+  const x1 = useTransform(layout, (l) => l[index].cx + (l[index].side === 'left' ? 4 : -4));
   const y1 = useTransform(layout, (l) => l[index].cy);
   const x2 = useTransform(layout, (l) => l[index].ax);
   const y2 = useTransform(layout, (l) => l[index].ay);
@@ -184,12 +208,13 @@ function LeaderLine({ layout, index, side }: { layout: MotionValue<LabelPos[]>; 
 function LabelChip({ layer, layout, index }: { layer: Layer; layout: MotionValue<LabelPos[]>; index: number }) {
   const x = useTransform(layout, (l) => l[index].cx);
   const y = useTransform(layout, (l) => l[index].cy);
+  const shift = useTransform(layout, (l) => (l[index].side === 'left' ? '-100%' : '0%'));
   return (
-    <motion.div className={`plabel plabel--${layer.side}`} style={{ x, y }}>
-      <span className="plabel__chip">
+    <motion.div className="plabel" style={{ x, y }}>
+      <motion.span className="plabel__chip" style={{ x: shift, y: '-50%' }}>
         <span>{layer.label}</span>
         <small>{layer.sub}</small>
-      </span>
+      </motion.span>
     </motion.div>
   );
 }
@@ -205,8 +230,22 @@ export default function ExplodedPhone() {
   const still = useTransform(() => 1);
   const progress = reduceMotion ? still : smooth;
 
-  const rotX = useTransform(progress, [0, 0.9], [0, TILT_X], { ease: easeInOut });
-  const rotZ = useTransform(progress, [0, 0.9], [0, TILT_Z], { ease: easeInOut });
+  const baseRotX = useTransform(progress, [0, 0.9], [0, TILT_X], { ease: easeInOut });
+  const baseRotZ = useTransform(progress, [0, 0.9], [0, TILT_Z], { ease: easeInOut });
+  // User rotation: yaw spins the exploded stack like a turntable (full 360),
+  // pitch tilts it. Both fade in with the explosion so the resting phone
+  // still faces the viewer squarely.
+  const yaw = useMotionValue(0);
+  const pitch = useMotionValue(0);
+  const userWeight = useTransform(progress, [0.3, 0.9], [0, 1]);
+  const rotX = useTransform([baseRotX, pitch, userWeight], (v) => {
+    const [b, pt, w] = v as number[];
+    return Math.min(82, Math.max(8, b + pt * w));
+  });
+  const rotZ = useTransform([baseRotZ, yaw, userWeight], (v) => {
+    const [b, y, w] = v as number[];
+    return b + y * w;
+  });
   const lift = useTransform(progress, [0, 1], [0, -30]);
   const grow = useTransform(progress, [0, 1], [1, 1.12]);
   const stackTransform = useMotionTemplate`translateY(${lift}px) scale(${grow}) rotateX(${rotX}deg) rotateZ(${rotZ}deg)`;
@@ -237,6 +276,95 @@ export default function ExplodedPhone() {
   const pickHintOpacity = useTransform(progress, [0.75, 0.95], [0, 1]);
   const pickHintY = useTransform(progress, [0.75, 0.95], [12, 0]);
 
+  const dragging = useRef(false);
+  const movedRef = useRef(false);
+  const dragStart = useRef({ x: 0, y: 0, yaw: 0, pitch: 0, t: 0, vx: 0, lastX: 0, lastT: 0 });
+  const idleTimer = useRef<number | undefined>(undefined);
+  const autoSpin = useRef<ReturnType<typeof animate> | null>(null);
+
+  const stopAutoSpin = () => {
+    autoSpin.current?.stop();
+    autoSpin.current = null;
+  };
+  const startAutoSpin = () => {
+    if (reduceMotion || autoSpin.current || dragging.current) return;
+    autoSpin.current = animate(yaw, yaw.get() + 360, { duration: 60, ease: 'linear', repeat: Infinity, repeatType: 'loop' });
+  };
+  const scheduleAutoSpin = () => {
+    window.clearTimeout(idleTimer.current);
+    idleTimer.current = window.setTimeout(() => {
+      if (progress.get() > 0.85) startAutoSpin();
+    }, 4000);
+  };
+  // Auto-rotate slowly once the phone is fully open and nobody is touching it.
+  useMotionValueEvent(progress, 'change', (v) => {
+    if (v > 0.85) {
+      if (!autoSpin.current && !dragging.current) scheduleAutoSpin();
+    } else {
+      stopAutoSpin();
+      window.clearTimeout(idleTimer.current);
+    }
+  });
+  useEffect(() => () => {
+    stopAutoSpin();
+    window.clearTimeout(idleTimer.current);
+  }, []);
+
+  const onPointerDown = (e: ReactPointerEvent<HTMLDivElement>) => {
+    if (reduceMotion || e.button !== 0) return;
+    stopAutoSpin();
+    window.clearTimeout(idleTimer.current);
+    dragging.current = true;
+    movedRef.current = false;
+    const now = performance.now();
+    dragStart.current = { x: e.clientX, y: e.clientY, yaw: yaw.get(), pitch: pitch.get(), t: now, vx: 0, lastX: e.clientX, lastT: now };
+    const el = e.currentTarget;
+    const onMove = (ev: PointerEvent) => {
+      if (!dragging.current) return;
+      const d = dragStart.current;
+      const dx = ev.clientX - d.x;
+      const dy = ev.clientY - d.y;
+      if (!movedRef.current && Math.hypot(dx, dy) > 6) {
+        movedRef.current = true;
+        el.classList.add('is-dragging');
+      }
+      if (!movedRef.current) return;
+      yaw.set(d.yaw + dx * 0.45);
+      pitch.set(d.pitch - dy * 0.25);
+      const t = performance.now();
+      const dt = Math.max(1, t - d.lastT);
+      d.vx = ((ev.clientX - d.lastX) / dt) * 1000 * 0.45;
+      d.lastX = ev.clientX;
+      d.lastT = t;
+    };
+    const onUp = () => {
+      window.removeEventListener('pointermove', onMove);
+      window.removeEventListener('pointerup', onUp);
+      window.removeEventListener('pointercancel', onUp);
+      if (!dragging.current) return;
+      dragging.current = false;
+      el.classList.remove('is-dragging');
+      if (movedRef.current) {
+        animate(yaw, yaw.get(), { type: 'inertia', velocity: dragStart.current.vx, power: 0.6, timeConstant: 350 });
+        // let the synthetic click that follows the drag be swallowed, then reset
+        window.setTimeout(() => {
+          movedRef.current = false;
+        }, 0);
+      }
+      scheduleAutoSpin();
+    };
+    window.addEventListener('pointermove', onMove);
+    window.addEventListener('pointerup', onUp);
+    window.addEventListener('pointercancel', onUp);
+  };
+  const onClickCapture = (e: ReactMouseEvent<HTMLDivElement>) => {
+    // a drag must not count as a click on the part underneath
+    if (movedRef.current) {
+      e.stopPropagation();
+      e.preventDefault();
+    }
+  };
+
   const onPick = (l: Layer) => {
     pickPart(l.partId, l.category, 'phone');
     scrollTo('#counter', -90);
@@ -264,7 +392,12 @@ export default function ExplodedPhone() {
           </div>
         </div>
 
-        <div className="hero__phone" ref={phoneRef}>
+        <div
+          className="hero__phone"
+          ref={phoneRef}
+          onPointerDown={onPointerDown}
+          onClickCapture={onClickCapture}
+        >
           <motion.div className="phone3d__shadow" style={{ opacity: shadowOpacity, scale: shadowScale }} aria-hidden="true" />
           <div className="phone3d__scene">
             <motion.div className="phone3d" style={{ transform: stackTransform }}>
@@ -279,7 +412,10 @@ export default function ExplodedPhone() {
               ))}
             </motion.div>
           </div>
-          <LabelOverlay progress={progress} sceneScale={sceneScale} stageW={stage.w} stageH={stage.h} />
+          <LabelOverlay progress={progress} rotX={rotX} rotZ={rotZ} sceneScale={sceneScale} stageW={stage.w} stageH={stage.h} />
+          <motion.div className="hero__spin" style={{ opacity: pickHintOpacity }} aria-hidden="true">
+            <Icon name="refresh" size={16} /> Drag to rotate
+          </motion.div>
 
           <motion.div className="hero__hint" style={{ opacity: scrollHintOpacity }} aria-hidden="true">
             <span>Scroll karo</span>

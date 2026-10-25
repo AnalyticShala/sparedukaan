@@ -1,0 +1,13 @@
+{
+  // Cloudflare Workers config: serve the Vite build as static assets.
+  // Build command: pnpm run build     Deploy command: npx wrangler deploy
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "sd",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    // React Router handles /parts/... client-side, so unknown paths get index.html
+    "not_found_handling": "single-page-application"
+  },
+  "observability": { "enabled": true }
+}

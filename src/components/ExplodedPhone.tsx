@@ -78,16 +78,21 @@ const SCENE_H = 540;
 
 function PhoneLayer({
   layer,
+  index,
   progress,
   onPick,
   active,
 }: {
   layer: Layer;
+  index: number;
   progress: MotionValue<number>;
   onPick: (l: Layer) => void;
   active: boolean;
 }) {
-  const z = useTransform(progress, [0.08, 1], [0, layer.depth], { ease: easeInOut });
+  // A hair of depth per layer keeps the stacking order right even when all
+  // layers sit at z = 0 (resting phone), on every browser.
+  const rest = (LAYERS.length - index) * 0.4;
+  const z = useTransform(progress, [0.08, 1], [rest, layer.depth + rest], { ease: easeInOut });
   const transform = useMotionTemplate`translateZ(${z}px)`;
   return (
     <motion.button
@@ -163,6 +168,7 @@ function LabelOverlay({
   sceneScale,
   stageW,
   stageH,
+  onPick,
 }: {
   progress: MotionValue<number>;
   rotX: MotionValue<number>;
@@ -170,8 +176,9 @@ function LabelOverlay({
   sceneScale: number;
   stageW: number;
   stageH: number;
+  onPick: (l: Layer) => void;
 }) {
-  const colX = Math.min(330, stageW / 2 - 100);
+  const colX = Math.min(330, stageW / 2 - 210);
   const maxY = stageH / 2 - 60;
   const layout = useTransform([progress, rotX, rotZ], (v) => {
     const [p, a, b] = v as number[];
@@ -186,7 +193,7 @@ function LabelOverlay({
         ))}
       </svg>
       {LAYERS.map((layer, i) => (
-        <LabelChip key={layer.id} layer={layer} layout={layout} index={i} />
+        <LabelChip key={layer.id} layer={layer} layout={layout} index={i} onPick={onPick} />
       ))}
     </motion.div>
   );
@@ -205,16 +212,18 @@ function LeaderLine({ layout, index }: { layout: MotionValue<LabelPos[]>; index:
   );
 }
 
-function LabelChip({ layer, layout, index }: { layer: Layer; layout: MotionValue<LabelPos[]>; index: number }) {
+function LabelChip({ layer, layout, index, onPick }: { layer: Layer; layout: MotionValue<LabelPos[]>; index: number; onPick: (l: Layer) => void }) {
   const x = useTransform(layout, (l) => l[index].cx);
   const y = useTransform(layout, (l) => l[index].cy);
   const shift = useTransform(layout, (l) => (l[index].side === 'left' ? '-100%' : '0%'));
   return (
     <motion.div className="plabel" style={{ x, y }}>
-      <motion.span className="plabel__chip" style={{ x: shift, y: '-50%' }}>
-        <span>{layer.label}</span>
-        <small>{layer.sub}</small>
-      </motion.span>
+      <motion.button type="button" className="plabel__btn" style={{ x: shift, y: '-50%' }} onClick={() => onPick(layer)} tabIndex={-1}>
+        <span className="plabel__chip">
+          <span>{layer.label}</span>
+          <small>{layer.sub}</small>
+        </span>
+      </motion.button>
     </motion.div>
   );
 }
@@ -401,10 +410,11 @@ export default function ExplodedPhone() {
           <motion.div className="phone3d__shadow" style={{ opacity: shadowOpacity, scale: shadowScale }} aria-hidden="true" />
           <div className="phone3d__scene">
             <motion.div className="phone3d" style={{ transform: stackTransform }}>
-              {LAYERS.map((l) => (
+              {[...LAYERS].reverse().map((l) => (
                 <PhoneLayer
                   key={l.id}
                   layer={l}
+                  index={LAYERS.indexOf(l)}
                   progress={progress}
                   onPick={onPick}
                   active={sel.startedFrom === 'phone' && sel.partId === l.partId}
@@ -412,7 +422,7 @@ export default function ExplodedPhone() {
               ))}
             </motion.div>
           </div>
-          <LabelOverlay progress={progress} rotX={rotX} rotZ={rotZ} sceneScale={sceneScale} stageW={stage.w} stageH={stage.h} />
+          <LabelOverlay progress={progress} rotX={rotX} rotZ={rotZ} sceneScale={sceneScale} stageW={stage.w} stageH={stage.h} onPick={onPick} />
           <motion.div className="hero__spin" style={{ opacity: pickHintOpacity }} aria-hidden="true">
             <Icon name="refresh" size={16} /> Drag to rotate
           </motion.div>

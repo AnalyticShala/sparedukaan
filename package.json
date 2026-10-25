@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "typecheck": "tsc -b"
+    "typecheck": "tsc -b",
+    "qa": "node qa/qa.cjs"
   },
   "dependencies": {
     "@fontsource/fraunces": "^5.3.0",
@@ -23,6 +24,8 @@
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.4",
     "typescript": "^5.6.3",
-    "vite": "^5.4.11"
+    "vite": "^5.4.11",
+    "axe-core": "^4.10.2",
+    "playwright": "^1.49.0"
   }
 }

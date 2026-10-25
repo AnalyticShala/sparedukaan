@@ -70,31 +70,31 @@ async function axe(p, label) {
     ok('counter heading adapts', (await p.locator('.counter__title').textContent()).includes('Ab company'));
     // counter flow
     await p.getByRole('button', { name: 'Samsung', exact: true }).first().click();
-    ok('models appear after brand', (await p.locator('.choice--row').count()) === 4);
-    await p.locator('.field input').fill('a54'); await p.waitForTimeout(400);
+    ok('models appear after brand (Samsung has 100+)', (await p.locator('.choice--row').count()) > 100, String(await p.locator('.choice--row').count()));
+    await p.locator('#model-search').fill('a54'); await p.waitForTimeout(400);
     ok('model search filters', (await p.locator('.choice--row').count()) === 1);
     await p.locator('.choice--row').first().click();
     const cta = await p.locator('.slip a.btn').textContent().catch(() => '');
     ok('Dikhao enabled after model', cta.includes('Dikhao'));
     // tabs
     await p.getByRole('tab', { name: 'Accessories' }).click();
-    ok('accessories tab shows 6 parts', (await p.locator('.counter__col .choice--tall').count()) === 6);
+    ok('accessories tab shows 9 part types', (await p.locator('.counter__col .choice--tall').count()) === 9);
     ok('switching category clears part', (await p.locator('.slip__row--last .slip__v').textContent()).includes('All accessories'));
     await p.getByRole('tab', { name: 'Spare Parts' }).click();
-    ok('spare parts tab shows 12 parts', (await p.locator('.counter__col .choice--tall').count()) === 12);
+    ok('spare parts tab shows 20 part types', (await p.locator('.counter__col .choice--tall').count()) === 20);
     await p.locator('.counter__col .choice--tall', { hasText: 'Display assembly' }).click();
     await p.locator('.slip a.btn').click();
-    await p.waitForURL(/\/parts\/samsung\/a54/);
+    await p.waitForURL(/\/parts\/samsung\/galaxy-a54-5g/);
     ok('navigates to model page with query', p.url().includes('cat=parts') && p.url().includes('part=display'), p.url());
     ok('model page scrolled to top', (await p.evaluate(() => window.scrollY)) < 5);
     ok('pinned bar shows code', (await p.locator('.crumbs').textContent()).includes('SM-A546E'));
     ok('rail highlights display', (await p.locator('.rail__item.is-on').textContent()).includes('Display'));
-    ok('3 display products', (await p.locator('.product').count()) === 3);
-    ok('verified and review badges both present', (await p.locator('.badge--verified').count()) === 2 && (await p.locator('.badge--review').count()) === 1);
+    ok('2 display variants (with / without frame)', (await p.locator('.product').count()) === 2);
+    ok('every product shows a fit badge', (await p.locator('.badge').count()) === (await p.locator('.product').count()));
     await p.getByRole('tab', { name: 'Accessories' }).click();
     ok('accessories tab on model page lists products', (await p.locator('.product').count()) >= 5);
     await p.locator('.rail__item', { hasText: 'Tempered glass' }).click();
-    ok('rail filter narrows', (await p.locator('.product').count()) === 1);
+    ok('rail filter narrows', (await p.locator('.product').count()) === 2);
     // every part type has at least one product
     const emptyTypes = await p.evaluate(() => {
       const items = [...document.querySelectorAll('.rail__item')].slice(1);
@@ -106,8 +106,8 @@ async function axe(p, label) {
     ok('no spare part type without sample product', emptyParts.length === 0, emptyParts.join(', '));
     // change phone keeps state
     await p.locator('text=Change phone').click();
-    await p.waitForURL(BASE + '/');
-    ok('change phone returns home', p.url() === BASE + '/');
+    await p.waitForURL(/\/(#counter)?$/);
+    ok('change phone returns home', new URL(p.url()).pathname === '/');
     const keptBrand = await p.locator('.slip__row').first().textContent();
     ok('selection kept after returning', keptBrand.includes('Samsung'), keptBrand);
     // bad url
@@ -134,9 +134,31 @@ async function axe(p, label) {
     // symptom card -> counter
     await p.locator('.card--symptom').first().click(); await p.waitForTimeout(1500);
     ok('symptom card selects display', (await p.locator('.slip__row--last .slip__v').textContent()).includes('Display'));
+    // model-code search navigates
+    await p.locator('#code-search').fill('sm-a546e'); await p.locator('.codebar__form button').click();
+    await p.waitForURL(/\/parts\/samsung\/galaxy-a54-5g/); ok('model-code search finds Galaxy A54 5G', p.url().includes('galaxy-a54-5g'));
+    await p.goto(BASE + '/', { waitUntil: 'networkidle' });
+    await p.locator('#code-search').fill('zzz999'); await p.locator('.codebar__form button').click(); await p.waitForTimeout(300);
+    ok('unknown code shows a message', (await p.locator('.codehits').textContent()).includes('No model found'));
+    ok('top 8 brands shown by default', (await p.locator('.brands .choice').count()) === 8);
+    await p.locator('.linkbtn').click();
+    ok('all 25 brands after toggle', (await p.locator('.brands .choice').count()) === 25);
+    await p.locator('#brand-search').fill('lava');
+    ok('brand search filters', (await p.locator('.brands .choice').count()) === 1);
+    await p.locator('#brand-search').fill('');
+    // a feature phone has no front camera part
+    await p.goto(BASE + '/parts/jio/jiophone-prima-4g?cat=parts', { waitUntil: 'networkidle' });
+    ok('feature phone omits smartphone-only parts', !(await p.locator('.rail').textContent()).includes('Front camera'));
+    await p.goto(BASE + '/parts/apple/iphone-15?cat=parts', { waitUntil: 'networkidle' });
+    ok('iPhone 15 lists wireless coil', (await p.locator('.rail').textContent()).includes('Wireless charging coil'));
+    await p.goto(BASE + '/parts/apple/iphone-15?cat=acc&part=cable', { waitUntil: 'networkidle' });
+    ok('iPhone 15 cable is USB-C', (await p.locator('.product__title').first().textContent()).includes('USB-C to USB-C'));
+    await p.goto(BASE + '/parts/apple/iphone-13?cat=acc&part=cable', { waitUntil: 'networkidle' });
+    ok('iPhone 13 cable is Lightning', (await p.locator('.product__title').first().textContent()).includes('Lightning'));
+    await p.goto(BASE + '/', { waitUntil: 'networkidle' });
     // axe
     const v1 = await axe(p, 'home');
-    await p.goto(BASE + '/parts/samsung/a54?cat=parts&part=display', { waitUntil: 'networkidle' });
+    await p.goto(BASE + '/parts/samsung/galaxy-a54-5g?cat=parts&part=display', { waitUntil: 'networkidle' });
     const v2 = await axe(p, 'model page');
     fs.writeFileSync('qa/axe.json', JSON.stringify({ home: v1, model: v2 }, null, 2));
     ok('no JS/console errors (desktop)', errors.length === 0, errors.join('\n'));
@@ -182,7 +204,7 @@ async function axe(p, label) {
     ok('mobile: counter card fits', slipBox && slipBox.x + slipBox.width <= 390, JSON.stringify(slipBox));
     const smallTargets = await p.evaluate(() => [...document.querySelectorAll('a,button')].filter((e) => { const r = e.getBoundingClientRect(); return r.width > 0 && r.height > 0 && r.height < 32; }).map((e) => (e.textContent || e.getAttribute('aria-label') || '').trim().slice(0, 30)));
     ok('mobile: tap targets at least 32px tall', smallTargets.length === 0, smallTargets.join(' | '));
-    await p.goto(BASE + '/parts/samsung/a54?cat=parts', { waitUntil: 'networkidle' });
+    await p.goto(BASE + '/parts/samsung/galaxy-a54-5g?cat=parts', { waitUntil: 'networkidle' });
     await p.screenshot({ path: 'qa/shots/qa-mobile-3.png', fullPage: false });
     ok('mobile model page: no horizontal scroll', await p.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1), await p.evaluate(() => document.documentElement.scrollWidth));
     ok('mobile: no JS errors', errors.length === 0, errors.join('\n'));

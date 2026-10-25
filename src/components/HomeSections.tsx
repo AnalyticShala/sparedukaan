@@ -1,4 +1,4 @@
-import { BRANDS, PART_TYPES } from '../data/catalog';
+import { BRANDS, PART_TYPES, TOP_BRAND_IDS } from '../data/catalog';
 import { useSelection } from '../store/selection';
 import { useSmoothScroll } from '../lib/smoothScroll';
 import { Icon } from './Icon';
@@ -88,13 +88,16 @@ export function BrandWall() {
   const { scrollTo } = useSmoothScroll();
   return (
     <section className="container section">
-      <h2 className="h2">Phone companies</h2>
+      <div className="section__head">
+        <h2 className="h2">Phone companies</h2>
+        <span className="muted">{BRANDS.length} companies sold in India, including older brands still in repair.</span>
+      </div>
       <div className="grid-8">
-        {BRANDS.map((b) => (
+        {[...TOP_BRAND_IDS.map((id) => BRANDS.find((b) => b.id === id)!), ...BRANDS.filter((b) => !TOP_BRAND_IDS.includes(b.id))].map((b) => (
           <button
             key={b.id}
             type="button"
-            className="tile"
+            className={`tile${b.status === 'legacy' ? ' tile--muted' : ''}`}
             onClick={() => {
               pickBrand(b.id);
               scrollTo('#counter', -90);

@@ -1,0 +1,857 @@
+model_id,brand_id,model_name,launch_year,exact_code,code_status,device_type,display_tech,battery_mah,charging_port,back_material,wireless_charging,fingerprint,parts_availability
+samsung-galaxy-s25-ultra,samsung,Galaxy S25 Ultra,2025,SM-S938B,verify,smartphone,OLED,5000,USB-C,glass,Yes,in-display,Medium
+samsung-galaxy-s25,samsung,Galaxy S25+,2025,SM-S936B,verify,smartphone,OLED,4900,USB-C,glass,Yes,in-display,Medium
+samsung-galaxy-s25,samsung,Galaxy S25,2025,SM-S931B,verify,smartphone,OLED,4000,USB-C,glass,Yes,in-display,Medium
+samsung-galaxy-s24-ultra,samsung,Galaxy S24 Ultra,2024,SM-S928B,verify,smartphone,OLED,5000,USB-C,glass,Yes,in-display,High
+samsung-galaxy-s24,samsung,Galaxy S24+,2024,SM-S926B,verify,smartphone,OLED,4900,USB-C,glass,Yes,in-display,Medium
+samsung-galaxy-s24,samsung,Galaxy S24,2024,SM-S921B,verify,smartphone,OLED,4000,USB-C,glass,Yes,in-display,High
+samsung-galaxy-s24-fe,samsung,Galaxy S24 FE,2024,SM-S721B,verify,smartphone,OLED,4700,USB-C,glass,Yes,in-display,Medium
+samsung-galaxy-s23-ultra,samsung,Galaxy S23 Ultra,2023,SM-S918B,verify,smartphone,OLED,5000,USB-C,glass,Yes,in-display,High
+samsung-galaxy-s23,samsung,Galaxy S23+,2023,SM-S916B,verify,smartphone,OLED,4700,USB-C,glass,Yes,in-display,Medium
+samsung-galaxy-s23,samsung,Galaxy S23,2023,SM-S911B,verify,smartphone,OLED,3900,USB-C,glass,Yes,in-display,High
+samsung-galaxy-s23-fe,samsung,Galaxy S23 FE,2023,SM-S711B,verify,smartphone,OLED,4500,USB-C,glass,Yes,in-display,Medium
+samsung-galaxy-s22-ultra,samsung,Galaxy S22 Ultra,2022,SM-S908E,verify,smartphone,OLED,5000,USB-C,glass,Yes,in-display,High
+samsung-galaxy-s22,samsung,Galaxy S22+,2022,SM-S906E,verify,smartphone,OLED,4500,USB-C,glass,Yes,in-display,Medium
+samsung-galaxy-s22,samsung,Galaxy S22,2022,SM-S901E,verify,smartphone,OLED,3700,USB-C,glass,Yes,in-display,High
+samsung-galaxy-s21-ultra,samsung,Galaxy S21 Ultra,2021,SM-G998B,verify,smartphone,OLED,5000,USB-C,glass,Yes,in-display,High
+samsung-galaxy-s21,samsung,Galaxy S21+,2021,SM-G996B,verify,smartphone,OLED,4800,USB-C,glass,Yes,in-display,Medium
+samsung-galaxy-s21,samsung,Galaxy S21,2021,SM-G991B,verify,smartphone,OLED,4000,USB-C,plastic,Yes,in-display,High
+samsung-galaxy-s21-fe,samsung,Galaxy S21 FE,2022,SM-G990E,verify,smartphone,OLED,4500,USB-C,plastic,Yes,in-display,High
+samsung-galaxy-s20-ultra,samsung,Galaxy S20 Ultra,2020,SM-G988B,verify,smartphone,OLED,5000,USB-C,glass,Yes,in-display,Medium
+samsung-galaxy-s20,samsung,Galaxy S20+,2020,SM-G985F,verify,smartphone,OLED,4500,USB-C,glass,Yes,in-display,Medium
+samsung-galaxy-s20,samsung,Galaxy S20,2020,SM-G980F,verify,smartphone,OLED,4000,USB-C,glass,Yes,in-display,Medium
+samsung-galaxy-s20-fe,samsung,Galaxy S20 FE,2020,SM-G780F,verify,smartphone,OLED,4500,USB-C,plastic,Yes,in-display,High
+samsung-galaxy-s10,samsung,Galaxy S10+,2019,SM-G975F,verify,smartphone,OLED,4100,USB-C,glass,Yes,in-display,Medium
+samsung-galaxy-s10,samsung,Galaxy S10,2019,SM-G973F,verify,smartphone,OLED,3400,USB-C,glass,Yes,in-display,Medium
+samsung-galaxy-s10e,samsung,Galaxy S10e,2019,SM-G970F,verify,smartphone,OLED,3100,USB-C,glass,Yes,side,Low
+samsung-galaxy-s10-lite,samsung,Galaxy S10 Lite,2020,SM-G770F,verify,smartphone,OLED,4500,USB-C,plastic,No,in-display,Medium
+samsung-galaxy-s9,samsung,Galaxy S9+,2018,SM-G965F,verify,smartphone,OLED,3500,USB-C,glass,Yes,rear,Medium
+samsung-galaxy-s9,samsung,Galaxy S9,2018,SM-G960F,verify,smartphone,OLED,3000,USB-C,glass,Yes,rear,Medium
+samsung-galaxy-note-20-ultra,samsung,Galaxy Note 20 Ultra,2020,SM-N985F,verify,smartphone,OLED,4500,USB-C,glass,Yes,in-display,Medium
+samsung-galaxy-note-20,samsung,Galaxy Note 20,2020,SM-N980F,verify,smartphone,OLED,4300,USB-C,plastic,Yes,in-display,Medium
+samsung-galaxy-note-10,samsung,Galaxy Note 10+,2019,SM-N975F,verify,smartphone,OLED,4300,USB-C,glass,Yes,in-display,Medium
+samsung-galaxy-note-10,samsung,Galaxy Note 10,2019,SM-N970F,verify,smartphone,OLED,3500,USB-C,glass,Yes,in-display,Medium
+samsung-galaxy-note-10-lite,samsung,Galaxy Note 10 Lite,2020,SM-N770F,verify,smartphone,OLED,4500,USB-C,plastic,No,in-display,Medium
+samsung-galaxy-note-9,samsung,Galaxy Note 9,2018,SM-N960F,verify,smartphone,OLED,4000,USB-C,glass,Yes,rear,Medium
+samsung-galaxy-z-fold6,samsung,Galaxy Z Fold6,2024,SM-F956B,verify,smartphone,OLED,4400,USB-C,glass,Yes,side,Low
+samsung-galaxy-z-fold5,samsung,Galaxy Z Fold5,2023,SM-F946B,verify,smartphone,OLED,4400,USB-C,glass,Yes,side,Low
+samsung-galaxy-z-fold4,samsung,Galaxy Z Fold4,2022,SM-F936B,verify,smartphone,OLED,4400,USB-C,glass,Yes,side,Low
+samsung-galaxy-z-flip6,samsung,Galaxy Z Flip6,2024,SM-F741B,verify,smartphone,OLED,4000,USB-C,glass,Yes,side,Low
+samsung-galaxy-z-flip5,samsung,Galaxy Z Flip5,2023,SM-F731B,verify,smartphone,OLED,3700,USB-C,glass,Yes,side,Low
+samsung-galaxy-z-flip4,samsung,Galaxy Z Flip4,2022,SM-F721B,verify,smartphone,OLED,3700,USB-C,glass,Yes,side,Low
+samsung-galaxy-a56-5g,samsung,Galaxy A56 5G,2025,SM-A566B,verify,smartphone,OLED,5000,USB-C,glass,No,in-display,High
+samsung-galaxy-a36-5g,samsung,Galaxy A36 5G,2025,SM-A366B,verify,smartphone,OLED,5000,USB-C,glass,No,in-display,High
+samsung-galaxy-a26-5g,samsung,Galaxy A26 5G,2025,SM-A266B,verify,smartphone,OLED,5000,USB-C,glass,No,side,Medium
+samsung-galaxy-a16-5g,samsung,Galaxy A16 5G,2024,SM-A166B,verify,smartphone,OLED,5000,USB-C,plastic,No,side,High
+samsung-galaxy-a16,samsung,Galaxy A16,2024,SM-A165F,verify,smartphone,OLED,5000,USB-C,plastic,No,side,High
+samsung-galaxy-a06,samsung,Galaxy A06,2024,SM-A065F,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+samsung-galaxy-a55-5g,samsung,Galaxy A55 5G,2024,SM-A556E,verify,smartphone,OLED,5000,USB-C,glass,No,in-display,High
+samsung-galaxy-a35-5g,samsung,Galaxy A35 5G,2024,SM-A356E,verify,smartphone,OLED,5000,USB-C,glass,No,in-display,High
+samsung-galaxy-a25-5g,samsung,Galaxy A25 5G,2023,SM-A256E,verify,smartphone,OLED,5000,USB-C,plastic,No,side,High
+samsung-galaxy-a15-5g,samsung,Galaxy A15 5G,2023,SM-A156E,verify,smartphone,OLED,5000,USB-C,plastic,No,side,High
+samsung-galaxy-a15,samsung,Galaxy A15,2023,SM-A155F,verify,smartphone,OLED,5000,USB-C,plastic,No,side,High
+samsung-galaxy-a05s,samsung,Galaxy A05s,2023,SM-A057F,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+samsung-galaxy-a05,samsung,Galaxy A05,2023,SM-A055F,verify,smartphone,LCD,5000,USB-C,plastic,No,none,High
+samsung-galaxy-a54-5g,samsung,Galaxy A54 5G,2023,SM-A546E,verify,smartphone,OLED,5000,USB-C,glass,No,in-display,High
+samsung-galaxy-a34-5g,samsung,Galaxy A34 5G,2023,SM-A346E,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,High
+samsung-galaxy-a24,samsung,Galaxy A24,2023,SM-A245F,verify,smartphone,OLED,5000,USB-C,plastic,No,side,High
+samsung-galaxy-a14-5g,samsung,Galaxy A14 5G,2023,SM-A146B,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+samsung-galaxy-a14,samsung,Galaxy A14,2023,SM-A145F,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+samsung-galaxy-a04s,samsung,Galaxy A04s,2022,SM-A047F,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+samsung-galaxy-a04,samsung,Galaxy A04,2022,SM-A045F,verify,smartphone,LCD,5000,USB-C,plastic,No,none,Medium
+samsung-galaxy-a04e,samsung,Galaxy A04e,2022,SM-A042F,verify,smartphone,LCD,5000,Micro-USB,plastic,No,none,Medium
+samsung-galaxy-a73-5g,samsung,Galaxy A73 5G,2022,SM-A736B,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,Medium
+samsung-galaxy-a53-5g,samsung,Galaxy A53 5G,2022,SM-A536E,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,High
+samsung-galaxy-a33-5g,samsung,Galaxy A33 5G,2022,SM-A336E,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,High
+samsung-galaxy-a23,samsung,Galaxy A23,2022,SM-A235F,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+samsung-galaxy-a13,samsung,Galaxy A13,2022,SM-A135F,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+samsung-galaxy-a03s,samsung,Galaxy A03s,2021,SM-A037F,verify,smartphone,LCD,5000,Micro-USB,plastic,No,side,High
+samsung-galaxy-a03,samsung,Galaxy A03,2021,SM-A035F,verify,smartphone,LCD,5000,Micro-USB,plastic,No,none,Medium
+samsung-galaxy-a03-core,samsung,Galaxy A03 Core,2021,SM-A032F,verify,smartphone,LCD,5000,Micro-USB,plastic,No,none,Medium
+samsung-galaxy-a72,samsung,Galaxy A72,2021,SM-A725F,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,Medium
+samsung-galaxy-a52s-5g,samsung,Galaxy A52s 5G,2021,SM-A528B,verify,smartphone,OLED,4500,USB-C,plastic,No,in-display,High
+samsung-galaxy-a52,samsung,Galaxy A52,2021,SM-A525F,verify,smartphone,OLED,4500,USB-C,plastic,No,in-display,High
+samsung-galaxy-a32,samsung,Galaxy A32,2021,SM-A325F,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,High
+samsung-galaxy-a22-5g,samsung,Galaxy A22 5G,2021,SM-A226B,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+samsung-galaxy-a22,samsung,Galaxy A22,2021,SM-A225F,verify,smartphone,OLED,5000,USB-C,plastic,No,side,High
+samsung-galaxy-a12,samsung,Galaxy A12,2020,SM-A125F,verify,smartphone,LCD,5000,USB-C,plastic,No,rear,High
+samsung-galaxy-a02s,samsung,Galaxy A02s,2021,SM-A025F,verify,smartphone,LCD,5000,USB-C,plastic,No,none,High
+samsung-galaxy-a02,samsung,Galaxy A02,2021,SM-A022F,verify,smartphone,LCD,5000,Micro-USB,plastic,No,none,Medium
+samsung-galaxy-a71,samsung,Galaxy A71,2020,SM-A715F,verify,smartphone,OLED,4500,USB-C,plastic,No,in-display,High
+samsung-galaxy-a51,samsung,Galaxy A51,2020,SM-A515F,verify,smartphone,OLED,4000,USB-C,plastic,No,in-display,High
+samsung-galaxy-a31,samsung,Galaxy A31,2020,SM-A315F,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,High
+samsung-galaxy-a21s,samsung,Galaxy A21s,2020,SM-A217F,verify,smartphone,LCD,5000,USB-C,plastic,No,rear,High
+samsung-galaxy-a11,samsung,Galaxy A11,2020,SM-A115F,verify,smartphone,LCD,4000,USB-C,plastic,No,rear,Medium
+samsung-galaxy-a01,samsung,Galaxy A01,2020,SM-A015F,verify,smartphone,LCD,3000,Micro-USB,plastic,No,none,Medium
+samsung-galaxy-a70,samsung,Galaxy A70,2019,SM-A705F,verify,smartphone,OLED,4500,USB-C,plastic,No,in-display,High
+samsung-galaxy-a50s,samsung,Galaxy A50s,2019,SM-A507F,verify,smartphone,OLED,4000,USB-C,plastic,No,in-display,High
+samsung-galaxy-a50,samsung,Galaxy A50,2019,SM-A505F,verify,smartphone,OLED,4000,USB-C,plastic,No,in-display,High
+samsung-galaxy-a30s,samsung,Galaxy A30s,2019,SM-A307F,verify,smartphone,OLED,4000,USB-C,plastic,No,in-display,High
+samsung-galaxy-a30,samsung,Galaxy A30,2019,SM-A305F,verify,smartphone,OLED,4000,USB-C,plastic,No,rear,High
+samsung-galaxy-a20s,samsung,Galaxy A20s,2019,SM-A207F,verify,smartphone,LCD,4000,USB-C,plastic,No,rear,High
+samsung-galaxy-a20,samsung,Galaxy A20,2019,SM-A205F,verify,smartphone,OLED,4000,USB-C,plastic,No,rear,High
+samsung-galaxy-a10s,samsung,Galaxy A10s,2019,SM-A107F,verify,smartphone,LCD,4000,Micro-USB,plastic,No,rear,High
+samsung-galaxy-a10,samsung,Galaxy A10,2019,SM-A105F,verify,smartphone,LCD,3400,Micro-USB,plastic,No,none,High
+samsung-galaxy-a7-2018,samsung,Galaxy A7 (2018),2018,SM-A750F,verify,smartphone,OLED,3300,Micro-USB,glass,No,side,Medium
+samsung-galaxy-a6,samsung,Galaxy A6+,2018,SM-A605F,verify,smartphone,OLED,3500,Micro-USB,metal,No,rear,Low
+samsung-galaxy-m56-5g,samsung,Galaxy M56 5G,2025,SM-M566B,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,Medium
+samsung-galaxy-m36-5g,samsung,Galaxy M36 5G,2025,SM-M366B,verify,smartphone,OLED,5000,USB-C,plastic,No,side,Medium
+samsung-galaxy-m16-5g,samsung,Galaxy M16 5G,2025,SM-M166B,verify,smartphone,OLED,5000,USB-C,plastic,No,side,Medium
+samsung-galaxy-m06-5g,samsung,Galaxy M06 5G,2025,SM-M066B,verify,smartphone,LCD,5000,USB-C,plastic,No,side,Medium
+samsung-galaxy-m55s-5g,samsung,Galaxy M55s 5G,2024,SM-M558B,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,Medium
+samsung-galaxy-m35-5g,samsung,Galaxy M35 5G,2024,SM-M356B,verify,smartphone,OLED,6000,USB-C,plastic,No,side,High
+samsung-galaxy-m15-5g,samsung,Galaxy M15 5G,2024,SM-M156B,verify,smartphone,OLED,6000,USB-C,plastic,No,side,High
+samsung-galaxy-m05,samsung,Galaxy M05,2024,SM-M055F,verify,smartphone,LCD,5000,USB-C,plastic,No,none,High
+samsung-galaxy-m34-5g,samsung,Galaxy M34 5G,2023,SM-M346B,verify,smartphone,OLED,6000,USB-C,plastic,No,side,High
+samsung-galaxy-m14-5g,samsung,Galaxy M14 5G,2023,SM-M146B,verify,smartphone,LCD,6000,USB-C,plastic,No,side,High
+samsung-galaxy-m04,samsung,Galaxy M04,2022,SM-M045F,verify,smartphone,LCD,5000,USB-C,plastic,No,none,High
+samsung-galaxy-m53-5g,samsung,Galaxy M53 5G,2022,SM-M536B,verify,smartphone,OLED,5000,USB-C,plastic,No,side,Medium
+samsung-galaxy-m33-5g,samsung,Galaxy M33 5G,2022,SM-M336B,verify,smartphone,LCD,6000,USB-C,plastic,No,side,High
+samsung-galaxy-m13-5g,samsung,Galaxy M13 5G,2022,SM-M136B,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+samsung-galaxy-m13,samsung,Galaxy M13,2022,SM-M135F,verify,smartphone,LCD,6000,USB-C,plastic,No,side,High
+samsung-galaxy-m52-5g,samsung,Galaxy M52 5G,2021,SM-M526B,verify,smartphone,OLED,5000,USB-C,plastic,No,side,Medium
+samsung-galaxy-m32,samsung,Galaxy M32,2021,SM-M325F,verify,smartphone,OLED,6000,USB-C,plastic,No,side,High
+samsung-galaxy-m12,samsung,Galaxy M12,2021,SM-M127F,verify,smartphone,LCD,6000,USB-C,plastic,No,side,High
+samsung-galaxy-m02s,samsung,Galaxy M02s,2021,SM-M025F,verify,smartphone,LCD,5000,USB-C,plastic,No,none,High
+samsung-galaxy-m51,samsung,Galaxy M51,2020,SM-M515F,verify,smartphone,OLED,7000,USB-C,plastic,No,side,High
+samsung-galaxy-m31s,samsung,Galaxy M31s,2020,SM-M317F,verify,smartphone,OLED,6000,USB-C,plastic,No,side,High
+samsung-galaxy-m31,samsung,Galaxy M31,2020,SM-M315F,verify,smartphone,OLED,6000,USB-C,plastic,No,rear,High
+samsung-galaxy-m21,samsung,Galaxy M21,2020,SM-M215F,verify,smartphone,OLED,6000,USB-C,plastic,No,rear,High
+samsung-galaxy-m11,samsung,Galaxy M11,2020,SM-M115F,verify,smartphone,LCD,5000,USB-C,plastic,No,rear,High
+samsung-galaxy-m01,samsung,Galaxy M01,2020,SM-M015F,verify,smartphone,LCD,4000,Micro-USB,plastic,No,rear,Medium
+samsung-galaxy-m30s,samsung,Galaxy M30s,2019,SM-M307F,verify,smartphone,OLED,6000,USB-C,plastic,No,rear,High
+samsung-galaxy-m30,samsung,Galaxy M30,2019,SM-M305F,verify,smartphone,OLED,5000,USB-C,plastic,No,rear,High
+samsung-galaxy-m20,samsung,Galaxy M20,2019,SM-M205F,verify,smartphone,LCD,5000,USB-C,plastic,No,rear,High
+samsung-galaxy-m10,samsung,Galaxy M10,2019,SM-M105F,verify,smartphone,LCD,3400,Micro-USB,plastic,No,none,Medium
+samsung-galaxy-f55-5g,samsung,Galaxy F55 5G,2024,SM-E556B,verify,smartphone,OLED,5000,USB-C,leather,No,in-display,Medium
+samsung-galaxy-f15-5g,samsung,Galaxy F15 5G,2024,SM-E156B,verify,smartphone,OLED,6000,USB-C,plastic,No,side,Medium
+samsung-galaxy-f54-5g,samsung,Galaxy F54 5G,2023,SM-E546B,verify,smartphone,OLED,6000,USB-C,plastic,No,in-display,Medium
+samsung-galaxy-f34-5g,samsung,Galaxy F34 5G,2023,SM-E346B,verify,smartphone,OLED,6000,USB-C,plastic,No,side,Medium
+samsung-galaxy-f14-5g,samsung,Galaxy F14 5G,2023,SM-E146B,verify,smartphone,LCD,6000,USB-C,plastic,No,side,High
+samsung-galaxy-f23-5g,samsung,Galaxy F23 5G,2022,SM-E236B,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+samsung-galaxy-f13,samsung,Galaxy F13,2022,SM-E135F,verify,smartphone,LCD,6000,USB-C,plastic,No,side,High
+samsung-galaxy-f62,samsung,Galaxy F62,2021,SM-E625F,verify,smartphone,OLED,7000,USB-C,plastic,No,side,Medium
+samsung-galaxy-f41,samsung,Galaxy F41,2020,SM-F415F,verify,smartphone,OLED,6000,USB-C,plastic,No,rear,High
+samsung-galaxy-j7-prime,samsung,Galaxy J7 Prime,2016,SM-G610F,verify,smartphone,LCD,3300,Micro-USB,metal,No,front,Low
+samsung-galaxy-j7-pro,samsung,Galaxy J7 Pro,2017,SM-J730G,verify,smartphone,OLED,3600,Micro-USB,metal,No,front,Low
+samsung-galaxy-j6,samsung,Galaxy J6,2018,SM-J600G,verify,smartphone,OLED,3000,Micro-USB,plastic,No,rear,Low
+samsung-galaxy-j4,samsung,Galaxy J4,2018,SM-J400F,verify,smartphone,OLED,3000,Micro-USB,plastic,No,none,Low
+samsung-galaxy-j2-core,samsung,Galaxy J2 Core,2018,SM-J260G,verify,smartphone,LCD,2600,Micro-USB,plastic,No,none,Low
+xiaomi-redmi-note-14-pro-5g,xiaomi,Redmi Note 14 Pro+ 5G,2024,,unknown - fill in,smartphone,OLED,6200,USB-C,glass,No,in-display,Medium
+xiaomi-redmi-note-14-pro-5g,xiaomi,Redmi Note 14 Pro 5G,2024,,unknown - fill in,smartphone,OLED,5500,USB-C,glass,No,in-display,High
+xiaomi-redmi-note-14-5g,xiaomi,Redmi Note 14 5G,2024,,unknown - fill in,smartphone,OLED,5110,USB-C,plastic,No,in-display,High
+xiaomi-redmi-note-13-pro-5g,xiaomi,Redmi Note 13 Pro+ 5G,2024,,unknown - fill in,smartphone,OLED,5000,USB-C,glass,No,in-display,Medium
+xiaomi-redmi-note-13-pro-5g,xiaomi,Redmi Note 13 Pro 5G,2024,,unknown - fill in,smartphone,OLED,5100,USB-C,glass,No,in-display,High
+xiaomi-redmi-note-13-5g,xiaomi,Redmi Note 13 5G,2024,2312DRAABI,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,High
+xiaomi-redmi-note-12-pro-5g,xiaomi,Redmi Note 12 Pro+ 5G,2023,22101316I,verify,smartphone,OLED,5000,USB-C,glass,No,side,Medium
+xiaomi-redmi-note-12-pro-5g,xiaomi,Redmi Note 12 Pro 5G,2023,22101316I,verify,smartphone,OLED,5000,USB-C,glass,No,side,High
+xiaomi-redmi-note-12-5g,xiaomi,Redmi Note 12 5G,2023,22111317I,verify,smartphone,OLED,5000,USB-C,plastic,No,side,High
+xiaomi-redmi-note-12,xiaomi,Redmi Note 12,2023,23021RAAEG,verify,smartphone,OLED,5000,USB-C,plastic,No,side,High
+xiaomi-redmi-note-11-pro-5g,xiaomi,Redmi Note 11 Pro+ 5G,2022,21091116UI,verify,smartphone,OLED,5000,USB-C,glass,No,side,Medium
+xiaomi-redmi-note-11-pro,xiaomi,Redmi Note 11 Pro,2022,2201116TI,verify,smartphone,OLED,5000,USB-C,glass,No,side,High
+xiaomi-redmi-note-11t-5g,xiaomi,Redmi Note 11T 5G,2021,21091116AI,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+xiaomi-redmi-note-11,xiaomi,Redmi Note 11,2022,2201117TI,verify,smartphone,OLED,5000,USB-C,plastic,No,side,High
+xiaomi-redmi-note-11s,xiaomi,Redmi Note 11S,2022,,unknown - fill in,smartphone,OLED,5000,USB-C,plastic,No,side,Medium
+xiaomi-redmi-note-10-pro-max,xiaomi,Redmi Note 10 Pro Max,2021,M2101K6I,verify,smartphone,OLED,5020,USB-C,glass,No,side,High
+xiaomi-redmi-note-10-pro,xiaomi,Redmi Note 10 Pro,2021,M2101K6P,verify,smartphone,OLED,5020,USB-C,glass,No,side,High
+xiaomi-redmi-note-10,xiaomi,Redmi Note 10,2021,M2101K7AI,verify,smartphone,OLED,5000,USB-C,plastic,No,side,High
+xiaomi-redmi-note-10s,xiaomi,Redmi Note 10S,2021,M2101K7BI,verify,smartphone,OLED,5000,USB-C,plastic,No,side,High
+xiaomi-redmi-note-10t-5g,xiaomi,Redmi Note 10T 5G,2021,M2103K19I,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+xiaomi-redmi-note-10-lite,xiaomi,Redmi Note 10 Lite,2021,M2002F4LG,verify,smartphone,LCD,5020,USB-C,plastic,No,rear,Medium
+xiaomi-redmi-note-9-pro-max,xiaomi,Redmi Note 9 Pro Max,2020,M2003J6B1I,verify,smartphone,LCD,5020,USB-C,glass,No,side,High
+xiaomi-redmi-note-9-pro,xiaomi,Redmi Note 9 Pro,2020,M2003J6A1I,verify,smartphone,LCD,5020,USB-C,glass,No,side,High
+xiaomi-redmi-note-9,xiaomi,Redmi Note 9,2020,M2003J15SI,verify,smartphone,LCD,5020,USB-C,plastic,No,rear,High
+xiaomi-redmi-note-8-pro,xiaomi,Redmi Note 8 Pro,2019,M1906G7I,verify,smartphone,LCD,4500,USB-C,glass,No,rear,High
+xiaomi-redmi-note-8,xiaomi,Redmi Note 8,2019,M1908C3JI,verify,smartphone,LCD,4000,USB-C,glass,No,rear,High
+xiaomi-redmi-note-7-pro,xiaomi,Redmi Note 7 Pro,2019,M1901F7S,verify,smartphone,LCD,4000,USB-C,glass,No,rear,High
+xiaomi-redmi-note-7,xiaomi,Redmi Note 7,2019,M1901F7I,verify,smartphone,LCD,4000,USB-C,glass,No,rear,High
+xiaomi-redmi-note-7s,xiaomi,Redmi Note 7S,2019,M1901F7S,verify,smartphone,LCD,4000,USB-C,glass,No,rear,High
+xiaomi-redmi-note-6-pro,xiaomi,Redmi Note 6 Pro,2018,M1806E7TI,verify,smartphone,LCD,4000,Micro-USB,metal,No,rear,Medium
+xiaomi-redmi-note-5-pro,xiaomi,Redmi Note 5 Pro,2018,MEI7S,verify,smartphone,LCD,4000,Micro-USB,metal,No,rear,Medium
+xiaomi-redmi-note-5,xiaomi,Redmi Note 5,2018,MEI7,verify,smartphone,LCD,4000,Micro-USB,metal,No,rear,Medium
+xiaomi-redmi-14c-5g,xiaomi,Redmi 14C 5G,2025,,unknown - fill in,smartphone,LCD,5160,USB-C,plastic,No,side,High
+xiaomi-redmi-13-5g,xiaomi,Redmi 13 5G,2024,,unknown - fill in,smartphone,LCD,5030,USB-C,glass,No,side,High
+xiaomi-redmi-13c-5g,xiaomi,Redmi 13C 5G,2023,23100RN82I,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+xiaomi-redmi-13c,xiaomi,Redmi 13C,2023,23106RN0DA,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+xiaomi-redmi-12-5g,xiaomi,Redmi 12 5G,2023,23076RN4BI,verify,smartphone,LCD,5000,USB-C,glass,No,side,High
+xiaomi-redmi-12,xiaomi,Redmi 12,2023,23053RN02I,verify,smartphone,LCD,5000,USB-C,glass,No,side,High
+xiaomi-redmi-12c,xiaomi,Redmi 12C,2023,22120RN86I,verify,smartphone,LCD,5000,Micro-USB,plastic,No,rear,High
+xiaomi-redmi-a4-5g,xiaomi,Redmi A4 5G,2024,,unknown - fill in,smartphone,LCD,5160,USB-C,plastic,No,side,High
+xiaomi-redmi-a3,xiaomi,Redmi A3,2024,23129RN51X,verify,smartphone,LCD,5000,USB-C,glass,No,side,High
+xiaomi-redmi-a2,xiaomi,Redmi A2,2023,23028RNCAI,verify,smartphone,LCD,5000,Micro-USB,plastic,No,none,High
+xiaomi-redmi-a1,xiaomi,Redmi A1,2022,220733SFG,verify,smartphone,LCD,5000,Micro-USB,plastic,No,none,High
+xiaomi-redmi-11-prime-5g,xiaomi,Redmi 11 Prime 5G,2022,22041219I,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+xiaomi-redmi-11-prime,xiaomi,Redmi 11 Prime,2022,22071219AI,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+xiaomi-redmi-10-prime,xiaomi,Redmi 10 Prime,2021,21061119BI,verify,smartphone,LCD,6000,USB-C,plastic,No,side,High
+xiaomi-redmi-10,xiaomi,Redmi 10,2022,21061119AG,verify,smartphone,LCD,6000,USB-C,plastic,No,side,High
+xiaomi-redmi-10a,xiaomi,Redmi 10A,2022,220233L2I,verify,smartphone,LCD,5000,Micro-USB,plastic,No,rear,High
+xiaomi-redmi-10-power,xiaomi,Redmi 10 Power,2022,220333QBI,verify,smartphone,LCD,6000,USB-C,plastic,No,side,Medium
+xiaomi-redmi-9-power,xiaomi,Redmi 9 Power,2020,M2010J19SI,verify,smartphone,LCD,6000,USB-C,plastic,No,rear,High
+xiaomi-redmi-9-prime,xiaomi,Redmi 9 Prime,2020,M2004J19PI,verify,smartphone,LCD,5020,USB-C,plastic,No,rear,High
+xiaomi-redmi-9,xiaomi,Redmi 9,2020,M2006C3LII,verify,smartphone,LCD,5000,Micro-USB,plastic,No,none,High
+xiaomi-redmi-9a,xiaomi,Redmi 9A,2020,M2006C3LI,verify,smartphone,LCD,5000,Micro-USB,plastic,No,none,High
+xiaomi-redmi-9i,xiaomi,Redmi 9i,2020,M2006C3LII,verify,smartphone,LCD,5000,Micro-USB,plastic,No,none,High
+xiaomi-redmi-9-activ,xiaomi,Redmi 9 Activ,2021,M2006C3LII,verify,smartphone,LCD,5000,Micro-USB,plastic,No,none,High
+xiaomi-redmi-8,xiaomi,Redmi 8,2019,M1908C3IG,verify,smartphone,LCD,5000,USB-C,glass,No,rear,High
+xiaomi-redmi-8a,xiaomi,Redmi 8A,2019,M1908C3KG,verify,smartphone,LCD,5000,USB-C,plastic,No,none,High
+xiaomi-redmi-8a-dual,xiaomi,Redmi 8A Dual,2020,M1908C3KH,verify,smartphone,LCD,5000,USB-C,plastic,No,none,High
+xiaomi-redmi-7,xiaomi,Redmi 7,2019,M1810F6LG,verify,smartphone,LCD,4000,Micro-USB,glass,No,rear,Medium
+xiaomi-redmi-7a,xiaomi,Redmi 7A,2019,M1903C3EI,verify,smartphone,LCD,4000,Micro-USB,plastic,No,none,Medium
+xiaomi-redmi-6-pro,xiaomi,Redmi 6 Pro,2018,M1805D1SI,verify,smartphone,LCD,4000,Micro-USB,metal,No,rear,Medium
+xiaomi-redmi-6,xiaomi,Redmi 6,2018,M1804C3DI,verify,smartphone,LCD,3000,Micro-USB,plastic,No,rear,Medium
+xiaomi-redmi-6a,xiaomi,Redmi 6A,2018,M1804C3CI,verify,smartphone,LCD,3000,Micro-USB,plastic,No,none,Medium
+xiaomi-redmi-y3,xiaomi,Redmi Y3,2019,M1810F6G,verify,smartphone,LCD,4000,Micro-USB,glass,No,rear,Medium
+xiaomi-redmi-y2,xiaomi,Redmi Y2,2018,M1805D1SI,verify,smartphone,LCD,3080,Micro-USB,plastic,No,rear,Medium
+xiaomi-redmi-k20-pro,xiaomi,Redmi K20 Pro,2019,M1903F11I,verify,smartphone,OLED,4000,USB-C,glass,No,in-display,High
+xiaomi-redmi-k20,xiaomi,Redmi K20,2019,M1903F10I,verify,smartphone,OLED,4000,USB-C,glass,No,in-display,High
+xiaomi-redmi-k50i-5g,xiaomi,Redmi K50i 5G,2022,22041216I,verify,smartphone,LCD,5080,USB-C,plastic,No,side,Medium
+xiaomi-xiaomi-15,xiaomi,Xiaomi 15,2025,,unknown - fill in,smartphone,OLED,5240,USB-C,glass,Yes,in-display,Low
+xiaomi-xiaomi-14-ultra,xiaomi,Xiaomi 14 Ultra,2024,,unknown - fill in,smartphone,OLED,5000,USB-C,glass,Yes,in-display,Low
+xiaomi-xiaomi-14,xiaomi,Xiaomi 14,2024,23127PN0CI,verify,smartphone,OLED,4610,USB-C,glass,Yes,in-display,Medium
+xiaomi-xiaomi-14-civi,xiaomi,Xiaomi 14 CIVI,2024,,unknown - fill in,smartphone,OLED,4700,USB-C,glass,No,in-display,Medium
+xiaomi-xiaomi-13-pro,xiaomi,Xiaomi 13 Pro,2023,2210132G,verify,smartphone,OLED,4820,USB-C,glass,Yes,in-display,Low
+xiaomi-xiaomi-12-pro,xiaomi,Xiaomi 12 Pro,2022,2201122G,verify,smartphone,OLED,4600,USB-C,glass,Yes,in-display,Low
+xiaomi-xiaomi-11t-pro,xiaomi,Xiaomi 11T Pro,2022,2107113SI,verify,smartphone,OLED,5000,USB-C,glass,No,side,Medium
+xiaomi-xiaomi-11i-hypercharge,xiaomi,Xiaomi 11i HyperCharge,2022,21091116UI,verify,smartphone,OLED,4500,USB-C,glass,No,side,Medium
+xiaomi-xiaomi-11-lite-ne-5g,xiaomi,Xiaomi 11 Lite NE 5G,2021,2109119DI,verify,smartphone,OLED,4250,USB-C,glass,No,side,Medium
+xiaomi-mi-11x-pro,xiaomi,Mi 11X Pro,2021,M2012K11I,verify,smartphone,OLED,4520,USB-C,glass,No,side,Medium
+xiaomi-mi-11x,xiaomi,Mi 11X,2021,M2012K11AI,verify,smartphone,OLED,4520,USB-C,glass,No,side,High
+xiaomi-mi-11-ultra,xiaomi,Mi 11 Ultra,2021,M2102K1G,verify,smartphone,OLED,5000,USB-C,ceramic,Yes,in-display,Low
+xiaomi-mi-10t-pro,xiaomi,Mi 10T Pro,2020,M2007J3SI,verify,smartphone,LCD,5000,USB-C,glass,No,side,Medium
+xiaomi-mi-10t,xiaomi,Mi 10T,2020,M2007J3SY,verify,smartphone,LCD,5000,USB-C,glass,No,side,Medium
+xiaomi-mi-10,xiaomi,Mi 10,2020,M2001J2I,verify,smartphone,OLED,4780,USB-C,glass,Yes,in-display,Medium
+xiaomi-mi-10i,xiaomi,Mi 10i,2021,M2007J17I,verify,smartphone,LCD,4820,USB-C,glass,No,side,High
+xiaomi-mi-a3,xiaomi,Mi A3,2019,M1906F9SI,verify,smartphone,OLED,4030,USB-C,glass,No,in-display,Medium
+xiaomi-mi-a2,xiaomi,Mi A2,2018,M1804D2SI,verify,smartphone,LCD,3010,USB-C,metal,No,rear,Medium
+poco-poco-x7-pro,poco,Poco X7 Pro,2025,,unknown - fill in,smartphone,OLED,6000,USB-C,plastic,No,in-display,Medium
+poco-poco-x7,poco,Poco X7,2025,,unknown - fill in,smartphone,OLED,5500,USB-C,glass,No,in-display,Medium
+poco-poco-x6-pro,poco,Poco X6 Pro,2024,2311DRK48I,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,High
+poco-poco-x6,poco,Poco X6,2024,23122PCD1I,verify,smartphone,OLED,5100,USB-C,glass,No,in-display,High
+poco-poco-x5-pro,poco,Poco X5 Pro,2023,22101320I,verify,smartphone,OLED,5000,USB-C,plastic,No,side,High
+poco-poco-x5,poco,Poco X5,2023,22111317PI,verify,smartphone,OLED,5000,USB-C,plastic,No,side,High
+poco-poco-x4-pro,poco,Poco X4 Pro,2022,2201116PI,verify,smartphone,OLED,5000,USB-C,glass,No,side,High
+poco-poco-x3-pro,poco,Poco X3 Pro,2021,M2102J20SI,verify,smartphone,LCD,5160,USB-C,plastic,No,side,High
+poco-poco-x3,poco,Poco X3,2020,M2007J20CI,verify,smartphone,LCD,6000,USB-C,plastic,No,side,High
+poco-poco-x2,poco,Poco X2,2020,MZB9011IN,verify,smartphone,LCD,4500,USB-C,glass,No,side,High
+poco-poco-f7,poco,Poco F7,2025,,unknown - fill in,smartphone,OLED,7550,USB-C,glass,No,in-display,Medium
+poco-poco-f6,poco,Poco F6,2024,23113RKC6I,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,Medium
+poco-poco-f5,poco,Poco F5,2023,23049PCD8I,verify,smartphone,OLED,5000,USB-C,plastic,No,side,High
+poco-poco-f4-5g,poco,Poco F4 5G,2022,22021211RI,verify,smartphone,OLED,4500,USB-C,glass,No,side,Medium
+poco-poco-f3-gt,poco,Poco F3 GT,2021,M2104K10I,verify,smartphone,OLED,5065,USB-C,glass,No,side,Medium
+poco-poco-f1,poco,Poco F1,2018,M1805E10A,verify,smartphone,LCD,4000,USB-C,plastic,No,rear,High
+poco-poco-m7-pro-5g,poco,Poco M7 Pro 5G,2024,,unknown - fill in,smartphone,OLED,5110,USB-C,plastic,No,in-display,High
+poco-poco-m6-plus-5g,poco,Poco M6 Plus 5G,2024,,unknown - fill in,smartphone,LCD,5030,USB-C,glass,No,side,High
+poco-poco-m6-pro-5g,poco,Poco M6 Pro 5G,2023,23076PC4BI,verify,smartphone,LCD,5000,USB-C,glass,No,side,High
+poco-poco-m6-5g,poco,Poco M6 5G,2023,2312FPCA6I,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+poco-poco-m5,poco,Poco M5,2022,22071219CI,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+poco-poco-m4-pro-5g,poco,Poco M4 Pro 5G,2022,21091116AI,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+poco-poco-m4-pro,poco,Poco M4 Pro,2022,2201117PI,verify,smartphone,OLED,5000,USB-C,plastic,No,side,High
+poco-poco-m3-pro-5g,poco,Poco M3 Pro 5G,2021,M2103K19PI,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+poco-poco-m3,poco,Poco M3,2021,M2010J19CI,verify,smartphone,LCD,6000,USB-C,plastic,No,rear,High
+poco-poco-m2-pro,poco,Poco M2 Pro,2020,M2003J6CI,verify,smartphone,LCD,5000,USB-C,glass,No,rear,High
+poco-poco-m2,poco,Poco M2,2020,M2004J19PI,verify,smartphone,LCD,5000,USB-C,plastic,No,rear,High
+poco-poco-c75-5g,poco,Poco C75 5G,2024,,unknown - fill in,smartphone,LCD,5160,USB-C,plastic,No,side,High
+poco-poco-c65,poco,Poco C65,2023,2312FPCA6G,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+poco-poco-c61,poco,Poco C61,2024,23129RN51X,verify,smartphone,LCD,5000,USB-C,glass,No,side,High
+poco-poco-c55,poco,Poco C55,2023,22127PC95I,verify,smartphone,LCD,5000,Micro-USB,leather,No,rear,High
+poco-poco-c51,poco,Poco C51,2023,23028RNCAI,verify,smartphone,LCD,5000,Micro-USB,plastic,No,none,High
+poco-poco-c31,poco,Poco C31,2021,211033MI,verify,smartphone,LCD,5000,Micro-USB,plastic,No,rear,High
+poco-poco-c3,poco,Poco C3,2020,M2006C3MI,verify,smartphone,LCD,5000,Micro-USB,plastic,No,none,High
+vivo-vivo-x200-pro,vivo,Vivo X200 Pro,2024,V2415,verify,smartphone,OLED,6000,USB-C,glass,Yes,in-display,Low
+vivo-vivo-x200,vivo,Vivo X200,2024,V2413,verify,smartphone,OLED,5800,USB-C,glass,No,in-display,Low
+vivo-vivo-x100-pro,vivo,Vivo X100 Pro,2024,V2324,verify,smartphone,OLED,5400,USB-C,glass,Yes,in-display,Low
+vivo-vivo-x100,vivo,Vivo X100,2024,V2308,verify,smartphone,OLED,5000,USB-C,glass,Yes,in-display,Medium
+vivo-vivo-x90-pro,vivo,Vivo X90 Pro,2023,V2242,verify,smartphone,OLED,4870,USB-C,leather,Yes,in-display,Low
+vivo-vivo-x80,vivo,Vivo X80,2022,V2183,verify,smartphone,OLED,4500,USB-C,glass,No,in-display,Medium
+vivo-vivo-x70-pro,vivo,Vivo X70 Pro,2021,V2105,verify,smartphone,OLED,4450,USB-C,glass,No,in-display,Medium
+vivo-vivo-v50,vivo,Vivo V50,2025,V2427,verify,smartphone,OLED,6000,USB-C,glass,No,in-display,Medium
+vivo-vivo-v40-pro,vivo,Vivo V40 Pro,2024,V2319,verify,smartphone,OLED,5500,USB-C,glass,No,in-display,Medium
+vivo-vivo-v40,vivo,Vivo V40,2024,V2404,verify,smartphone,OLED,5500,USB-C,glass,No,in-display,High
+vivo-vivo-v40e,vivo,Vivo V40e,2024,V2407,verify,smartphone,OLED,5500,USB-C,plastic,No,in-display,Medium
+vivo-vivo-v30-pro,vivo,Vivo V30 Pro,2024,V2319,verify,smartphone,OLED,5000,USB-C,glass,No,in-display,Medium
+vivo-vivo-v30,vivo,Vivo V30,2024,V2318,verify,smartphone,OLED,5000,USB-C,glass,No,in-display,High
+vivo-vivo-v30e,vivo,Vivo V30e,2024,V2335,verify,smartphone,OLED,5500,USB-C,plastic,No,in-display,High
+vivo-vivo-v29-pro,vivo,Vivo V29 Pro,2023,V2250,verify,smartphone,OLED,4600,USB-C,glass,No,in-display,Medium
+vivo-vivo-v29,vivo,Vivo V29,2023,V2250,verify,smartphone,OLED,4600,USB-C,glass,No,in-display,High
+vivo-vivo-v29e,vivo,Vivo V29e,2023,V2243,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,High
+vivo-vivo-v27-pro,vivo,Vivo V27 Pro,2023,V2230,verify,smartphone,OLED,4600,USB-C,glass,No,in-display,Medium
+vivo-vivo-v27,vivo,Vivo V27,2023,V2246,verify,smartphone,OLED,4600,USB-C,glass,No,in-display,High
+vivo-vivo-v25-pro,vivo,Vivo V25 Pro,2022,V2158,verify,smartphone,OLED,4830,USB-C,glass,No,in-display,Medium
+vivo-vivo-v25,vivo,Vivo V25,2022,V2202,verify,smartphone,OLED,4500,USB-C,glass,No,in-display,High
+vivo-vivo-v23-pro,vivo,Vivo V23 Pro,2022,V2132,verify,smartphone,OLED,4300,USB-C,glass,No,in-display,Medium
+vivo-vivo-v23,vivo,Vivo V23,2022,V2130,verify,smartphone,OLED,4200,USB-C,glass,No,in-display,High
+vivo-vivo-v21,vivo,Vivo V21,2021,V2050,verify,smartphone,OLED,4000,USB-C,glass,No,in-display,High
+vivo-vivo-v21e,vivo,Vivo V21e,2021,V2061,verify,smartphone,OLED,4000,USB-C,plastic,No,in-display,High
+vivo-vivo-v20-pro,vivo,Vivo V20 Pro,2020,V2025,verify,smartphone,OLED,4000,USB-C,glass,No,in-display,High
+vivo-vivo-v20,vivo,Vivo V20,2020,V2024,verify,smartphone,OLED,4000,USB-C,glass,No,in-display,High
+vivo-vivo-v20-se,vivo,Vivo V20 SE,2020,V2023,verify,smartphone,OLED,4100,USB-C,plastic,No,in-display,High
+vivo-vivo-v19,vivo,Vivo V19,2020,V1990,verify,smartphone,OLED,4500,USB-C,glass,No,in-display,High
+vivo-vivo-v17,vivo,Vivo V17,2019,V1919,verify,smartphone,OLED,4500,USB-C,glass,No,in-display,High
+vivo-vivo-v17-pro,vivo,Vivo V17 Pro,2019,V1909,verify,smartphone,OLED,4100,USB-C,glass,No,in-display,Medium
+vivo-vivo-v15-pro,vivo,Vivo V15 Pro,2019,V1818,verify,smartphone,OLED,3700,Micro-USB,plastic,No,in-display,High
+vivo-vivo-v15,vivo,Vivo V15,2019,V1838,verify,smartphone,LCD,4000,Micro-USB,plastic,No,rear,High
+vivo-vivo-v11-pro,vivo,Vivo V11 Pro,2018,V1804,verify,smartphone,OLED,3400,Micro-USB,plastic,No,in-display,High
+vivo-vivo-v9,vivo,Vivo V9,2018,V1723,verify,smartphone,LCD,3260,Micro-USB,plastic,No,rear,High
+vivo-vivo-t4-5g,vivo,Vivo T4 5G,2025,V2433,verify,smartphone,OLED,7300,USB-C,plastic,No,in-display,Medium
+vivo-vivo-t3-pro-5g,vivo,Vivo T3 Pro 5G,2024,V2341,verify,smartphone,OLED,5500,USB-C,plastic,No,in-display,Medium
+vivo-vivo-t3-5g,vivo,Vivo T3 5G,2024,V2334,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,High
+vivo-vivo-t3x-5g,vivo,Vivo T3x 5G,2024,V2336,verify,smartphone,LCD,6000,USB-C,plastic,No,side,High
+vivo-vivo-t2-pro-5g,vivo,Vivo T2 Pro 5G,2023,V2240,verify,smartphone,OLED,4600,USB-C,plastic,No,in-display,Medium
+vivo-vivo-t2-5g,vivo,Vivo T2 5G,2023,V2247,verify,smartphone,OLED,4500,USB-C,plastic,No,in-display,High
+vivo-vivo-t2x-5g,vivo,Vivo T2x 5G,2023,V2235,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+vivo-vivo-t1-5g,vivo,Vivo T1 5G,2022,V2141,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+vivo-vivo-y400-pro,vivo,Vivo Y400 Pro,2025,V2449,verify,smartphone,OLED,5500,USB-C,plastic,No,in-display,Medium
+vivo-vivo-y300,vivo,Vivo Y300,2024,V2420,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,High
+vivo-vivo-y200,vivo,Vivo Y200,2023,V2307,verify,smartphone,OLED,4800,USB-C,plastic,No,in-display,High
+vivo-vivo-y200e,vivo,Vivo Y200e,2024,V2336,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,High
+vivo-vivo-y100,vivo,Vivo Y100,2023,V2318,verify,smartphone,OLED,4500,USB-C,plastic,No,in-display,High
+vivo-vivo-y58-5g,vivo,Vivo Y58 5G,2024,V2341,verify,smartphone,LCD,6000,USB-C,plastic,No,side,High
+vivo-vivo-y56-5g,vivo,Vivo Y56 5G,2023,V2231,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+vivo-vivo-y35,vivo,Vivo Y35,2022,V2205,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+vivo-vivo-y33s,vivo,Vivo Y33s,2021,V2109,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+vivo-vivo-y28-5g,vivo,Vivo Y28 5G,2024,V2334,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+vivo-vivo-y27,vivo,Vivo Y27,2023,V2302,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+vivo-vivo-y22,vivo,Vivo Y22,2022,V2207,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+vivo-vivo-y21,vivo,Vivo Y21,2021,V2111,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+vivo-vivo-y20,vivo,Vivo Y20,2020,V2027,verify,smartphone,LCD,5000,Micro-USB,plastic,No,side,High
+vivo-vivo-y18,vivo,Vivo Y18,2024,V2339,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+vivo-vivo-y17s,vivo,Vivo Y17s,2023,V2310,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+vivo-vivo-y16,vivo,Vivo Y16,2022,V2204,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+vivo-vivo-y15s,vivo,Vivo Y15s,2021,V2125,verify,smartphone,LCD,5000,Micro-USB,plastic,No,rear,High
+vivo-vivo-y12,vivo,Vivo Y12,2019,V1901,verify,smartphone,LCD,5000,Micro-USB,plastic,No,rear,High
+vivo-vivo-y11,vivo,Vivo Y11,2019,V1901,verify,smartphone,LCD,5000,Micro-USB,plastic,No,rear,High
+vivo-vivo-y91,vivo,Vivo Y91,2019,V1811,verify,smartphone,LCD,4030,Micro-USB,plastic,No,rear,High
+vivo-vivo-y83,vivo,Vivo Y83,2018,V1726,verify,smartphone,LCD,3260,Micro-USB,plastic,No,rear,Medium
+vivo-vivo-y81,vivo,Vivo Y81,2018,V1732,verify,smartphone,LCD,3260,Micro-USB,plastic,No,rear,Medium
+vivo-vivo-y71,vivo,Vivo Y71,2018,V1731,verify,smartphone,LCD,3360,Micro-USB,plastic,No,none,Medium
+vivo-vivo-y02t,vivo,Vivo Y02t,2023,V2237,verify,smartphone,LCD,5000,Micro-USB,plastic,No,none,Medium
+iqoo-iqoo-13,iqoo,iQOO 13,2024,I2406,verify,smartphone,OLED,6000,USB-C,glass,No,in-display,Low
+iqoo-iqoo-12,iqoo,iQOO 12,2023,I2208,verify,smartphone,OLED,5000,USB-C,glass,No,in-display,Medium
+iqoo-iqoo-11,iqoo,iQOO 11,2023,I2207,verify,smartphone,OLED,5000,USB-C,glass,No,in-display,Medium
+iqoo-iqoo-9-pro,iqoo,iQOO 9 Pro,2022,I2022,verify,smartphone,OLED,4700,USB-C,glass,Yes,in-display,Low
+iqoo-iqoo-9,iqoo,iQOO 9,2022,I2021,verify,smartphone,OLED,4350,USB-C,glass,No,in-display,Medium
+iqoo-iqoo-7,iqoo,iQOO 7,2021,I2009,verify,smartphone,OLED,4400,USB-C,glass,No,in-display,Medium
+iqoo-iqoo-neo-10,iqoo,iQOO Neo 10,2025,I2411,verify,smartphone,OLED,7000,USB-C,glass,No,in-display,Medium
+iqoo-iqoo-neo-9-pro,iqoo,iQOO Neo 9 Pro,2024,I2301,verify,smartphone,OLED,5160,USB-C,glass,No,in-display,Medium
+iqoo-iqoo-neo-7-pro,iqoo,iQOO Neo 7 Pro,2023,I2223,verify,smartphone,OLED,5000,USB-C,glass,No,in-display,Medium
+iqoo-iqoo-neo-7,iqoo,iQOO Neo 7,2023,I2216,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,High
+iqoo-iqoo-neo-6,iqoo,iQOO Neo 6,2022,I2201,verify,smartphone,OLED,4700,USB-C,glass,No,in-display,Medium
+iqoo-iqoo-z10,iqoo,iQOO Z10,2025,I2416,verify,smartphone,OLED,7300,USB-C,plastic,No,in-display,Medium
+iqoo-iqoo-z9s,iqoo,iQOO Z9s,2024,I2321,verify,smartphone,OLED,5500,USB-C,plastic,No,in-display,High
+iqoo-iqoo-z9,iqoo,iQOO Z9,2024,I2320,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,High
+iqoo-iqoo-z9x,iqoo,iQOO Z9x,2024,I2320,verify,smartphone,LCD,6000,USB-C,plastic,No,side,High
+iqoo-iqoo-z7,iqoo,iQOO Z7,2023,I2219,verify,smartphone,OLED,4500,USB-C,plastic,No,in-display,High
+iqoo-iqoo-z7s,iqoo,iQOO Z7s,2023,I2229,verify,smartphone,OLED,4500,USB-C,plastic,No,in-display,High
+iqoo-iqoo-z6,iqoo,iQOO Z6,2022,I2124,verify,smartphone,OLED,4500,USB-C,plastic,No,in-display,High
+iqoo-iqoo-z6-lite,iqoo,iQOO Z6 Lite,2022,I2210,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+iqoo-iqoo-z5,iqoo,iQOO Z5,2021,I2113,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+iqoo-iqoo-z3,iqoo,iQOO Z3,2021,I2011,verify,smartphone,LCD,4400,USB-C,plastic,No,side,High
+iqoo-iqoo-3,iqoo,iQOO 3,2020,I1927,verify,smartphone,OLED,4440,USB-C,glass,No,in-display,Medium
+oppo-oppo-find-x8-pro,oppo,Oppo Find X8 Pro,2024,CPH2659,verify,smartphone,OLED,5910,USB-C,glass,Yes,in-display,Low
+oppo-oppo-find-x8,oppo,Oppo Find X8,2024,CPH2651,verify,smartphone,OLED,5630,USB-C,glass,Yes,in-display,Low
+oppo-oppo-find-n3-flip,oppo,Oppo Find N3 Flip,2023,CPH2519,verify,smartphone,OLED,4300,USB-C,glass,No,side,Low
+oppo-oppo-reno-13-pro,oppo,Oppo Reno 13 Pro,2025,CPH2689,verify,smartphone,OLED,5800,USB-C,glass,No,in-display,Medium
+oppo-oppo-reno-13,oppo,Oppo Reno 13,2025,CPH2691,verify,smartphone,OLED,5600,USB-C,glass,No,in-display,Medium
+oppo-oppo-reno-12-pro,oppo,Oppo Reno 12 Pro,2024,CPH2629,verify,smartphone,OLED,5000,USB-C,glass,No,in-display,Medium
+oppo-oppo-reno-12,oppo,Oppo Reno 12,2024,CPH2625,verify,smartphone,OLED,5000,USB-C,glass,No,in-display,High
+oppo-oppo-reno-11-pro,oppo,Oppo Reno 11 Pro,2024,CPH2607,verify,smartphone,OLED,4600,USB-C,glass,No,in-display,Medium
+oppo-oppo-reno-11,oppo,Oppo Reno 11,2024,CPH2599,verify,smartphone,OLED,5000,USB-C,glass,No,in-display,High
+oppo-oppo-reno-10-pro,oppo,Oppo Reno 10 Pro+,2023,CPH2521,verify,smartphone,OLED,4700,USB-C,glass,No,in-display,Medium
+oppo-oppo-reno-10-pro,oppo,Oppo Reno 10 Pro,2023,CPH2525,verify,smartphone,OLED,4600,USB-C,glass,No,in-display,Medium
+oppo-oppo-reno-10,oppo,Oppo Reno 10,2023,CPH2531,verify,smartphone,OLED,5000,USB-C,glass,No,in-display,High
+oppo-oppo-reno-8-pro,oppo,Oppo Reno 8 Pro,2022,CPH2357,verify,smartphone,OLED,4500,USB-C,glass,No,in-display,Medium
+oppo-oppo-reno-8,oppo,Oppo Reno 8,2022,CPH2359,verify,smartphone,OLED,4500,USB-C,glass,No,in-display,High
+oppo-oppo-reno-8t,oppo,Oppo Reno 8T,2023,CPH2481,verify,smartphone,OLED,4800,USB-C,glass,No,in-display,High
+oppo-oppo-reno-7-pro,oppo,Oppo Reno 7 Pro,2022,CPH2293,verify,smartphone,OLED,4500,USB-C,glass,No,in-display,Medium
+oppo-oppo-reno-7,oppo,Oppo Reno 7,2022,CPH2363,verify,smartphone,OLED,4500,USB-C,glass,No,in-display,High
+oppo-oppo-reno-6-pro,oppo,Oppo Reno 6 Pro,2021,CPH2249,verify,smartphone,OLED,4500,USB-C,glass,No,in-display,Medium
+oppo-oppo-reno-6,oppo,Oppo Reno 6,2021,CPH2235,verify,smartphone,OLED,4300,USB-C,glass,No,in-display,High
+oppo-oppo-reno-5-pro,oppo,Oppo Reno 5 Pro,2021,CPH2201,verify,smartphone,OLED,4350,USB-C,glass,No,in-display,Medium
+oppo-oppo-reno-4-pro,oppo,Oppo Reno 4 Pro,2020,CPH2109,verify,smartphone,OLED,4000,USB-C,glass,No,in-display,Medium
+oppo-oppo-reno-3-pro,oppo,Oppo Reno 3 Pro,2020,CPH2035,verify,smartphone,OLED,4025,USB-C,glass,No,in-display,Medium
+oppo-oppo-reno-2,oppo,Oppo Reno 2,2019,CPH1907,verify,smartphone,OLED,4000,USB-C,glass,No,in-display,Medium
+oppo-oppo-f29-pro,oppo,Oppo F29 Pro,2025,CPH2713,verify,smartphone,OLED,6000,USB-C,plastic,No,in-display,Medium
+oppo-oppo-f29,oppo,Oppo F29,2025,CPH2711,verify,smartphone,OLED,6500,USB-C,plastic,No,in-display,Medium
+oppo-oppo-f27-pro,oppo,Oppo F27 Pro+,2024,CPH2603,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,Medium
+oppo-oppo-f27,oppo,Oppo F27,2024,CPH2641,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,High
+oppo-oppo-f25-pro,oppo,Oppo F25 Pro,2024,CPH2603,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,High
+oppo-oppo-f23,oppo,Oppo F23,2023,CPH2527,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+oppo-oppo-f21-pro,oppo,Oppo F21 Pro,2022,CPH2363,verify,smartphone,OLED,4500,USB-C,leather,No,in-display,High
+oppo-oppo-f21s-pro,oppo,Oppo F21s Pro,2022,CPH2461,verify,smartphone,OLED,4500,USB-C,leather,No,in-display,High
+oppo-oppo-f19-pro,oppo,Oppo F19 Pro+,2021,CPH2213,verify,smartphone,OLED,4310,USB-C,plastic,No,in-display,High
+oppo-oppo-f19-pro,oppo,Oppo F19 Pro,2021,CPH2285,verify,smartphone,OLED,4310,USB-C,plastic,No,in-display,High
+oppo-oppo-f19,oppo,Oppo F19,2021,CPH2219,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,High
+oppo-oppo-f19s,oppo,Oppo F19s,2021,CPH2223,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,High
+oppo-oppo-f17-pro,oppo,Oppo F17 Pro,2020,CPH2119,verify,smartphone,OLED,4015,USB-C,plastic,No,in-display,High
+oppo-oppo-f17,oppo,Oppo F17,2020,CPH2095,verify,smartphone,OLED,4015,USB-C,plastic,No,in-display,High
+oppo-oppo-f15,oppo,Oppo F15,2020,CPH2001,verify,smartphone,OLED,4025,USB-C,plastic,No,in-display,High
+oppo-oppo-f11-pro,oppo,Oppo F11 Pro,2019,CPH1969,verify,smartphone,LCD,4000,Micro-USB,plastic,No,rear,High
+oppo-oppo-f11,oppo,Oppo F11,2019,CPH1911,verify,smartphone,LCD,4020,Micro-USB,plastic,No,rear,High
+oppo-oppo-f9-pro,oppo,Oppo F9 Pro,2018,CPH1823,verify,smartphone,LCD,3500,Micro-USB,plastic,No,rear,High
+oppo-oppo-f9,oppo,Oppo F9,2018,CPH1881,verify,smartphone,LCD,3500,Micro-USB,plastic,No,rear,High
+oppo-oppo-f7,oppo,Oppo F7,2018,CPH1819,verify,smartphone,LCD,3400,Micro-USB,plastic,No,rear,Medium
+oppo-oppo-k13,oppo,Oppo K13,2025,CPH2735,verify,smartphone,OLED,7000,USB-C,plastic,No,in-display,Medium
+oppo-oppo-k12x,oppo,Oppo K12x,2024,CPH2651,verify,smartphone,LCD,5100,USB-C,plastic,No,side,Medium
+oppo-oppo-k10-5g,oppo,Oppo K10 5G,2022,CPH2373,verify,smartphone,LCD,5000,USB-C,plastic,No,side,Medium
+oppo-oppo-k10,oppo,Oppo K10,2022,CPH2341,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+oppo-oppo-a5-pro-5g,oppo,Oppo A5 Pro 5G,2025,CPH2695,verify,smartphone,LCD,5800,USB-C,plastic,No,side,Medium
+oppo-oppo-a3-pro-5g,oppo,Oppo A3 Pro 5G,2024,CPH2639,verify,smartphone,LCD,5100,USB-C,plastic,No,side,High
+oppo-oppo-a3x,oppo,Oppo A3x,2024,CPH2641,verify,smartphone,LCD,5100,USB-C,plastic,No,side,High
+oppo-oppo-a3,oppo,Oppo A3,2024,CPH2669,verify,smartphone,LCD,5100,USB-C,plastic,No,side,High
+oppo-oppo-a79-5g,oppo,Oppo A79 5G,2023,CPH2557,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+oppo-oppo-a78-5g,oppo,Oppo A78 5G,2023,CPH2495,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+oppo-oppo-a78,oppo,Oppo A78,2023,CPH2565,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,High
+oppo-oppo-a77,oppo,Oppo A77,2022,CPH2385,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+oppo-oppo-a77s,oppo,Oppo A77s,2022,CPH2473,verify,smartphone,LCD,5000,USB-C,leather,No,side,High
+oppo-oppo-a76,oppo,Oppo A76,2022,CPH2375,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+oppo-oppo-a74-5g,oppo,Oppo A74 5G,2021,CPH2263,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+oppo-oppo-a74,oppo,Oppo A74,2021,CPH2219,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,High
+oppo-oppo-a59-5g,oppo,Oppo A59 5G,2023,CPH2609,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+oppo-oppo-a58,oppo,Oppo A58,2023,CPH2577,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+oppo-oppo-a57,oppo,Oppo A57,2022,CPH2387,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+oppo-oppo-a55,oppo,Oppo A55,2021,CPH2325,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+oppo-oppo-a54,oppo,Oppo A54,2021,CPH2239,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+oppo-oppo-a53,oppo,Oppo A53,2020,CPH2127,verify,smartphone,LCD,5000,USB-C,plastic,No,rear,High
+oppo-oppo-a53s-5g,oppo,Oppo A53s 5G,2021,CPH2321,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+oppo-oppo-a52,oppo,Oppo A52,2020,CPH2061,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+oppo-oppo-a38,oppo,Oppo A38,2023,CPH2579,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+oppo-oppo-a31,oppo,Oppo A31,2020,CPH2015,verify,smartphone,LCD,4230,Micro-USB,plastic,No,rear,High
+oppo-oppo-a18,oppo,Oppo A18,2023,CPH2591,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+oppo-oppo-a17,oppo,Oppo A17,2022,CPH2477,verify,smartphone,LCD,5000,USB-C,leather,No,side,High
+oppo-oppo-a17k,oppo,Oppo A17k,2022,CPH2471,verify,smartphone,LCD,5000,Micro-USB,plastic,No,none,High
+oppo-oppo-a16,oppo,Oppo A16,2021,CPH2269,verify,smartphone,LCD,5000,Micro-USB,plastic,No,rear,High
+oppo-oppo-a16k,oppo,Oppo A16k,2022,CPH2349,verify,smartphone,LCD,4230,Micro-USB,plastic,No,none,High
+oppo-oppo-a15,oppo,Oppo A15,2020,CPH2185,verify,smartphone,LCD,4230,Micro-USB,plastic,No,rear,High
+oppo-oppo-a15s,oppo,Oppo A15s,2020,CPH2179,verify,smartphone,LCD,4230,Micro-USB,plastic,No,rear,High
+oppo-oppo-a12,oppo,Oppo A12,2020,CPH2083,verify,smartphone,LCD,4230,Micro-USB,plastic,No,rear,High
+oppo-oppo-a11k,oppo,Oppo A11k,2020,CPH2083,verify,smartphone,LCD,4230,Micro-USB,plastic,No,rear,High
+oppo-oppo-a9-2020,oppo,Oppo A9 2020,2019,CPH1937,verify,smartphone,LCD,5000,Micro-USB,plastic,No,rear,High
+oppo-oppo-a5-2020,oppo,Oppo A5 2020,2019,CPH1931,verify,smartphone,LCD,5000,Micro-USB,plastic,No,rear,High
+oppo-oppo-a5s,oppo,Oppo A5s,2019,CPH1909,verify,smartphone,LCD,4230,Micro-USB,plastic,No,rear,High
+oppo-oppo-a3s,oppo,Oppo A3s,2018,CPH1803,verify,smartphone,LCD,4230,Micro-USB,plastic,No,none,High
+oppo-oppo-a1k,oppo,Oppo A1k,2019,CPH1923,verify,smartphone,LCD,4000,Micro-USB,plastic,No,none,High
+realme-realme-gt-7-pro,realme,Realme GT 7 Pro,2024,RMX5011,verify,smartphone,OLED,5800,USB-C,glass,No,in-display,Low
+realme-realme-gt-6,realme,Realme GT 6,2024,RMX3851,verify,smartphone,OLED,5500,USB-C,glass,No,in-display,Medium
+realme-realme-gt-6t,realme,Realme GT 6T,2024,RMX3853,verify,smartphone,OLED,5500,USB-C,glass,No,in-display,Medium
+realme-realme-gt-2-pro,realme,Realme GT 2 Pro,2022,RMX3301,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,Medium
+realme-realme-gt-2,realme,Realme GT 2,2022,RMX3311,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,Medium
+realme-realme-gt-neo-3,realme,Realme GT Neo 3,2022,RMX3561,verify,smartphone,OLED,5000,USB-C,glass,No,in-display,Medium
+realme-realme-gt-neo-2,realme,Realme GT Neo 2,2021,RMX3370,verify,smartphone,OLED,5000,USB-C,glass,No,in-display,Medium
+realme-realme-gt-master-edition,realme,Realme GT Master Edition,2021,RMX3360,verify,smartphone,OLED,4300,USB-C,leather,No,in-display,Medium
+realme-realme-gt-5g,realme,Realme GT 5G,2021,RMX2202,verify,smartphone,OLED,4500,USB-C,glass,No,in-display,Medium
+realme-realme-x7-max,realme,Realme X7 Max,2021,RMX3031,verify,smartphone,OLED,4500,USB-C,plastic,No,in-display,Medium
+realme-realme-x7-pro,realme,Realme X7 Pro,2021,RMX2121,verify,smartphone,OLED,4500,USB-C,plastic,No,in-display,Medium
+realme-realme-x7,realme,Realme X7,2021,RMX3092,verify,smartphone,OLED,4310,USB-C,plastic,No,in-display,Medium
+realme-realme-x3-superzoom,realme,Realme X3 SuperZoom,2020,RMX2086,verify,smartphone,LCD,4200,USB-C,glass,No,side,Medium
+realme-realme-x3,realme,Realme X3,2020,RMX2085,verify,smartphone,LCD,4200,USB-C,glass,No,side,Medium
+realme-realme-x2-pro,realme,Realme X2 Pro,2019,RMX1931,verify,smartphone,OLED,4000,USB-C,glass,No,in-display,Medium
+realme-realme-x2,realme,Realme X2,2019,RMX1992,verify,smartphone,OLED,4000,USB-C,glass,No,in-display,High
+realme-realme-xt,realme,Realme XT,2019,RMX1921,verify,smartphone,OLED,4000,USB-C,glass,No,in-display,High
+realme-realme-x,realme,Realme X,2019,RMX1901,verify,smartphone,OLED,3765,USB-C,glass,No,in-display,High
+realme-realme-14-pro-5g,realme,Realme 14 Pro+ 5G,2025,RMX5061,verify,smartphone,OLED,6000,USB-C,glass,No,in-display,Medium
+realme-realme-14-pro-5g,realme,Realme 14 Pro 5G,2025,RMX5062,verify,smartphone,OLED,6000,USB-C,plastic,No,in-display,Medium
+realme-realme-14x-5g,realme,Realme 14x 5G,2024,RMX3999,verify,smartphone,LCD,6000,USB-C,plastic,No,side,High
+realme-realme-13-pro-5g,realme,Realme 13 Pro+ 5G,2024,RMX3921,verify,smartphone,OLED,5200,USB-C,leather,No,in-display,Medium
+realme-realme-13-pro-5g,realme,Realme 13 Pro 5G,2024,RMX3920,verify,smartphone,OLED,5200,USB-C,leather,No,in-display,High
+realme-realme-13-5g,realme,Realme 13+ 5G,2024,RMX3952,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,High
+realme-realme-13-5g,realme,Realme 13 5G,2024,RMX3950,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+realme-realme-12-pro-5g,realme,Realme 12 Pro+ 5G,2024,RMX3840,verify,smartphone,OLED,5000,USB-C,leather,No,in-display,Medium
+realme-realme-12-pro-5g,realme,Realme 12 Pro 5G,2024,RMX3842,verify,smartphone,OLED,5000,USB-C,leather,No,in-display,High
+realme-realme-12-5g,realme,Realme 12+ 5G,2024,RMX3867,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,High
+realme-realme-12-5g,realme,Realme 12 5G,2024,RMX3999,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+realme-realme-12x-5g,realme,Realme 12x 5G,2024,RMX3998,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+realme-realme-11-pro-5g,realme,Realme 11 Pro+ 5G,2023,RMX3741,verify,smartphone,OLED,5000,USB-C,leather,No,in-display,Medium
+realme-realme-11-pro-5g,realme,Realme 11 Pro 5G,2023,RMX3771,verify,smartphone,OLED,5000,USB-C,leather,No,in-display,High
+realme-realme-11x-5g,realme,Realme 11x 5G,2023,RMX3785,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+realme-realme-11-5g,realme,Realme 11 5G,2023,RMX3780,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+realme-realme-10-pro-5g,realme,Realme 10 Pro+ 5G,2022,RMX3686,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,High
+realme-realme-10-pro-5g,realme,Realme 10 Pro 5G,2022,RMX3661,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+realme-realme-10,realme,Realme 10,2022,RMX3630,verify,smartphone,OLED,5000,USB-C,plastic,No,side,High
+realme-realme-9-pro-5g,realme,Realme 9 Pro+ 5G,2022,RMX3393,verify,smartphone,OLED,4500,USB-C,plastic,No,in-display,High
+realme-realme-9-pro-5g,realme,Realme 9 Pro 5G,2022,RMX3471,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+realme-realme-9-5g,realme,Realme 9 5G,2022,RMX3474,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+realme-realme-9,realme,Realme 9,2022,RMX3521,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,High
+realme-realme-9i,realme,Realme 9i,2022,RMX3491,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+realme-realme-9i-5g,realme,Realme 9i 5G,2022,RMX3612,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+realme-realme-8-pro,realme,Realme 8 Pro,2021,RMX3081,verify,smartphone,OLED,4500,USB-C,plastic,No,in-display,High
+realme-realme-8,realme,Realme 8,2021,RMX3085,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,High
+realme-realme-8-5g,realme,Realme 8 5G,2021,RMX3241,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+realme-realme-8s-5g,realme,Realme 8s 5G,2021,RMX3381,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+realme-realme-8i,realme,Realme 8i,2021,RMX3151,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+realme-realme-7-pro,realme,Realme 7 Pro,2020,RMX2170,verify,smartphone,OLED,4500,USB-C,plastic,No,in-display,High
+realme-realme-7,realme,Realme 7,2020,RMX2151,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+realme-realme-7i,realme,Realme 7i,2020,RMX2193,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+realme-realme-6-pro,realme,Realme 6 Pro,2020,RMX2061,verify,smartphone,LCD,4300,USB-C,glass,No,side,High
+realme-realme-6,realme,Realme 6,2020,RMX2001,verify,smartphone,LCD,4300,USB-C,plastic,No,side,High
+realme-realme-6i,realme,Realme 6i,2020,RMX2002,verify,smartphone,LCD,5000,USB-C,plastic,No,rear,High
+realme-realme-5-pro,realme,Realme 5 Pro,2019,RMX1971,verify,smartphone,LCD,4035,USB-C,plastic,No,rear,High
+realme-realme-5,realme,Realme 5,2019,RMX1911,verify,smartphone,LCD,5000,Micro-USB,plastic,No,rear,High
+realme-realme-5i,realme,Realme 5i,2020,RMX2030,verify,smartphone,LCD,5000,Micro-USB,plastic,No,rear,High
+realme-realme-5s,realme,Realme 5s,2019,RMX1911,verify,smartphone,LCD,5000,Micro-USB,plastic,No,rear,High
+realme-realme-3-pro,realme,Realme 3 Pro,2019,RMX1851,verify,smartphone,LCD,4045,Micro-USB,plastic,No,rear,High
+realme-realme-3,realme,Realme 3,2019,RMX1821,verify,smartphone,LCD,4230,Micro-USB,plastic,No,rear,High
+realme-realme-3i,realme,Realme 3i,2019,RMX1827,verify,smartphone,LCD,4230,Micro-USB,plastic,No,rear,High
+realme-realme-2-pro,realme,Realme 2 Pro,2018,RMX1801,verify,smartphone,LCD,3500,Micro-USB,plastic,No,rear,High
+realme-realme-2,realme,Realme 2,2018,RMX1805,verify,smartphone,LCD,4230,Micro-USB,plastic,No,rear,High
+realme-realme-1,realme,Realme 1,2018,CPH1859,verify,smartphone,LCD,3410,Micro-USB,plastic,No,none,Medium
+realme-realme-u1,realme,Realme U1,2018,RMX1831,verify,smartphone,LCD,3500,Micro-USB,plastic,No,rear,Medium
+realme-realme-narzo-80-pro-5g,realme,Realme Narzo 80 Pro 5G,2025,RMX5065,verify,smartphone,OLED,6000,USB-C,plastic,No,in-display,Medium
+realme-realme-narzo-80x-5g,realme,Realme Narzo 80x 5G,2025,RMX5067,verify,smartphone,LCD,6000,USB-C,plastic,No,side,High
+realme-realme-narzo-70-pro-5g,realme,Realme Narzo 70 Pro 5G,2024,RMX3868,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,High
+realme-realme-narzo-70-5g,realme,Realme Narzo 70 5G,2024,RMX3867,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,High
+realme-realme-narzo-70x-5g,realme,Realme Narzo 70x 5G,2024,RMX3998,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+realme-realme-narzo-60-pro-5g,realme,Realme Narzo 60 Pro 5G,2023,RMX3771,verify,smartphone,OLED,5000,USB-C,leather,No,in-display,High
+realme-realme-narzo-60-5g,realme,Realme Narzo 60 5G,2023,RMX3750,verify,smartphone,OLED,5000,USB-C,leather,No,in-display,High
+realme-realme-narzo-60x-5g,realme,Realme Narzo 60x 5G,2023,RMX3782,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+realme-realme-narzo-50-pro-5g,realme,Realme Narzo 50 Pro 5G,2022,RMX3395,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,High
+realme-realme-narzo-50-5g,realme,Realme Narzo 50 5G,2022,RMX3571,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+realme-realme-narzo-50,realme,Realme Narzo 50,2022,RMX3286,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+realme-realme-narzo-50a,realme,Realme Narzo 50A,2021,RMX3430,verify,smartphone,LCD,6000,Micro-USB,plastic,No,rear,High
+realme-realme-narzo-50a-prime,realme,Realme Narzo 50A Prime,2022,RMX3516,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+realme-realme-narzo-50i,realme,Realme Narzo 50i,2021,RMX3235,verify,smartphone,LCD,5000,Micro-USB,plastic,No,none,High
+realme-realme-narzo-30-pro-5g,realme,Realme Narzo 30 Pro 5G,2021,RMX2117,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+realme-realme-narzo-30,realme,Realme Narzo 30,2021,RMX2156,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+realme-realme-narzo-30a,realme,Realme Narzo 30A,2021,RMX3171,verify,smartphone,LCD,6000,Micro-USB,plastic,No,rear,High
+realme-realme-narzo-20-pro,realme,Realme Narzo 20 Pro,2020,RMX2161,verify,smartphone,LCD,4500,USB-C,plastic,No,side,High
+realme-realme-narzo-20,realme,Realme Narzo 20,2020,RMX2193,verify,smartphone,LCD,6000,USB-C,plastic,No,rear,High
+realme-realme-narzo-20a,realme,Realme Narzo 20A,2020,RMX2050,verify,smartphone,LCD,5000,Micro-USB,plastic,No,rear,High
+realme-realme-narzo-10,realme,Realme Narzo 10,2020,RMX2040,verify,smartphone,LCD,5000,USB-C,plastic,No,rear,High
+realme-realme-narzo-10a,realme,Realme Narzo 10A,2020,RMX2020,verify,smartphone,LCD,5000,Micro-USB,plastic,No,rear,High
+realme-realme-p3-pro-5g,realme,Realme P3 Pro 5G,2025,RMX5030,verify,smartphone,OLED,6000,USB-C,plastic,No,in-display,Medium
+realme-realme-p3-5g,realme,Realme P3 5G,2025,RMX5071,verify,smartphone,LCD,6000,USB-C,plastic,No,side,High
+realme-realme-p2-pro-5g,realme,Realme P2 Pro 5G,2024,RMX3990,verify,smartphone,OLED,5200,USB-C,plastic,No,in-display,High
+realme-realme-p1-pro-5g,realme,Realme P1 Pro 5G,2024,RMX3917,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,High
+realme-realme-p1-5g,realme,Realme P1 5G,2024,RMX3869,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,High
+realme-realme-c75-5g,realme,Realme C75 5G,2025,RMX5058,verify,smartphone,LCD,6000,USB-C,plastic,No,side,High
+realme-realme-c71,realme,Realme C71,2025,RMX5080,verify,smartphone,LCD,6300,USB-C,plastic,No,side,High
+realme-realme-c65-5g,realme,Realme C65 5G,2024,RMX3997,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+realme-realme-c63,realme,Realme C63,2024,RMX3939,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+realme-realme-c61,realme,Realme C61,2024,RMX3930,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+realme-realme-c55,realme,Realme C55,2023,RMX3710,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+realme-realme-c53,realme,Realme C53,2023,RMX3760,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+realme-realme-c51,realme,Realme C51,2023,RMX3830,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+realme-realme-c35,realme,Realme C35,2022,RMX3511,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+realme-realme-c33,realme,Realme C33,2022,RMX3624,verify,smartphone,LCD,5000,Micro-USB,plastic,No,side,High
+realme-realme-c31,realme,Realme C31,2022,RMX3501,verify,smartphone,LCD,5000,Micro-USB,plastic,No,side,High
+realme-realme-c30,realme,Realme C30,2022,RMX3581,verify,smartphone,LCD,5000,Micro-USB,plastic,No,none,High
+realme-realme-c25,realme,Realme C25,2021,RMX3191,verify,smartphone,LCD,6000,Micro-USB,plastic,No,rear,High
+realme-realme-c25s,realme,Realme C25s,2021,RMX3195,verify,smartphone,LCD,6000,Micro-USB,plastic,No,rear,High
+realme-realme-c21,realme,Realme C21,2021,RMX3201,verify,smartphone,LCD,5000,Micro-USB,plastic,No,rear,High
+realme-realme-c21y,realme,Realme C21Y,2021,RMX3261,verify,smartphone,LCD,5000,Micro-USB,plastic,No,rear,High
+realme-realme-c20,realme,Realme C20,2021,RMX3063,verify,smartphone,LCD,5000,Micro-USB,plastic,No,none,High
+realme-realme-c15,realme,Realme C15,2020,RMX2180,verify,smartphone,LCD,6000,Micro-USB,plastic,No,rear,High
+realme-realme-c12,realme,Realme C12,2020,RMX2189,verify,smartphone,LCD,6000,Micro-USB,plastic,No,rear,High
+realme-realme-c11,realme,Realme C11,2020,RMX2185,verify,smartphone,LCD,5000,Micro-USB,plastic,No,none,High
+realme-realme-c11-2021,realme,Realme C11 2021,2021,RMX3231,verify,smartphone,LCD,5000,Micro-USB,plastic,No,none,High
+realme-realme-c3,realme,Realme C3,2020,RMX2027,verify,smartphone,LCD,5000,Micro-USB,plastic,No,none,High
+realme-realme-c2,realme,Realme C2,2019,RMX1941,verify,smartphone,LCD,4000,Micro-USB,plastic,No,none,High
+realme-realme-c1,realme,Realme C1,2018,RMX1811,verify,smartphone,LCD,4230,Micro-USB,plastic,No,none,High
+oneplus-oneplus-13,oneplus,OnePlus 13,2025,CPH2649,verify,smartphone,OLED,6000,USB-C,glass,Yes,in-display,Medium
+oneplus-oneplus-13r,oneplus,OnePlus 13R,2025,CPH2645,verify,smartphone,OLED,6000,USB-C,glass,No,in-display,Medium
+oneplus-oneplus-13s,oneplus,OnePlus 13s,2025,CPH2723,verify,smartphone,OLED,5850,USB-C,glass,No,in-display,Medium
+oneplus-oneplus-12,oneplus,OnePlus 12,2024,CPH2573,verify,smartphone,OLED,5400,USB-C,glass,Yes,in-display,High
+oneplus-oneplus-12r,oneplus,OnePlus 12R,2024,CPH2585,verify,smartphone,OLED,5500,USB-C,glass,No,in-display,High
+oneplus-oneplus-11-5g,oneplus,OnePlus 11 5G,2023,CPH2447,verify,smartphone,OLED,5000,USB-C,glass,Yes,in-display,High
+oneplus-oneplus-11r-5g,oneplus,OnePlus 11R 5G,2023,CPH2487,verify,smartphone,OLED,5000,USB-C,glass,No,in-display,High
+oneplus-oneplus-10-pro,oneplus,OnePlus 10 Pro,2022,NE2211,verify,smartphone,OLED,5000,USB-C,glass,Yes,in-display,Medium
+oneplus-oneplus-10t,oneplus,OnePlus 10T,2022,CPH2413,verify,smartphone,OLED,4800,USB-C,glass,No,in-display,Medium
+oneplus-oneplus-10r,oneplus,OnePlus 10R,2022,CPH2411,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,High
+oneplus-oneplus-9-pro,oneplus,OnePlus 9 Pro,2021,LE2121,verify,smartphone,OLED,4500,USB-C,glass,Yes,in-display,Medium
+oneplus-oneplus-9,oneplus,OnePlus 9,2021,LE2111,verify,smartphone,OLED,4500,USB-C,glass,Yes,in-display,High
+oneplus-oneplus-9r,oneplus,OnePlus 9R,2021,LE2101,verify,smartphone,OLED,4500,USB-C,glass,No,in-display,High
+oneplus-oneplus-9rt,oneplus,OnePlus 9RT,2022,MT2111,verify,smartphone,OLED,4500,USB-C,glass,No,in-display,Medium
+oneplus-oneplus-8-pro,oneplus,OnePlus 8 Pro,2020,IN2021,verify,smartphone,OLED,4510,USB-C,glass,Yes,in-display,Medium
+oneplus-oneplus-8,oneplus,OnePlus 8,2020,IN2011,verify,smartphone,OLED,4300,USB-C,glass,No,in-display,High
+oneplus-oneplus-8t,oneplus,OnePlus 8T,2020,KB2001,verify,smartphone,OLED,4500,USB-C,glass,No,in-display,High
+oneplus-oneplus-7t-pro,oneplus,OnePlus 7T Pro,2019,HD1911,verify,smartphone,OLED,4085,USB-C,glass,No,in-display,Medium
+oneplus-oneplus-7t,oneplus,OnePlus 7T,2019,HD1901,verify,smartphone,OLED,3800,USB-C,glass,No,in-display,High
+oneplus-oneplus-7-pro,oneplus,OnePlus 7 Pro,2019,GM1911,verify,smartphone,OLED,4000,USB-C,glass,No,in-display,High
+oneplus-oneplus-7,oneplus,OnePlus 7,2019,GM1901,verify,smartphone,OLED,3700,USB-C,glass,No,in-display,High
+oneplus-oneplus-6t,oneplus,OnePlus 6T,2018,A6013,verify,smartphone,OLED,3700,USB-C,glass,No,in-display,High
+oneplus-oneplus-6,oneplus,OnePlus 6,2018,A6003,verify,smartphone,OLED,3300,USB-C,glass,No,rear,High
+oneplus-oneplus-5t,oneplus,OnePlus 5T,2017,A5010,verify,smartphone,OLED,3300,USB-C,metal,No,rear,Medium
+oneplus-oneplus-nord-5,oneplus,OnePlus Nord 5,2025,CPH2707,verify,smartphone,OLED,6800,USB-C,glass,No,in-display,Medium
+oneplus-oneplus-nord-ce-5,oneplus,OnePlus Nord CE 5,2025,CPH2717,verify,smartphone,OLED,7100,USB-C,plastic,No,in-display,Medium
+oneplus-oneplus-nord-4,oneplus,OnePlus Nord 4,2024,CPH2663,verify,smartphone,OLED,5500,USB-C,metal,No,in-display,High
+oneplus-oneplus-nord-ce-4,oneplus,OnePlus Nord CE 4,2024,CPH2613,verify,smartphone,OLED,5500,USB-C,plastic,No,in-display,High
+oneplus-oneplus-nord-ce-4-lite,oneplus,OnePlus Nord CE 4 Lite,2024,CPH2621,verify,smartphone,OLED,5110,USB-C,plastic,No,in-display,High
+oneplus-oneplus-nord-3,oneplus,OnePlus Nord 3,2023,CPH2491,verify,smartphone,OLED,5000,USB-C,glass,No,in-display,High
+oneplus-oneplus-nord-ce-3,oneplus,OnePlus Nord CE 3,2023,CPH2569,verify,smartphone,OLED,5000,USB-C,glass,No,in-display,High
+oneplus-oneplus-nord-ce-3-lite,oneplus,OnePlus Nord CE 3 Lite,2023,CPH2467,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+oneplus-oneplus-nord-2t,oneplus,OnePlus Nord 2T,2022,CPH2401,verify,smartphone,OLED,4500,USB-C,glass,No,in-display,High
+oneplus-oneplus-nord-ce-2,oneplus,OnePlus Nord CE 2,2022,IV2201,verify,smartphone,OLED,4500,USB-C,glass,No,in-display,High
+oneplus-oneplus-nord-ce-2-lite,oneplus,OnePlus Nord CE 2 Lite,2022,CPH2381,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+oneplus-oneplus-nord-2,oneplus,OnePlus Nord 2,2021,DN2101,verify,smartphone,OLED,4500,USB-C,glass,No,in-display,High
+oneplus-oneplus-nord-ce,oneplus,OnePlus Nord CE,2021,EB2101,verify,smartphone,OLED,4500,USB-C,plastic,No,in-display,High
+oneplus-oneplus-nord,oneplus,OnePlus Nord,2020,AC2001,verify,smartphone,OLED,4115,USB-C,glass,No,in-display,High
+oneplus-oneplus-nord-n20-se,oneplus,OnePlus Nord N20 SE,2022,CPH2469,verify,smartphone,LCD,5000,USB-C,plastic,No,side,Medium
+apple-iphone-16-pro-max,apple,iPhone 16 Pro Max,2024,A3084,verify,smartphone,OLED,4685,USB-C,glass,Yes,face,Medium
+apple-iphone-16-pro,apple,iPhone 16 Pro,2024,A3083,verify,smartphone,OLED,3582,USB-C,glass,Yes,face,Medium
+apple-iphone-16-plus,apple,iPhone 16 Plus,2024,A3082,verify,smartphone,OLED,4674,USB-C,glass,Yes,face,Medium
+apple-iphone-16,apple,iPhone 16,2024,A3081,verify,smartphone,OLED,3561,USB-C,glass,Yes,face,High
+apple-iphone-16e,apple,iPhone 16e,2025,A3212,verify,smartphone,OLED,4005,USB-C,glass,Yes,face,Medium
+apple-iphone-15-pro-max,apple,iPhone 15 Pro Max,2023,A3106,verify,smartphone,OLED,4441,USB-C,glass,Yes,face,High
+apple-iphone-15-pro,apple,iPhone 15 Pro,2023,A3102,verify,smartphone,OLED,3274,USB-C,glass,Yes,face,High
+apple-iphone-15-plus,apple,iPhone 15 Plus,2023,A3094,verify,smartphone,OLED,4383,USB-C,glass,Yes,face,Medium
+apple-iphone-15,apple,iPhone 15,2023,A3090,verify,smartphone,OLED,3349,USB-C,glass,Yes,face,High
+apple-iphone-14-pro-max,apple,iPhone 14 Pro Max,2022,A2894,verify,smartphone,OLED,4323,Lightning,glass,Yes,face,High
+apple-iphone-14-pro,apple,iPhone 14 Pro,2022,A2892,verify,smartphone,OLED,3200,Lightning,glass,Yes,face,High
+apple-iphone-14-plus,apple,iPhone 14 Plus,2022,A2886,verify,smartphone,OLED,4325,Lightning,glass,Yes,face,Medium
+apple-iphone-14,apple,iPhone 14,2022,A2884,verify,smartphone,OLED,3279,Lightning,glass,Yes,face,High
+apple-iphone-13-pro-max,apple,iPhone 13 Pro Max,2021,A2645,verify,smartphone,OLED,4352,Lightning,glass,Yes,face,High
+apple-iphone-13-pro,apple,iPhone 13 Pro,2021,A2640,verify,smartphone,OLED,3095,Lightning,glass,Yes,face,High
+apple-iphone-13,apple,iPhone 13,2021,A2633,verify,smartphone,OLED,3240,Lightning,glass,Yes,face,High
+apple-iphone-13-mini,apple,iPhone 13 mini,2021,A2630,verify,smartphone,OLED,2438,Lightning,glass,Yes,face,Medium
+apple-iphone-12-pro-max,apple,iPhone 12 Pro Max,2020,A2411,verify,smartphone,OLED,3687,Lightning,glass,Yes,face,High
+apple-iphone-12-pro,apple,iPhone 12 Pro,2020,A2407,verify,smartphone,OLED,2815,Lightning,glass,Yes,face,High
+apple-iphone-12,apple,iPhone 12,2020,A2403,verify,smartphone,OLED,2815,Lightning,glass,Yes,face,High
+apple-iphone-12-mini,apple,iPhone 12 mini,2020,A2399,verify,smartphone,OLED,2227,Lightning,glass,Yes,face,Medium
+apple-iphone-11-pro-max,apple,iPhone 11 Pro Max,2019,A2218,verify,smartphone,OLED,3969,Lightning,glass,Yes,face,High
+apple-iphone-11-pro,apple,iPhone 11 Pro,2019,A2215,verify,smartphone,OLED,3046,Lightning,glass,Yes,face,High
+apple-iphone-11,apple,iPhone 11,2019,A2221,verify,smartphone,LCD,3110,Lightning,glass,Yes,face,High
+apple-iphone-xs-max,apple,iPhone XS Max,2018,A2101,verify,smartphone,OLED,3174,Lightning,glass,Yes,face,High
+apple-iphone-xs,apple,iPhone XS,2018,A2097,verify,smartphone,OLED,2658,Lightning,glass,Yes,face,High
+apple-iphone-xr,apple,iPhone XR,2018,A2105,verify,smartphone,LCD,2942,Lightning,glass,Yes,face,High
+apple-iphone-x,apple,iPhone X,2017,A1901,verify,smartphone,OLED,2716,Lightning,glass,Yes,face,High
+apple-iphone-se-2022,apple,iPhone SE (2022),2022,A2783,verify,smartphone,LCD,2018,Lightning,glass,Yes,front,Medium
+apple-iphone-se-2020,apple,iPhone SE (2020),2020,A2296,verify,smartphone,LCD,1821,Lightning,glass,Yes,front,High
+apple-iphone-8-plus,apple,iPhone 8 Plus,2017,A1897,verify,smartphone,LCD,2691,Lightning,glass,Yes,front,High
+apple-iphone-8,apple,iPhone 8,2017,A1905,verify,smartphone,LCD,1821,Lightning,glass,Yes,front,High
+apple-iphone-7-plus,apple,iPhone 7 Plus,2016,A1784,verify,smartphone,LCD,2900,Lightning,metal,No,front,High
+apple-iphone-7,apple,iPhone 7,2016,A1778,verify,smartphone,LCD,1960,Lightning,metal,No,front,High
+apple-iphone-6s-plus,apple,iPhone 6s Plus,2015,A1687,verify,smartphone,LCD,2750,Lightning,metal,No,front,Medium
+apple-iphone-6s,apple,iPhone 6s,2015,A1688,verify,smartphone,LCD,1715,Lightning,metal,No,front,Medium
+motorola-motorola-edge-60-pro,motorola,Motorola Edge 60 Pro,2025,XT2507-1,verify,smartphone,OLED,6000,USB-C,leather,Yes,in-display,Medium
+motorola-motorola-edge-60-fusion,motorola,Motorola Edge 60 Fusion,2025,XT2503-1,verify,smartphone,OLED,5500,USB-C,leather,No,in-display,Medium
+motorola-motorola-edge-50-pro,motorola,Motorola Edge 50 Pro,2024,XT2403-2,verify,smartphone,OLED,4500,USB-C,leather,Yes,in-display,High
+motorola-motorola-edge-50-fusion,motorola,Motorola Edge 50 Fusion,2024,XT2429-2,verify,smartphone,OLED,5000,USB-C,leather,No,in-display,High
+motorola-motorola-edge-50-neo,motorola,Motorola Edge 50 Neo,2024,XT2407-1,verify,smartphone,OLED,4310,USB-C,leather,Yes,in-display,Medium
+motorola-motorola-edge-50,motorola,Motorola Edge 50,2024,XT2405-2,verify,smartphone,OLED,5000,USB-C,leather,No,in-display,Medium
+motorola-motorola-edge-40-neo,motorola,Motorola Edge 40 Neo,2023,XT2307-1,verify,smartphone,OLED,5000,USB-C,leather,No,in-display,High
+motorola-motorola-edge-40,motorola,Motorola Edge 40,2023,XT2303-2,verify,smartphone,OLED,4400,USB-C,leather,Yes,in-display,High
+motorola-motorola-edge-30-ultra,motorola,Motorola Edge 30 Ultra,2022,XT2241-1,verify,smartphone,OLED,4610,USB-C,glass,Yes,in-display,Medium
+motorola-motorola-edge-30-fusion,motorola,Motorola Edge 30 Fusion,2022,XT2243-1,verify,smartphone,OLED,4400,USB-C,glass,No,in-display,Medium
+motorola-motorola-edge-30,motorola,Motorola Edge 30,2022,XT2203-1,verify,smartphone,OLED,4020,USB-C,plastic,No,in-display,Medium
+motorola-motorola-edge-20-pro,motorola,Motorola Edge 20 Pro,2021,XT2153-1,verify,smartphone,OLED,4500,USB-C,glass,No,side,Medium
+motorola-motorola-edge-20,motorola,Motorola Edge 20,2021,XT2143-1,verify,smartphone,OLED,4000,USB-C,plastic,No,side,Medium
+motorola-motorola-edge-20-fusion,motorola,Motorola Edge 20 Fusion,2021,XT2139-2,verify,smartphone,OLED,5000,USB-C,plastic,No,side,Medium
+motorola-moto-g96-5g,motorola,Moto G96 5G,2025,XT2531-1,verify,smartphone,OLED,5500,USB-C,leather,No,in-display,Medium
+motorola-moto-g86-power-5g,motorola,Moto G86 Power 5G,2025,XT2527-1,verify,smartphone,OLED,6720,USB-C,leather,No,in-display,Medium
+motorola-moto-g85-5g,motorola,Moto G85 5G,2024,XT2427-1,verify,smartphone,OLED,5000,USB-C,leather,No,in-display,High
+motorola-moto-g84-5g,motorola,Moto G84 5G,2023,XT2347-2,verify,smartphone,OLED,5000,USB-C,leather,No,in-display,High
+motorola-moto-g73-5g,motorola,Moto G73 5G,2023,XT2237-2,verify,smartphone,LCD,5000,USB-C,plastic,No,side,Medium
+motorola-moto-g64-5g,motorola,Moto G64 5G,2024,XT2403-1,verify,smartphone,LCD,6000,USB-C,plastic,No,side,High
+motorola-moto-g62-5g,motorola,Moto G62 5G,2022,XT2223-2,verify,smartphone,LCD,5000,USB-C,plastic,No,side,Medium
+motorola-moto-g54-5g,motorola,Moto G54 5G,2023,XT2343-1,verify,smartphone,LCD,6000,USB-C,leather,No,side,High
+motorola-moto-g52,motorola,Moto G52,2022,XT2221-1,verify,smartphone,OLED,5000,USB-C,plastic,No,side,High
+motorola-moto-g45-5g,motorola,Moto G45 5G,2024,XT2421-1,verify,smartphone,LCD,5000,USB-C,leather,No,side,High
+motorola-moto-g42,motorola,Moto G42,2022,XT2233-2,verify,smartphone,OLED,5000,USB-C,plastic,No,side,Medium
+motorola-moto-g35-5g,motorola,Moto G35 5G,2024,XT2431-1,verify,smartphone,LCD,5000,USB-C,leather,No,side,High
+motorola-moto-g34-5g,motorola,Moto G34 5G,2024,XT2363-2,verify,smartphone,LCD,5000,USB-C,leather,No,side,High
+motorola-moto-g32,motorola,Moto G32,2022,XT2235-2,verify,smartphone,LCD,5000,USB-C,plastic,No,side,Medium
+motorola-moto-g31,motorola,Moto G31,2021,XT2173-3,verify,smartphone,OLED,5000,USB-C,plastic,No,rear,Medium
+motorola-moto-g24-power,motorola,Moto G24 Power,2024,XT2425-2,verify,smartphone,LCD,6000,USB-C,plastic,No,side,High
+motorola-moto-g14,motorola,Moto G14,2023,XT2341-2,verify,smartphone,LCD,5000,USB-C,leather,No,side,High
+motorola-moto-g13,motorola,Moto G13,2023,XT2331-2,verify,smartphone,LCD,5000,USB-C,plastic,No,side,Medium
+motorola-moto-g05,motorola,Moto G05,2025,XT2523-1,verify,smartphone,LCD,5200,USB-C,leather,No,side,Medium
+motorola-moto-g04,motorola,Moto G04,2024,XT2421-2,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+motorola-moto-e14,motorola,Moto E14,2024,XT2425-3,verify,smartphone,LCD,5000,USB-C,plastic,No,none,Medium
+motorola-moto-e13,motorola,Moto E13,2023,XT2345-3,verify,smartphone,LCD,5000,USB-C,plastic,No,none,High
+motorola-moto-g60,motorola,Moto G60,2021,XT2135-2,verify,smartphone,LCD,6000,USB-C,plastic,No,rear,High
+motorola-moto-g40-fusion,motorola,Moto G40 Fusion,2021,XT2147-2,verify,smartphone,LCD,6000,USB-C,plastic,No,rear,High
+motorola-moto-g9-power,motorola,Moto G9 Power,2020,XT2091-3,verify,smartphone,LCD,6000,USB-C,plastic,No,rear,High
+motorola-moto-g9,motorola,Moto G9,2020,XT2083-3,verify,smartphone,LCD,5000,USB-C,plastic,No,rear,High
+motorola-moto-g8-power-lite,motorola,Moto G8 Power Lite,2020,XT2055-2,verify,smartphone,LCD,5000,Micro-USB,plastic,No,rear,Medium
+motorola-moto-g-stylus-5g,motorola,Moto G Stylus 5G,2021,XT2131-1,verify,smartphone,LCD,5000,USB-C,plastic,No,side,Low
+motorola-moto-one-fusion,motorola,Moto One Fusion+,2020,XT2067-3,verify,smartphone,LCD,5000,USB-C,plastic,No,rear,Medium
+motorola-motorola-razr-50-ultra,motorola,Motorola Razr 50 Ultra,2024,XT2451-3,verify,smartphone,OLED,4000,USB-C,leather,Yes,side,Low
+motorola-motorola-razr-50,motorola,Motorola Razr 50,2024,XT2453-2,verify,smartphone,OLED,4200,USB-C,leather,Yes,side,Low
+motorola-motorola-razr-40-ultra,motorola,Motorola Razr 40 Ultra,2023,XT2321-1,verify,smartphone,OLED,3800,USB-C,glass,Yes,side,Low
+motorola-motorola-razr-40,motorola,Motorola Razr 40,2023,XT2323-1,verify,smartphone,OLED,4200,USB-C,leather,Yes,side,Low
+nothing-nothing-phone-3,nothing,Nothing Phone (3),2025,A059,verify,smartphone,OLED,5150,USB-C,glass,Yes,in-display,Medium
+nothing-nothing-phone-3a-pro,nothing,Nothing Phone (3a) Pro,2025,A059P,verify,smartphone,OLED,5000,USB-C,glass,No,in-display,Medium
+nothing-nothing-phone-3a,nothing,Nothing Phone (3a),2025,A059,verify,smartphone,OLED,5000,USB-C,glass,No,in-display,High
+nothing-nothing-phone-2a-plus,nothing,Nothing Phone (2a) Plus,2024,A142P,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,Medium
+nothing-nothing-phone-2a,nothing,Nothing Phone (2a),2024,A142,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,High
+nothing-nothing-phone-2,nothing,Nothing Phone (2),2023,A065,verify,smartphone,OLED,4700,USB-C,glass,Yes,in-display,High
+nothing-nothing-phone-1,nothing,Nothing Phone (1),2022,A063,verify,smartphone,OLED,4500,USB-C,glass,Yes,in-display,High
+nothing-cmf-phone-2-pro,nothing,CMF Phone 2 Pro,2025,A001P,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,Medium
+nothing-cmf-phone-1,nothing,CMF Phone 1,2024,A015,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,High
+google-pixel-9-pro-xl,google,Pixel 9 Pro XL,2024,GZC4D,verify,smartphone,OLED,5060,USB-C,glass,Yes,in-display,Low
+google-pixel-9-pro,google,Pixel 9 Pro,2024,GEC77,verify,smartphone,OLED,4700,USB-C,glass,Yes,in-display,Low
+google-pixel-9,google,Pixel 9,2024,GUR25,verify,smartphone,OLED,4700,USB-C,glass,Yes,in-display,Medium
+google-pixel-9a,google,Pixel 9a,2025,G4QUR,verify,smartphone,OLED,5100,USB-C,plastic,Yes,in-display,Medium
+google-pixel-8-pro,google,Pixel 8 Pro,2023,GC3VE,verify,smartphone,OLED,5050,USB-C,glass,Yes,in-display,Medium
+google-pixel-8,google,Pixel 8,2023,G9BQD,verify,smartphone,OLED,4575,USB-C,glass,Yes,in-display,Medium
+google-pixel-8a,google,Pixel 8a,2024,G6GPR,verify,smartphone,OLED,4492,USB-C,plastic,Yes,in-display,Medium
+google-pixel-7-pro,google,Pixel 7 Pro,2022,GE2AE,verify,smartphone,OLED,5000,USB-C,glass,Yes,in-display,Medium
+google-pixel-7,google,Pixel 7,2022,GQML3,verify,smartphone,OLED,4355,USB-C,glass,Yes,in-display,Medium
+google-pixel-7a,google,Pixel 7a,2023,GHL1X,verify,smartphone,OLED,4385,USB-C,plastic,Yes,in-display,Medium
+google-pixel-6a,google,Pixel 6a,2022,GB62Z,verify,smartphone,OLED,4410,USB-C,plastic,No,in-display,Medium
+google-pixel-4a,google,Pixel 4a,2020,G025J,verify,smartphone,OLED,3140,USB-C,plastic,No,rear,Medium
+google-pixel-3a,google,Pixel 3a,2019,G020F,verify,smartphone,OLED,3000,USB-C,plastic,No,rear,Low
+infinix-infinix-note-50x-5g,infinix,Infinix Note 50x 5G,2025,X6882,verify,smartphone,LCD,5500,USB-C,plastic,No,side,Medium
+infinix-infinix-note-40-pro-5g,infinix,Infinix Note 40 Pro 5G,2024,X6851,verify,smartphone,OLED,5000,USB-C,plastic,Yes,in-display,Medium
+infinix-infinix-note-40-5g,infinix,Infinix Note 40 5G,2024,X6838,verify,smartphone,OLED,5000,USB-C,plastic,Yes,in-display,Medium
+infinix-infinix-note-40x-5g,infinix,Infinix Note 40X 5G,2024,X6838,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+infinix-infinix-note-30-5g,infinix,Infinix Note 30 5G,2023,X6711,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+infinix-infinix-note-30,infinix,Infinix Note 30,2023,X6833B,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+infinix-infinix-note-12-pro,infinix,Infinix Note 12 Pro,2022,X676B,verify,smartphone,OLED,5000,USB-C,plastic,No,side,High
+infinix-infinix-note-12,infinix,Infinix Note 12,2022,X663,verify,smartphone,OLED,5000,USB-C,plastic,No,side,High
+infinix-infinix-note-11,infinix,Infinix Note 11,2021,X663,verify,smartphone,OLED,5000,USB-C,plastic,No,side,High
+infinix-infinix-note-10-pro,infinix,Infinix Note 10 Pro,2021,X695,verify,smartphone,LCD,5000,USB-C,plastic,No,side,Medium
+infinix-infinix-zero-40-5g,infinix,Infinix Zero 40 5G,2024,X6861,verify,smartphone,OLED,5000,USB-C,leather,No,in-display,Medium
+infinix-infinix-zero-30-5g,infinix,Infinix Zero 30 5G,2023,X6731,verify,smartphone,OLED,5000,USB-C,leather,No,in-display,Medium
+infinix-infinix-zero-5g-2023,infinix,Infinix Zero 5G 2023,2023,X6815C,verify,smartphone,LCD,5000,USB-C,plastic,No,side,Medium
+infinix-infinix-gt-30-pro,infinix,Infinix GT 30 Pro,2025,X6879,verify,smartphone,OLED,5500,USB-C,plastic,No,in-display,Medium
+infinix-infinix-gt-20-pro,infinix,Infinix GT 20 Pro,2024,X6871,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,Medium
+infinix-infinix-gt-10-pro,infinix,Infinix GT 10 Pro,2023,X6739,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,Medium
+infinix-infinix-hot-60-5g,infinix,Infinix Hot 60 5G+,2025,X6885,verify,smartphone,LCD,5160,USB-C,plastic,No,side,Medium
+infinix-infinix-hot-50-5g,infinix,Infinix Hot 50 5G,2024,X6720,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+infinix-infinix-hot-40-pro,infinix,Infinix Hot 40 Pro,2023,X6837,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+infinix-infinix-hot-40i,infinix,Infinix Hot 40i,2023,X6528,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+infinix-infinix-hot-30-5g,infinix,Infinix Hot 30 5G,2023,X6832,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+infinix-infinix-hot-30i,infinix,Infinix Hot 30i,2023,X669D,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+infinix-infinix-hot-20-5g,infinix,Infinix Hot 20 5G,2022,X666B,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+infinix-infinix-hot-12-play,infinix,Infinix Hot 12 Play,2022,X6816D,verify,smartphone,LCD,6000,Micro-USB,plastic,No,rear,High
+infinix-infinix-hot-11,infinix,Infinix Hot 11,2021,X662,verify,smartphone,LCD,5200,Micro-USB,plastic,No,rear,High
+infinix-infinix-hot-10,infinix,Infinix Hot 10,2020,X682B,verify,smartphone,LCD,5200,Micro-USB,plastic,No,rear,High
+infinix-infinix-hot-9,infinix,Infinix Hot 9,2020,X655C,verify,smartphone,LCD,5000,Micro-USB,plastic,No,rear,High
+infinix-infinix-smart-9-hd,infinix,Infinix Smart 9 HD,2025,X6525,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+infinix-infinix-smart-8,infinix,Infinix Smart 8,2023,X6525,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+infinix-infinix-smart-7,infinix,Infinix Smart 7,2023,X6515,verify,smartphone,LCD,6000,Micro-USB,plastic,No,rear,High
+infinix-infinix-smart-6,infinix,Infinix Smart 6,2022,X6511B,verify,smartphone,LCD,5000,Micro-USB,plastic,No,rear,High
+infinix-infinix-smart-5,infinix,Infinix Smart 5,2020,X657,verify,smartphone,LCD,6000,Micro-USB,plastic,No,rear,High
+tecno-tecno-pova-7-pro-5g,tecno,Tecno Pova 7 Pro 5G,2025,LI8,verify,smartphone,OLED,6000,USB-C,plastic,No,in-display,Medium
+tecno-tecno-pova-6-pro-5g,tecno,Tecno Pova 6 Pro 5G,2024,LI9,verify,smartphone,OLED,6000,USB-C,plastic,No,in-display,Medium
+tecno-tecno-pova-6-neo-5g,tecno,Tecno Pova 6 Neo 5G,2024,LI6,verify,smartphone,LCD,7000,USB-C,plastic,No,side,High
+tecno-tecno-pova-5-pro-5g,tecno,Tecno Pova 5 Pro 5G,2023,LH8n,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+tecno-tecno-pova-5,tecno,Tecno Pova 5,2023,LH7n,verify,smartphone,LCD,6000,USB-C,plastic,No,side,High
+tecno-tecno-pova-4-pro,tecno,Tecno Pova 4 Pro,2022,LG8n,verify,smartphone,OLED,6000,USB-C,plastic,No,side,Medium
+tecno-tecno-pova-4,tecno,Tecno Pova 4,2022,LG7n,verify,smartphone,LCD,6000,USB-C,plastic,No,side,High
+tecno-tecno-pova-3,tecno,Tecno Pova 3,2022,LF7n,verify,smartphone,LCD,7000,USB-C,plastic,No,side,High
+tecno-tecno-pova-2,tecno,Tecno Pova 2,2021,LE7n,verify,smartphone,LCD,7000,USB-C,plastic,No,side,High
+tecno-tecno-camon-30-5g,tecno,Tecno Camon 30 5G,2024,CL6,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,Medium
+tecno-tecno-camon-20-pro-5g,tecno,Tecno Camon 20 Pro 5G,2023,CK8n,verify,smartphone,OLED,5000,USB-C,plastic,No,in-display,Medium
+tecno-tecno-camon-20,tecno,Tecno Camon 20,2023,CK6n,verify,smartphone,OLED,5000,USB-C,leather,No,in-display,High
+tecno-tecno-camon-19-pro,tecno,Tecno Camon 19 Pro,2022,CI8n,verify,smartphone,LCD,5000,USB-C,plastic,No,side,Medium
+tecno-tecno-camon-18,tecno,Tecno Camon 18,2021,CH6n,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+tecno-tecno-phantom-x,tecno,Tecno Phantom X,2021,AC8,verify,smartphone,OLED,4700,USB-C,glass,No,in-display,Low
+tecno-tecno-spark-30c-5g,tecno,Tecno Spark 30C 5G,2024,KL5,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+tecno-tecno-spark-20-pro,tecno,Tecno Spark 20 Pro+,2024,KJ7,verify,smartphone,OLED,5000,USB-C,leather,No,in-display,High
+tecno-tecno-spark-20-pro,tecno,Tecno Spark 20 Pro,2024,KJ6,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+tecno-tecno-spark-20,tecno,Tecno Spark 20,2024,KJ5,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+tecno-tecno-spark-go-2024,tecno,Tecno Spark Go 2024,2024,BG6,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+tecno-tecno-spark-10-5g,tecno,Tecno Spark 10 5G,2023,KI8,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+tecno-tecno-spark-10-pro,tecno,Tecno Spark 10 Pro,2023,KI7,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+tecno-tecno-spark-9,tecno,Tecno Spark 9,2022,KG5p,verify,smartphone,LCD,5000,Micro-USB,plastic,No,rear,High
+tecno-tecno-spark-8,tecno,Tecno Spark 8,2021,KG6,verify,smartphone,LCD,5000,Micro-USB,plastic,No,rear,High
+tecno-tecno-spark-7,tecno,Tecno Spark 7,2021,KF6,verify,smartphone,LCD,6000,Micro-USB,plastic,No,rear,High
+tecno-tecno-spark-6-go,tecno,Tecno Spark 6 Go,2020,KE5,verify,smartphone,LCD,5000,Micro-USB,plastic,No,rear,High
+itel-itel-a80,itel,Itel A80,2024,A671L,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+itel-itel-a70,itel,Itel A70,2024,A665L,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+itel-itel-p55-5g,itel,Itel P55 5G,2023,P661N,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+itel-itel-s24,itel,Itel S24,2024,S665L,verify,smartphone,LCD,5000,USB-C,plastic,No,side,Medium
+itel-itel-a60s,itel,Itel A60s,2023,A662L,verify,smartphone,LCD,5000,Micro-USB,plastic,No,rear,High
+itel-itel-a49,itel,Itel A49,2022,A661L,verify,smartphone,LCD,4000,Micro-USB,plastic,No,rear,High
+itel-itel-vision-3,itel,Itel Vision 3,2022,P682L,verify,smartphone,LCD,5000,USB-C,plastic,No,rear,High
+itel-itel-a27,itel,Itel A27,2022,A551L,verify,smartphone,LCD,4000,Micro-USB,plastic,No,none,High
+itel-itel-a25,itel,Itel A25,2021,L5002,verify,smartphone,LCD,3020,Micro-USB,plastic,No,none,Medium
+honor-honor-200-pro,honor,Honor 200 Pro,2024,ELP-NX9,verify,smartphone,OLED,5200,USB-C,glass,Yes,in-display,Low
+honor-honor-200,honor,Honor 200,2024,ELI-NX9,verify,smartphone,OLED,5200,USB-C,glass,No,in-display,Medium
+honor-honor-90,honor,Honor 90,2023,REA-NX9,verify,smartphone,OLED,5000,USB-C,glass,No,in-display,Medium
+honor-honor-x9c-5g,honor,Honor X9c 5G,2025,ALI-NX1,verify,smartphone,OLED,6600,USB-C,plastic,No,in-display,Medium
+honor-honor-x9b-5g,honor,Honor X9b 5G,2024,ALI-NX1,verify,smartphone,OLED,5800,USB-C,plastic,No,in-display,Medium
+honor-honor-x7b,honor,Honor X7b,2024,CLK-LX1,verify,smartphone,LCD,6000,USB-C,plastic,No,side,Medium
+honor-honor-play-9t,honor,Honor Play 9T,2024,,unknown - fill in,smartphone,LCD,6000,USB-C,plastic,No,side,Low
+honor-honor-9x,honor,Honor 9X,2019,STK-LX1,verify,smartphone,LCD,4000,USB-C,glass,No,rear,Medium
+honor-honor-8x,honor,Honor 8X,2018,JSN-L22,verify,smartphone,LCD,3750,Micro-USB,glass,No,rear,Medium
+honor-honor-10-lite,honor,Honor 10 Lite,2019,HRY-LX1,verify,smartphone,LCD,3400,Micro-USB,plastic,No,rear,Medium
+honor-honor-9n,honor,Honor 9N,2018,LLD-AL20,verify,smartphone,LCD,3000,Micro-USB,glass,No,rear,Low
+nokia-nokia-g42-5g,nokia,Nokia G42 5G,2023,TA-1581,verify,smartphone,LCD,5000,USB-C,plastic,No,side,Medium
+nokia-nokia-g21,nokia,Nokia G21,2022,TA-1418,verify,smartphone,LCD,5050,USB-C,plastic,No,side,Medium
+nokia-nokia-g20,nokia,Nokia G20,2021,TA-1343,verify,smartphone,LCD,5050,USB-C,plastic,No,side,Medium
+nokia-nokia-g10,nokia,Nokia G10,2021,TA-1334,verify,smartphone,LCD,5000,USB-C,plastic,No,side,Medium
+nokia-nokia-c32,nokia,Nokia C32,2023,TA-1534,verify,smartphone,LCD,5000,USB-C,plastic,No,rear,Medium
+nokia-nokia-c22,nokia,Nokia C22,2023,TA-1545,verify,smartphone,LCD,5000,USB-C,plastic,No,rear,Medium
+nokia-nokia-c21-plus,nokia,Nokia C21 Plus,2022,TA-1431,verify,smartphone,LCD,5050,Micro-USB,plastic,No,rear,Medium
+nokia-nokia-c12,nokia,Nokia C12,2023,TA-1535,verify,smartphone,LCD,3000,Micro-USB,plastic,No,none,Medium
+nokia-nokia-c01-plus,nokia,Nokia C01 Plus,2021,TA-1383,verify,smartphone,LCD,3000,Micro-USB,plastic,No,none,Low
+nokia-nokia-x30-5g,nokia,Nokia X30 5G,2022,TA-1450,verify,smartphone,OLED,4200,USB-C,glass,No,in-display,Low
+nokia-nokia-xr21,nokia,Nokia XR21,2023,TA-1486,verify,smartphone,LCD,4800,USB-C,plastic,No,side,Low
+nokia-nokia-5-4,nokia,Nokia 5.4,2020,TA-1337,verify,smartphone,LCD,4000,USB-C,plastic,No,rear,Medium
+nokia-nokia-5-3,nokia,Nokia 5.3,2020,TA-1234,verify,smartphone,LCD,4000,USB-C,plastic,No,rear,Medium
+nokia-nokia-3-4,nokia,Nokia 3.4,2020,TA-1283,verify,smartphone,LCD,4000,USB-C,plastic,No,rear,Medium
+nokia-nokia-2-4,nokia,Nokia 2.4,2020,TA-1270,verify,smartphone,LCD,4500,Micro-USB,plastic,No,rear,Medium
+nokia-nokia-8-1,nokia,Nokia 8.1,2018,TA-1119,verify,smartphone,LCD,3500,USB-C,glass,No,rear,Medium
+nokia-nokia-7-2,nokia,Nokia 7.2,2019,TA-1196,verify,smartphone,LCD,3500,USB-C,glass,No,rear,Medium
+nokia-nokia-6-1-plus,nokia,Nokia 6.1 Plus,2018,TA-1083,verify,smartphone,LCD,3060,USB-C,glass,No,rear,High
+nokia-nokia-6-1,nokia,Nokia 6.1,2018,TA-1089,verify,smartphone,LCD,3000,USB-C,metal,No,rear,Medium
+nokia-nokia-5-1-plus,nokia,Nokia 5.1 Plus,2018,TA-1102,verify,smartphone,LCD,3060,USB-C,glass,No,rear,Medium
+nokia-nokia-3-1,nokia,Nokia 3.1,2018,TA-1049,verify,smartphone,LCD,2990,Micro-USB,metal,No,none,Low
+nokia-nokia-2-2,nokia,Nokia 2.2,2019,TA-1183,verify,smartphone,LCD,3000,Micro-USB,plastic,No,none,Low
+nokia-nokia-105-2023,nokia,Nokia 105 (2023),2023,TA-1557,verify,feature phone,LCD,1000,Micro-USB,plastic,No,none,High
+nokia-nokia-106-2023,nokia,Nokia 106 (2023),2023,TA-1564,verify,feature phone,LCD,1000,Micro-USB,plastic,No,none,High
+nokia-nokia-110-4g,nokia,Nokia 110 4G,2023,TA-1543,verify,feature phone,LCD,1450,Micro-USB,plastic,No,none,High
+nokia-nokia-3210-2024,nokia,Nokia 3210 (2024),2024,TA-1618,verify,smartphone,LCD,1450,USB-C,plastic,No,none,Medium
+lava-lava-agni-3-5g,lava,Lava Agni 3 5G,2024,LXX545,verify,smartphone,OLED,5000,USB-C,glass,No,in-display,Medium
+lava-lava-agni-2-5g,lava,Lava Agni 2 5G,2023,LXX515,verify,smartphone,OLED,4700,USB-C,glass,No,in-display,Medium
+lava-lava-blaze-x-5g,lava,Lava Blaze X 5G,2024,LXX534,verify,smartphone,OLED,5000,USB-C,glass,No,in-display,Medium
+lava-lava-blaze-curve-5g,lava,Lava Blaze Curve 5G,2024,LXX527,verify,smartphone,OLED,5000,USB-C,glass,No,in-display,Medium
+lava-lava-blaze-2-5g,lava,Lava Blaze 2 5G,2023,LXX509,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+lava-lava-blaze-5g,lava,Lava Blaze 5G,2022,LXX505,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+lava-lava-blaze-pro-5g,lava,Lava Blaze Pro 5G,2023,LXX508,verify,smartphone,LCD,5000,USB-C,plastic,No,side,Medium
+lava-lava-blaze,lava,Lava Blaze,2022,LXX501,verify,smartphone,LCD,5000,USB-C,glass,No,side,High
+lava-lava-yuva-5g,lava,Lava Yuva 5G,2024,LXX530,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+lava-lava-yuva-3-pro,lava,Lava Yuva 3 Pro,2024,LXX537,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+lava-lava-yuva-2-pro,lava,Lava Yuva 2 Pro,2023,LXX518,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+lava-lava-o2,lava,Lava O2,2024,LXX529,verify,smartphone,LCD,5000,USB-C,plastic,No,side,High
+lava-lava-storm-5g,lava,Lava Storm 5G,2023,LXX522,verify,smartphone,LCD,5000,USB-C,plastic,No,side,Medium
+lava-lava-z3,lava,Lava Z3,2021,LZG402,verify,smartphone,LCD,3100,Micro-USB,plastic,No,rear,Medium
+micromax-micromax-in-note-2,micromax,Micromax IN Note 2,2022,E7544,verify,smartphone,OLED,5000,USB-C,plastic,No,side,Medium
+micromax-micromax-in-2b,micromax,Micromax IN 2b,2021,E7543,verify,smartphone,LCD,5000,USB-C,plastic,No,rear,Medium
+micromax-micromax-in-2c,micromax,Micromax IN 2c,2022,E7542,verify,smartphone,LCD,5000,USB-C,plastic,No,none,Medium
+micromax-micromax-in-note-1,micromax,Micromax IN Note 1,2020,E7746,verify,smartphone,LCD,5000,USB-C,plastic,No,rear,Medium
+micromax-micromax-in-1b,micromax,Micromax IN 1b,2020,E7533,verify,smartphone,LCD,5000,USB-C,plastic,No,rear,Medium
+micromax-micromax-in-1,micromax,Micromax IN 1,2021,E7542,verify,smartphone,LCD,5000,USB-C,plastic,No,rear,Medium
+asus-asus-rog-phone-8-pro,asus,Asus ROG Phone 8 Pro,2024,AI2401,verify,smartphone,OLED,5500,USB-C,glass,Yes,in-display,Low
+asus-asus-rog-phone-7,asus,Asus ROG Phone 7,2023,AI2205,verify,smartphone,OLED,6000,USB-C,glass,No,in-display,Low
+asus-asus-rog-phone-6,asus,Asus ROG Phone 6,2022,AI2201,verify,smartphone,OLED,6000,USB-C,glass,No,in-display,Low
+asus-asus-rog-phone-5,asus,Asus ROG Phone 5,2021,ZS673KS,verify,smartphone,OLED,6000,USB-C,glass,No,in-display,Low
+asus-asus-rog-phone-3,asus,Asus ROG Phone 3,2020,ZS661KS,verify,smartphone,OLED,6000,USB-C,glass,No,in-display,Low
+asus-asus-zenfone-9,asus,Asus Zenfone 9,2022,AI2202,verify,smartphone,OLED,4300,USB-C,glass,No,side,Low
+asus-asus-zenfone-8,asus,Asus Zenfone 8,2021,ZS590KS,verify,smartphone,OLED,4000,USB-C,glass,No,in-display,Low
+asus-asus-6z,asus,Asus 6Z,2019,ZS630KL,verify,smartphone,LCD,5000,USB-C,glass,No,rear,Medium
+asus-asus-zenfone-max-pro-m2,asus,Asus Zenfone Max Pro M2,2018,ZB631KL,verify,smartphone,LCD,5000,Micro-USB,glass,No,rear,High
+asus-asus-zenfone-max-pro-m1,asus,Asus Zenfone Max Pro M1,2018,ZB601KL,verify,smartphone,LCD,5000,Micro-USB,metal,No,rear,High
+asus-asus-zenfone-max-m2,asus,Asus Zenfone Max M2,2018,ZB633KL,verify,smartphone,LCD,4000,Micro-USB,plastic,No,rear,Medium
+asus-asus-zenfone-5z,asus,Asus Zenfone 5Z,2018,ZS620KL,verify,smartphone,LCD,3300,USB-C,glass,No,rear,Medium
+lenovo-lenovo-legion-phone-duel,lenovo,Lenovo Legion Phone Duel,2020,L79031,verify,smartphone,OLED,5000,USB-C,glass,No,side,Low
+lenovo-lenovo-k10-note,lenovo,Lenovo K10 Note,2019,L38111,verify,smartphone,LCD,4050,USB-C,glass,No,rear,Low
+lenovo-lenovo-z6-pro,lenovo,Lenovo Z6 Pro,2019,L78051,verify,smartphone,OLED,4000,USB-C,glass,No,in-display,Low
+lenovo-lenovo-k9,lenovo,Lenovo K9,2018,L38043,verify,smartphone,LCD,3000,Micro-USB,glass,No,rear,Low
+lenovo-lenovo-k8-note,lenovo,Lenovo K8 Note,2017,XT1902-3,verify,smartphone,LCD,4000,Micro-USB,metal,No,rear,Medium
+lenovo-lenovo-k8-plus,lenovo,Lenovo K8 Plus,2017,XT1902-2,verify,smartphone,LCD,4000,Micro-USB,metal,No,rear,Medium
+huawei-huawei-p30-pro,huawei,Huawei P30 Pro,2019,VOG-L29,verify,smartphone,OLED,4200,USB-C,glass,Yes,in-display,Low
+huawei-huawei-p30-lite,huawei,Huawei P30 Lite,2019,MAR-LX2,verify,smartphone,LCD,3340,USB-C,glass,No,rear,Medium
+huawei-huawei-nova-3i,huawei,Huawei Nova 3i,2018,INE-LX2,verify,smartphone,LCD,3340,Micro-USB,glass,No,rear,Medium
+huawei-huawei-nova-3,huawei,Huawei Nova 3,2018,PAR-LX1,verify,smartphone,LCD,3750,USB-C,glass,No,rear,Low
+huawei-huawei-y9-prime-2019,huawei,Huawei Y9 Prime 2019,2019,STK-L22,verify,smartphone,LCD,4000,USB-C,glass,No,rear,Medium
+huawei-huawei-y9-2019,huawei,Huawei Y9 2019,2019,JKM-LX2,verify,smartphone,LCD,4000,Micro-USB,glass,No,rear,Medium
+huawei-huawei-mate-20-pro,huawei,Huawei Mate 20 Pro,2018,LYA-L29,verify,smartphone,OLED,4200,USB-C,glass,Yes,in-display,Low
+sony-sony-xperia-xz2,sony,Sony Xperia XZ2,2018,H8266,verify,smartphone,LCD,3180,USB-C,glass,Yes,rear,Low
+sony-sony-xperia-xa2,sony,Sony Xperia XA2,2018,H4113,verify,smartphone,LCD,3300,USB-C,metal,No,rear,Low
+sony-sony-xperia-xz1,sony,Sony Xperia XZ1,2017,G8342,verify,smartphone,LCD,2700,USB-C,metal,No,side,Low
+sony-sony-xperia-10-ii,sony,Sony Xperia 10 II,2020,XQ-AU52,verify,smartphone,OLED,3600,USB-C,glass,No,side,Low
+lg-lg-wing,lg,LG Wing,2020,LM-F100N,verify,smartphone,OLED,4000,USB-C,glass,Yes,side,Low
+lg-lg-velvet,lg,LG Velvet,2020,LM-G900EM,verify,smartphone,OLED,4300,USB-C,glass,Yes,in-display,Low
+lg-lg-g8x-thinq,lg,LG G8X ThinQ,2019,LM-G850EMW,verify,smartphone,OLED,4000,USB-C,glass,Yes,in-display,Low
+lg-lg-w41,lg,LG W41,2021,LM-K610IM,verify,smartphone,LCD,5000,USB-C,plastic,No,rear,Low
+lg-lg-w30,lg,LG W30,2019,LM-X440IM,verify,smartphone,LCD,4000,Micro-USB,plastic,No,rear,Low
+lg-lg-g7-thinq,lg,LG G7 ThinQ,2018,LM-G710EM,verify,smartphone,LCD,3000,USB-C,glass,Yes,rear,Low
+jio-jiophone-next,jio,JioPhone Next,2021,LS-5701,verify,smartphone,LCD,3500,Micro-USB,plastic,No,none,High
+jio-jiophone-prima-4g,jio,JioPhone Prima 4G,2023,F500,verify,feature phone,LCD,1800,Micro-USB,plastic,No,none,High
+jio-jiophone-2,jio,JioPhone 2,2018,F300B,verify,feature phone,LCD,2000,Micro-USB,plastic,No,none,Medium
+jio-jiophone,jio,JioPhone,2017,F220B,verify,feature phone,LCD,2000,Micro-USB,plastic,No,none,High
+jio-jiobharat-v2,jio,JioBharat V2,2023,F30C,verify,feature phone,LCD,1000,Micro-USB,plastic,No,none,High
+jio-jiobharat-b2,jio,JioBharat B2,2024,B2,verify,feature phone,LCD,1000,Micro-USB,plastic,No,none,High

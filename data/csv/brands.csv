@@ -1,0 +1,26 @@
+brand_id,name,slug,aliases,status,india_note
+samsung,Samsung,samsung,,active,Top-2 by volume in India; widest aftermarket for displays and batteries
+xiaomi,Xiaomi / Redmi,xiaomi,,active,Top-3 by volume; Redmi Note series is the most repaired line in India
+poco,Poco,poco,,active,Xiaomi sub-brand; many Poco models share parts with Redmi models
+vivo,Vivo,vivo,,active,Top-3 by volume; strong offline/tier-2 presence
+iqoo,iQOO,iqoo,,active,"Vivo sub-brand, online-first; shares parts with Vivo models"
+oppo,Oppo,oppo,,active,Top-5; offline heavy; A and F series dominate repairs
+realme,Realme,realme,,active,"Top-5; very high volume in budget segment, C and Narzo series"
+oneplus,OnePlus,oneplus,,active,Premium mid-range; Nord series high volume
+apple,Apple,apple,,active,Growing fast; iPhone 11 to 15 dominate repair demand
+motorola,Motorola,motorola,,active,G and Edge series; clean Android; rising share
+nothing,Nothing,nothing,,active,"Phone (1), (2), (2a), (3a), CMF; small but loyal base"
+google,Google,google,,active,Pixel; now assembled in India; parts via iFixit-style channels
+infinix,Infinix,infinix,,active,"Budget online; Hot, Note, Smart, Zero series"
+tecno,Tecno,tecno,,active,"Budget offline; Spark, Pova, Camon series"
+itel,Itel,itel,,active,Entry level and feature phones
+honor,Honor,honor,,active,Re-entered India 2023; small volume
+nokia,Nokia (HMD),nokia,,active,Low volume since 2021; older models still in repair
+lava,Lava,lava,,active,"Indian brand; Blaze, Yuva, Agni series"
+micromax,Micromax,micromax,,legacy,IN series 2020-2021; parts limited
+asus,Asus,asus,,legacy,ROG and Zenfone; niche
+lenovo,Lenovo,lenovo,,legacy,K series until ~2020; parts limited
+huawei,Huawei,huawei,,legacy,Exited India ~2020; parts limited
+sony,Sony,sony,,legacy,Exited India ~2019; parts very limited
+lg,LG,lg,,legacy,Exited phones 2021; parts very limited
+jio,Jio (Reliance),jio,,active,JioPhone Next and JioPhone feature phones

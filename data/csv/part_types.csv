@@ -1,0 +1,30 @@
+part_type_id,category,name,applies_to,notes
+display,parts,Display assembly,all,Cover glass + touch digitiser + panel. Variant by panel tech (OLED/LCD) and with/without frame
+adhesive,parts,Display adhesive / gasket,all,Pre-cut foam or glue; model-specific cut
+frame,parts,Mid-frame / chassis,all,Metal or plastic body; often sold with button flex; SIM tray separate
+simtray,parts,SIM tray,all,Colour-matched; single/dual/hybrid
+buttons,parts,Power and volume button flex,all,Side-key flex and button caps
+frontcam,parts,Front camera,smartphone,Selfie camera module
+earpiece,parts,Earpiece speaker,smartphone,Top receiver speaker
+board,parts,Logic board / motherboard,all,Sold by storage/RAM variant; IMEI-locked on some brands
+camera,parts,Rear camera module,smartphone,Main / ultra-wide / macro / telephoto as separate items on many models
+lens,parts,Rear camera lens glass,smartphone,"Glass cover for the camera island, with adhesive"
+battery,parts,Battery,all,Capacity in mAh; with pull-tab adhesive
+port,parts,Charging port / sub-board,all,"USB-C, Micro-USB or Lightning; often includes mic and SIM reader"
+speaker,parts,Loudspeaker,all,Bottom speaker module
+haptic,parts,Vibration motor,smartphone,Coin or linear motor
+fpsensor,parts,Fingerprint sensor,fp,"Rear, side-key or in-display (optical/ultrasonic) depending on model"
+coil,parts,Wireless charging coil + NFC,wireless,Only on models with wireless charging; NFC antenna separate on others
+nfc,parts,NFC antenna,nfc-only,On NFC models without wireless charging
+backpanel,parts,Back panel / rear glass,all,With camera lens cover on some; with adhesive
+flex,parts,Main / inter-connect flex,smartphone,Board-to-sub-board flex cable
+proximity,parts,Proximity / light sensor flex,smartphone,Model-specific
+glass,acc,Tempered glass / screen protector,all,"Full-cover, edge-to-edge, privacy, matte"
+cover,acc,Case / back cover,all,"Silicone, hard, flip, wallet, transparent"
+lensprotector,acc,Camera lens protector,smartphone,Tempered glass ring for the camera island
+charger,acc,Charger adapter,all,Wattage matched to the phone's fast-charge standard
+cable,acc,Charging cable,all,USB-C to USB-C / USB-A to USB-C / Lightning
+audio,acc,Earphones,all,Wired (3.5 mm or USB-C) or TWS
+holder,acc,Holders and stands,all,"Car vent, dashboard, desk"
+powerbank,acc,Power bank,all,By capacity and output
+skin,acc,Back skin / wrap,all,Vinyl skins

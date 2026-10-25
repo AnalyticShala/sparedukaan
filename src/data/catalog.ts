@@ -1,27 +1,46 @@
-// Catalogue data. This mirrors the starter import files in the project
-// document (brands.csv, devices.csv, products.csv, variants.csv,
-// compatibility.csv). Replace with real, verified data before launch.
+// Catalogue for the India storefront. Brands, models and part types come from
+// data/source/models.py (regenerated into src/data/generated/*.json). The
+// parts that apply to a model, and the suggested variant for each, are derived
+// here from the model's attributes. Every fit is "unverified" until the
+// catalogue manager records evidence; prices are not set yet.
+
+import brandsJson from './generated/brands.json';
+import modelsJson from './generated/models.json';
+import partTypesJson from './generated/partTypes.json';
 
 export type CategoryId = 'parts' | 'acc';
 
 export interface Brand {
   id: string;
   name: string;
+  status: 'active' | 'legacy';
+  note: string;
 }
 
 export interface DeviceModel {
   id: string;
   brandId: string;
   name: string;
-  code: string; // exact model code, e.g. SM-A546E
+  year: number;
+  code: string; // exact model code where known; '' = unknown
+  type: 'smartphone' | 'feature';
+  display: 'OLED' | 'LCD';
+  battery: number | null;
+  port: 'USB-C' | 'Micro-USB' | 'Lightning';
+  back: string;
+  wireless: boolean;
+  fp: 'in-display' | 'side' | 'rear' | 'front' | 'face' | 'none';
+  avail: 'high' | 'medium' | 'low';
 }
 
 export interface PartType {
   id: string;
   category: CategoryId;
   name: string;
-  hint: string;
-  symptom?: string; // the problem the buyer notices, in their words
+  applies: 'all' | 'smartphone' | 'fp' | 'wireless' | 'nfc-only';
+  notes: string;
+  hint: string; // one short line for the counter tiles
+  symptom?: string;
 }
 
 export type FitStatus = 'verified' | 'unverified' | 'incompatible';
@@ -31,7 +50,7 @@ export interface Variant {
   partId: string;
   title: string;
   chips: string[];
-  priceMinor: number | null; // INR paise; null = not yet set
+  priceMinor: number | null;
   inStock: boolean;
   fit: FitStatus;
 }
@@ -41,93 +60,154 @@ export const CATEGORIES: Record<CategoryId, { name: string; slipLabel: string }>
   acc: { name: 'Accessories', slipLabel: 'Accessory' },
 };
 
-export const BRANDS: Brand[] = [
-  { id: 'samsung', name: 'Samsung' },
-  { id: 'xiaomi', name: 'Xiaomi' },
-  { id: 'vivo', name: 'Vivo' },
-  { id: 'oppo', name: 'Oppo' },
-  { id: 'realme', name: 'Realme' },
-  { id: 'apple', name: 'Apple' },
-  { id: 'oneplus', name: 'OnePlus' },
-  { id: 'motorola', name: 'Motorola' },
-];
+export const BRANDS = brandsJson as Brand[];
+export const MODELS = modelsJson as DeviceModel[];
 
-// Model codes are illustrative examples; verify every one against supplier data.
-export const MODELS: DeviceModel[] = [
-  { id: 'a54', brandId: 'samsung', name: 'Galaxy A54 5G', code: 'SM-A546E' },
-  { id: 'm34', brandId: 'samsung', name: 'Galaxy M34 5G', code: 'SM-M346B' },
-  { id: 's23', brandId: 'samsung', name: 'Galaxy S23', code: 'SM-S911B' },
-  { id: 'a15', brandId: 'samsung', name: 'Galaxy A15', code: 'SM-A155F' },
-  { id: 'rn13', brandId: 'xiaomi', name: 'Redmi Note 13', code: '2312DRAABI' },
-  { id: 'rn12', brandId: 'xiaomi', name: 'Redmi Note 12', code: '23021RAAEG' },
-  { id: 'r13c', brandId: 'xiaomi', name: 'Redmi 13C', code: '23100RN82I' },
-  { id: 'y200', brandId: 'vivo', name: 'Vivo Y200', code: 'V2307' },
-  { id: 't2', brandId: 'vivo', name: 'Vivo T2 5G', code: 'V2247' },
-  { id: 'a78', brandId: 'oppo', name: 'Oppo A78', code: 'CPH2565' },
-  { id: 'f25', brandId: 'oppo', name: 'Oppo F25 Pro', code: 'CPH2603' },
-  { id: 'n60', brandId: 'realme', name: 'Realme Narzo 60', code: 'RMX3750' },
-  { id: '11x', brandId: 'realme', name: 'Realme 11x', code: 'RMX3785' },
-  { id: 'ip13', brandId: 'apple', name: 'iPhone 13', code: 'A2633' },
-  { id: 'ip11', brandId: 'apple', name: 'iPhone 11', code: 'A2221' },
-  { id: 'ip15', brandId: 'apple', name: 'iPhone 15', code: 'A3090' },
-  { id: 'nce3', brandId: 'oneplus', name: 'OnePlus Nord CE 3', code: 'CPH2569' },
-  { id: 'op11', brandId: 'oneplus', name: 'OnePlus 11', code: 'CPH2447' },
-  { id: 'g54', brandId: 'motorola', name: 'Moto G54', code: 'XT2343-1' },
-  { id: 'e13', brandId: 'motorola', name: 'Moto E13', code: 'XT2345-3' },
-];
+const SYMPTOMS: Record<string, string> = {
+  display: 'Screen toota',
+  battery: 'Battery jaldi khatam',
+  port: 'Charge nahi hota',
+  camera: 'Camera dhundla',
+};
+const HINTS: Record<string, string> = {
+  display: 'OLED / LCD, frame',
+  adhesive: 'foam gasket / glue',
+  frame: 'body, button flex',
+  simtray: 'single / dual / hybrid',
+  buttons: 'power, volume flex',
+  frontcam: 'selfie camera',
+  earpiece: 'top speaker',
+  board: 'by RAM / storage',
+  camera: 'main, wide, macro',
+  lens: 'camera glass',
+  battery: 'with adhesive',
+  port: 'USB-C / Micro / Lightning',
+  speaker: 'bottom speaker',
+  haptic: 'haptic engine',
+  fpsensor: 'rear / side / in-display',
+  coil: 'charging coil, antenna',
+  nfc: 'antenna only',
+  backpanel: 'rear glass, adhesive',
+  flex: 'board to sub-board',
+  proximity: 'sensor flex',
+  glass: 'full, matte, privacy',
+  cover: 'silicone, hard, flip',
+  lensprotector: 'camera ring glass',
+  charger: 'wattage matched',
+  cable: 'USB-C / Lightning',
+  audio: 'wired, TWS',
+  holder: 'car, desk',
+  powerbank: 'by capacity',
+  skin: 'vinyl wrap',
+};
+export const PART_TYPES: PartType[] = (partTypesJson as Omit<PartType, 'symptom' | 'hint'>[]).map((p) => ({ ...p, hint: HINTS[p.id] ?? '', symptom: SYMPTOMS[p.id] }));
 
-export const PART_TYPES: PartType[] = [
-  { id: 'display', category: 'parts', name: 'Display assembly', hint: 'glass + digitiser + OLED/LCD', symptom: 'Screen toota' },
-  { id: 'battery', category: 'parts', name: 'Battery', hint: 'with adhesive', symptom: 'Battery jaldi khatam' },
-  { id: 'port', category: 'parts', name: 'Charging port sub-board', hint: 'USB-C / Lightning, mic', symptom: 'Charge nahi hota' },
-  { id: 'camera', category: 'parts', name: 'Rear camera module', hint: 'main, wide, macro', symptom: 'Camera dhundla' },
-  { id: 'frontcam', category: 'parts', name: 'Front camera + earpiece', hint: 'selfie cam, ear speaker' },
-  { id: 'adhesive', category: 'parts', name: 'Display adhesive', hint: 'foam gasket / glue' },
-  { id: 'frame', category: 'parts', name: 'Mid-frame / chassis', hint: 'SIM tray, button flex' },
-  { id: 'board', category: 'parts', name: 'Logic board', hint: 'CPU, memory, charging IC' },
-  { id: 'speaker', category: 'parts', name: 'Loudspeaker', hint: 'bottom speaker' },
-  { id: 'haptic', category: 'parts', name: 'Vibration motor', hint: 'haptic engine' },
-  { id: 'coil', category: 'parts', name: 'Wireless coil + NFC', hint: 'charging coil, antenna' },
-  { id: 'backpanel', category: 'parts', name: 'Back panel / rear glass', hint: 'lens cover, adhesive' },
-  { id: 'cover', category: 'acc', name: 'Cases and covers', hint: 'back cover, wallet' },
-  { id: 'glass', category: 'acc', name: 'Tempered glass', hint: 'screen protector' },
-  { id: 'charger', category: 'acc', name: 'Chargers', hint: 'wattage matched' },
-  { id: 'cable', category: 'acc', name: 'Cables', hint: 'USB-C / Lightning' },
-  { id: 'audio', category: 'acc', name: 'Earphones', hint: 'wired, TWS' },
-  { id: 'holder', category: 'acc', name: 'Holders and stands', hint: 'car, desk' },
-];
-
-// Sample variants for the demo model page. In production these come from the
-// commerce platform, keyed by SKU, with compatibility resolved per model code.
-export const SAMPLE_VARIANTS: Variant[] = [
-  { sku: 'SD-SCR-0412', partId: 'display', title: 'OLED display with frame', chips: ['OLED', 'Frame included', 'Black'], priceMinor: null, inStock: true, fit: 'verified' },
-  { sku: 'SD-SCR-0413', partId: 'display', title: 'OLED display, no frame', chips: ['OLED', 'Reuse your frame', 'Adhesive included'], priceMinor: null, inStock: true, fit: 'verified' },
-  { sku: 'SD-SCR-0420', partId: 'display', title: 'LCD display with frame', chips: ['LCD', 'Frame included', 'No always-on display'], priceMinor: null, inStock: true, fit: 'unverified' },
-  { sku: 'SD-BAT-0097', partId: 'battery', title: 'Battery, 5000 mAh', chips: ['Adhesive strips', 'Connector rev. A'], priceMinor: null, inStock: true, fit: 'verified' },
-  { sku: 'SD-CHG-0211', partId: 'port', title: 'Charging port flex board', chips: ['USB-C', 'With microphone'], priceMinor: null, inStock: false, fit: 'verified' },
-  { sku: 'SD-CAM-0140', partId: 'camera', title: 'Rear main camera module', chips: ['50 MP', 'OIS'], priceMinor: null, inStock: true, fit: 'unverified' },
-  { sku: 'SD-BCK-0061', partId: 'backpanel', title: 'Rear glass panel with lens cover', chips: ['Glass', 'Adhesive included'], priceMinor: null, inStock: true, fit: 'verified' },
-  { sku: 'SD-FRM-0062', partId: 'frame', title: 'Mid-frame with SIM tray', chips: ['Metal', 'Button flex included'], priceMinor: null, inStock: true, fit: 'unverified' },
-  { sku: 'SD-FCM-0021', partId: 'frontcam', title: 'Front camera + earpiece speaker', chips: ['Selfie cam', 'Ear speaker'], priceMinor: null, inStock: true, fit: 'verified' },
-  { sku: 'SD-ADH-0005', partId: 'adhesive', title: 'Display adhesive gasket', chips: ['Pre-cut', 'Foam'], priceMinor: null, inStock: true, fit: 'verified' },
-  { sku: 'SD-LGB-0003', partId: 'board', title: 'Logic board, 8/128 GB', chips: ['Tested', 'Unlocked'], priceMinor: null, inStock: false, fit: 'unverified' },
-  { sku: 'SD-VIB-0009', partId: 'haptic', title: 'Vibration motor', chips: ['Linear'], priceMinor: null, inStock: true, fit: 'verified' },
-  { sku: 'SD-NFC-0004', partId: 'coil', title: 'Wireless charging coil with NFC', chips: ['Adhesive backed'], priceMinor: null, inStock: true, fit: 'verified' },
-  { sku: 'SD-SPK-0033', partId: 'speaker', title: 'Loudspeaker module', chips: ['Bottom'], priceMinor: null, inStock: true, fit: 'verified' },
-  { sku: 'SD-COV-0501', partId: 'cover', title: 'Silicone back case', chips: ['Camera lip', 'Matte'], priceMinor: null, inStock: true, fit: 'verified' },
-  { sku: 'SD-COV-0502', partId: 'cover', title: 'Clear hard case', chips: ['Anti-yellow'], priceMinor: null, inStock: true, fit: 'verified' },
-  { sku: 'SD-GLS-0301', partId: 'glass', title: 'Tempered glass, full cover', chips: ['9H', 'Edge to edge'], priceMinor: null, inStock: true, fit: 'verified' },
-  { sku: 'SD-CHR-0120', partId: 'charger', title: '25 W USB-C charger', chips: ['PD 3.0'], priceMinor: null, inStock: true, fit: 'verified' },
-  { sku: 'SD-CBL-0010', partId: 'cable', title: 'USB-C to USB-C cable, 1 m', chips: ['60 W'], priceMinor: null, inStock: true, fit: 'verified' },
-  { sku: 'SD-AUD-0007', partId: 'audio', title: 'Wired USB-C earphones', chips: ['In-line mic'], priceMinor: null, inStock: true, fit: 'verified' },
-  { sku: 'SD-HLD-0002', partId: 'holder', title: 'Car vent holder', chips: ['Magnetic'], priceMinor: null, inStock: true, fit: 'verified' },
-];
+// Brands shown first in the counter: the ones with the most repair volume in India.
+export const TOP_BRAND_IDS = ['samsung', 'xiaomi', 'vivo', 'oppo', 'realme', 'oneplus', 'apple', 'motorola'];
 
 export const brandById = (id: string | null) => BRANDS.find((b) => b.id === id) ?? null;
-export const modelById = (id: string | null) => MODELS.find((m) => m.id === id) ?? null;
-export const modelsForBrand = (brandId: string | null) => MODELS.filter((m) => m.brandId === brandId);
+export const modelById = (brandId: string | null, id: string | null) => MODELS.find((m) => m.brandId === brandId && m.id === id) ?? null;
+export const modelsForBrand = (brandId: string | null) =>
+  MODELS.filter((m) => m.brandId === brandId).sort((a, b) => b.year - a.year || a.name.localeCompare(b.name));
 export const partById = (id: string | null) => PART_TYPES.find((p) => p.id === id) ?? null;
 export const partsForCategory = (cat: CategoryId) => PART_TYPES.filter((p) => p.category === cat);
+
+export function partApplies(p: PartType, m: DeviceModel): boolean {
+  const sp = m.type === 'smartphone';
+  switch (p.applies) {
+    case 'all':
+      return true;
+    case 'smartphone':
+      return sp;
+    case 'fp':
+      return m.fp === 'rear' || m.fp === 'side' || m.fp === 'in-display';
+    case 'wireless':
+      return m.wireless;
+    case 'nfc-only':
+      return sp && !m.wireless && m.display === 'OLED';
+  }
+}
+
+export const partsForModel = (m: DeviceModel, cat?: CategoryId) =>
+  PART_TYPES.filter((p) => (!cat || p.category === cat) && partApplies(p, m));
+
+const CABLE: Record<DeviceModel['port'], string> = {
+  'USB-C': 'USB-C to USB-C cable',
+  'Micro-USB': 'USB-A to Micro-USB cable',
+  Lightning: 'USB-C to Lightning cable',
+};
+
+const skuFor = (m: DeviceModel, partId: string, suffix = '') =>
+  `SD-${partId.toUpperCase().slice(0, 4)}-${m.brandId.slice(0, 3).toUpperCase()}-${m.id.replace(/[^a-z0-9]/g, '').slice(-6).toUpperCase()}${suffix}`;
+
+// The sellable variants we expect to list for a model and part type. Supplier
+// data will replace these; the shapes stay the same.
+export function variantsForModel(m: DeviceModel, partId: string): Variant[] {
+  const base = { partId, priceMinor: null, inStock: true, fit: 'unverified' as FitStatus };
+  const metal = m.back === 'glass' || m.back === 'metal' || m.back === 'ceramic';
+  switch (partId) {
+    case 'display':
+      return m.type === 'smartphone'
+        ? [
+            { ...base, sku: skuFor(m, partId, '-F'), title: `${m.display} display assembly with frame`, chips: [m.display, 'Frame included'] },
+            { ...base, sku: skuFor(m, partId, '-N'), title: `${m.display} display assembly, no frame`, chips: [m.display, 'Reuse your frame', 'Adhesive included'] },
+          ]
+        : [{ ...base, sku: skuFor(m, partId), title: `${m.display} display`, chips: [m.display] }];
+    case 'battery':
+      return [{ ...base, sku: skuFor(m, partId), title: m.battery ? `Battery, ${m.battery.toLocaleString('en-IN')} mAh` : 'Battery', chips: ['Adhesive strips included'] }];
+    case 'port':
+      return [{ ...base, sku: skuFor(m, partId), title: `${m.port} charging port sub-board`, chips: [m.port, 'With microphone'] }];
+    case 'fpsensor':
+      return [{ ...base, sku: skuFor(m, partId), title: { rear: 'Rear fingerprint sensor flex', side: 'Side-key fingerprint flex', 'in-display': 'In-display fingerprint sensor' }[m.fp as 'rear' | 'side' | 'in-display'], chips: [m.fp] }];
+    case 'backpanel':
+      return [{ ...base, sku: skuFor(m, partId), title: `${m.back[0].toUpperCase() + m.back.slice(1)} back panel`, chips: [m.back, 'Adhesive included'] }];
+    case 'frame':
+      return [{ ...base, sku: skuFor(m, partId), title: `${metal ? 'Metal' : 'Plastic'} mid-frame`, chips: ['Button flex included', 'SIM tray separate'] }];
+    case 'camera':
+      return [{ ...base, sku: skuFor(m, partId), title: 'Rear camera module', chips: ['Main camera'] }];
+    case 'coil':
+      return [{ ...base, sku: skuFor(m, partId), title: 'Wireless charging coil with NFC', chips: ['Adhesive backed'] }];
+    case 'nfc':
+      return [{ ...base, sku: skuFor(m, partId), title: 'NFC antenna', chips: ['Confirm NFC on this model'] }];
+    case 'cable':
+      return [{ ...base, sku: skuFor(m, partId), title: CABLE[m.port], chips: ['1 m'] }];
+    case 'charger':
+      return [{ ...base, sku: skuFor(m, partId), title: `${m.port} charger adapter`, chips: ['Wattage matched to phone'] }];
+    case 'cover':
+      return [
+        { ...base, sku: skuFor(m, partId, '-S'), title: 'Silicone back case', chips: ['Camera lip', 'Matte'] },
+        { ...base, sku: skuFor(m, partId, '-C'), title: 'Clear hard case', chips: ['Anti-yellow'] },
+        { ...base, sku: skuFor(m, partId, '-W'), title: 'Flip wallet case', chips: ['Card slots'] },
+      ];
+    case 'glass':
+      return [
+        { ...base, sku: skuFor(m, partId, '-F'), title: 'Tempered glass, full cover', chips: ['9H', 'Edge to edge'] },
+        { ...base, sku: skuFor(m, partId, '-P'), title: 'Tempered glass, privacy', chips: ['9H', 'Privacy'] },
+      ];
+    case 'lensprotector':
+      return [{ ...base, sku: skuFor(m, partId), title: 'Camera lens protector', chips: ['Tempered glass ring'] }];
+    case 'audio':
+      return [{ ...base, sku: skuFor(m, partId), title: m.port === 'Lightning' ? 'Wired Lightning earphones' : 'Wired earphones', chips: ['In-line mic'] }];
+    default: {
+      const p = partById(partId);
+      return p ? [{ ...base, sku: skuFor(m, partId), title: p.name, chips: [] }] : [];
+    }
+  }
+}
+
+const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+// Exact-code lookup for the "model code already pata hai?" box. Returns all
+// models sharing the code (regional variants can share one), or by name.
+export function findByCode(query: string): DeviceModel[] {
+  const q = norm(query);
+  if (q.length < 3) return [];
+  const byCode = MODELS.filter((m) => m.code && norm(m.code) === q);
+  if (byCode.length) return byCode;
+  const partial = MODELS.filter((m) => m.code && norm(m.code).includes(q));
+  if (partial.length) return partial.slice(0, 8);
+  return MODELS.filter((m) => norm(m.name).includes(q)).slice(0, 8);
+}
 
 export const formatPrice = (minor: number | null) =>
   minor === null ? 'Price on request' : `₹${(minor / 100).toLocaleString('en-IN', { minimumFractionDigits: 0 })}`;

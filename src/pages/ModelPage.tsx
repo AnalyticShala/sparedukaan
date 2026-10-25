@@ -1,42 +1,49 @@
 import { useEffect, useMemo } from 'react';
 import { Link, Navigate, useParams, useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import {
-  CATEGORIES,
-  SAMPLE_VARIANTS,
-  brandById,
-  formatPrice,
-  modelById,
-  partsForCategory,
-  type CategoryId,
-} from '../data/catalog';
+import { CATEGORIES, brandById, formatPrice, modelById, partsForModel, variantsForModel, type CategoryId } from '../data/catalog';
+import { useSelection } from '../store/selection';
 import { Icon } from '../components/Icon';
+
+const AVAIL_COPY = {
+  high: 'Parts for this model are widely stocked in India.',
+  medium: 'Parts for this model are available; some may take a few days.',
+  low: 'Limited parts for this model: mostly display and battery, often on order.',
+} as const;
 
 export default function ModelPage() {
   const { brandId = '', modelId = '' } = useParams();
   const [params, setParams] = useSearchParams();
+  const { pickBrand, pickModel } = useSelection();
   const brand = brandById(brandId);
-  const model = modelById(modelId);
+  const model = modelById(brandId, modelId);
 
   const cat = (params.get('cat') === 'acc' ? 'acc' : 'parts') as CategoryId;
   const partId = params.get('part');
-  const parts = partsForCategory(cat);
-  const part = parts.find((p) => p.id === partId) ?? null;
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
+    if (model) {
+      pickBrand(model.brandId);
+      pickModel(model.id);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [brandId, modelId]);
 
+  const parts = useMemo(() => (model ? partsForModel(model, cat) : []), [model, cat]);
+  const part = parts.find((p) => p.id === partId) ?? null;
   const variants = useMemo(() => {
-    const ids = new Set(parts.map((p) => p.id));
-    return SAMPLE_VARIANTS.filter((v) => ids.has(v.partId) && (!part || v.partId === part.id));
-  }, [parts, part]);
+    if (!model) return [];
+    const list = part ? [part] : parts;
+    return list.flatMap((p) => variantsForModel(model, p.id));
+  }, [model, parts, part]);
 
-  if (!brand || !model || model.brandId !== brand.id) return <Navigate to="/" replace />;
+  if (!brand || !model) return <Navigate to="/" replace />;
 
   const setCat = (c: CategoryId) => setParams({ cat: c });
   const setPart = (id: string | null) => setParams(id ? { cat, part: id } : { cat });
-  const countFor = (id: string) => SAMPLE_VARIANTS.filter((v) => v.partId === id).length;
+  const countFor = (id: string) => variantsForModel(model, id).length;
+  const codeText = model.code || 'model code to be confirmed';
 
   return (
     <main>
@@ -44,17 +51,17 @@ export default function ModelPage() {
         <div className="container pinbar__inner">
           <span className="eyebrow eyebrow--tan">Aapka phone</span>
           <nav className="crumbs" aria-label="Your selection">
-            <Link to="/" className="crumb">
+            <Link to="/#counter" className="crumb">
               {brand.name}
             </Link>
             <Icon name="chevronRight" size={14} strokeWidth={3} />
-            <Link to="/" className="crumb">
-              {model.name} <span className="crumb__code">· {model.code}</span>
+            <Link to="/#counter" className="crumb">
+              {model.name} <span className="crumb__code">· {model.code || 'code?'}</span>
             </Link>
             <Icon name="chevronRight" size={14} strokeWidth={3} />
             <span className="crumb crumb--current">{part?.name ?? CATEGORIES[cat].name}</span>
           </nav>
-          <Link to="/" className="link-tan">
+          <Link to="/#counter" className="link-tan">
             Change phone
           </Link>
         </div>
@@ -65,7 +72,8 @@ export default function ModelPage() {
           <div>
             <h1 className="h1">{model.name} ke parts</h1>
             <p className="muted">
-              Everything here has been checked against model code {model.code}. Regional variants are listed separately.
+              {model.year} · {model.display} display · {model.port} · {model.battery ? `${model.battery.toLocaleString('en-IN')} mAh` : 'battery to confirm'}. {AVAIL_COPY[model.avail]}
+              {model.code ? ` Listed against model code ${model.code}; regional variants may differ.` : ' Confirm the exact model code in Settings > About phone before ordering.'}
             </p>
           </div>
           <div className="segmented segmented--lg" role="tablist" aria-label="Category">
@@ -80,7 +88,7 @@ export default function ModelPage() {
         <div className="model__body">
           <aside className="rail">
             <div className="rail__group">
-              <span className="rail__title">Kya kharab hai?</span>
+              <span className="rail__title">{cat === 'parts' ? 'Kya kharab hai?' : 'Kya chahiye?'}</span>
               <nav className="rail__nav" aria-label="Part type">
                 <button type="button" className={`rail__item${!part ? ' is-on' : ''}`} onClick={() => setPart(null)}>
                   <span>All {CATEGORIES[cat].name.toLowerCase()}</span>
@@ -93,38 +101,30 @@ export default function ModelPage() {
                 ))}
               </nav>
             </div>
-            {cat === 'parts' && (part?.id === 'display' || !part) && (
-              <>
-                <div className="rail__group">
-                  <span className="rail__title">Display type</span>
-                  <label className="check">
-                    <input type="checkbox" defaultChecked /> OLED (as shipped)
-                  </label>
-                  <label className="check">
-                    <input type="checkbox" defaultChecked /> LCD (budget replacement)
-                  </label>
-                </div>
-                <div className="rail__group">
-                  <span className="rail__title">Frame</span>
-                  <label className="check">
-                    <input type="checkbox" defaultChecked /> With frame
-                  </label>
-                  <label className="check">
-                    <input type="checkbox" defaultChecked /> Without frame
-                  </label>
-                </div>
-              </>
+            {cat === 'parts' && (!part || part.id === 'display') && model.type === 'smartphone' && (
+              <div className="rail__group">
+                <span className="rail__title">Frame</span>
+                <label className="check">
+                  <input id="f-with" type="checkbox" defaultChecked /> With frame
+                </label>
+                <label className="check">
+                  <input id="f-without" type="checkbox" defaultChecked /> Without frame
+                </label>
+              </div>
             )}
             <div className="rail__group">
               <span className="rail__title">Availability</span>
               <label className="check">
-                <input type="checkbox" defaultChecked /> In stock only
+                <input id="f-stock" type="checkbox" defaultChecked /> In stock only
               </label>
             </div>
             <div className="note">
-              <span className="note__title">OLED ya LCD?</span>
+              <span className="note__title">{model.display === 'OLED' ? 'OLED ya LCD?' : 'LCD display'}</span>
               <span className="note__text">
-                An LCD replacement is cheaper but dimmer, with no always-on display. <a href="#oled-lcd">Read the difference</a>
+                {model.display === 'OLED'
+                  ? 'This phone shipped with an OLED panel. An LCD replacement is cheaper but dimmer, with no always-on display.'
+                  : 'This phone shipped with an LCD panel. Match the panel type on the replacement.'}{' '}
+                <a href="#oled-lcd">Read the difference</a>
               </span>
             </div>
           </aside>
@@ -136,7 +136,7 @@ export default function ModelPage() {
               </span>
               <label className="sort">
                 Sort
-                <select>
+                <select id="sort">
                   <option>Recommended</option>
                   <option>Price: low to high</option>
                   <option>Price: high to low</option>
@@ -146,13 +146,7 @@ export default function ModelPage() {
 
             <div className="grid-3">
               {variants.map((v, i) => (
-                <motion.article
-                  key={v.sku}
-                  className="product"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.25, delay: i * 0.04 }}
-                >
+                <motion.article key={v.sku} className="product" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.22, delay: Math.min(i, 12) * 0.03 }}>
                   <div className="product__media">
                     <span className="product__placeholder">[PRODUCT PHOTO]</span>
                     {v.fit === 'verified' ? (
@@ -167,7 +161,7 @@ export default function ModelPage() {
                   </div>
                   <span className="product__title">{v.title}</span>
                   <span className="product__sku">
-                    SKU {v.sku} · {v.fit === 'verified' ? `fits ${model.code}` : `supplier says ${model.code}`}
+                    SKU {v.sku} · {v.fit === 'verified' ? `fits ${codeText}` : `for ${model.name} (${codeText})`}
                   </span>
                   <ul className="chips">
                     {v.chips.map((c) => (

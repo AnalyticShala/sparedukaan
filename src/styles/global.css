@@ -86,13 +86,16 @@ p { margin: 0; }
 /* 3D exploded phone */
 .phone3d__scene { position: relative; width: 260px; height: 540px; perspective: 1500px; perspective-origin: 50% 40%; transform: scale(var(--phone-scale, 0.8)); }
 .plabels { position: absolute; left: 50%; top: 50%; width: 0; height: 0; pointer-events: none; z-index: 5; }
+.plabels__lines { position: absolute; left: 0; top: 0; transform: translate(-50%, -50%); overflow: visible; }
+.plabels__line { stroke: var(--on-band); stroke-opacity: 0.55; stroke-width: 1.5; }
+.plabels__dot { fill: var(--terracotta); }
 .plabel { position: absolute; left: 0; top: 0; display: flex; align-items: center; white-space: nowrap; }
 .plabel--right { transform-origin: 0 50%; }
 .plabel--left { flex-direction: row-reverse; }
 .plabel--right .plabel__chip, .plabel--right .plabel__line { }
 .plabel--left { translate: -100% -50%; }
 .plabel--right { translate: 0 -50%; }
-.plabel__line { width: 36px; height: 2px; background: var(--on-band); opacity: 0.7; }
+.plabel--right { translate: 0 -50%; }
 .plabel__chip { display: flex; flex-direction: column; gap: 1px; padding: 7px 11px; border-radius: 10px; background: var(--card); color: var(--ink); border: 1px solid var(--sand); font-size: 13px; font-weight: 800; line-height: 1.1; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25); }
 .plabel__chip small { font-size: 11px; font-weight: 700; color: var(--brown); }
 .phone3d { position: absolute; inset: 0; transform-style: preserve-3d; will-change: transform; }
@@ -290,6 +293,7 @@ p { margin: 0; }
   .hero__top { padding-top: 16px; }
   .hero__badges { display: none; }
   .hero__phone { --phone-scale: 0.6; }
+  .plabels { display: none; }
   .grid-2--wide, .grid-3, .grid-4 { grid-template-columns: 1fr; }
   .grid-8 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .counter { border-radius: 0 0 24px 24px; }

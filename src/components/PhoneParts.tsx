@@ -141,8 +141,8 @@ export function Battery() {
   return (
     <svg viewBox={VB} className="part-svg">
       <Defs id="bt" />
-      <rect x="34" y="188" width="192" height="258" rx="10" fill="url(#bt-batt)" stroke="#5a5f66" strokeWidth="1" />
-      <rect x="34" y="188" width="192" height="258" rx="10" fill="url(#bt-sheen)" />
+      <rect x="34" y="188" width="192" height="222" rx="10" fill="url(#bt-batt)" stroke="#5a5f66" strokeWidth="1" />
+      <rect x="34" y="188" width="192" height="222" rx="10" fill="url(#bt-sheen)" />
       <rect x="48" y="206" width="164" height="60" rx="4" fill="#d6d9de" />
       <text x="130" y="230" textAnchor="middle" fontFamily="Nunito, sans-serif" fontWeight="800" fontSize="13" fill="#1d2126">
         Li-ion 5000 mAh
@@ -150,8 +150,8 @@ export function Battery() {
       <text x="130" y="250" textAnchor="middle" fontFamily="Nunito, sans-serif" fontWeight="700" fontSize="9" fill="#4a4f56">
         3.87 V · 19.35 Wh
       </text>
-      <rect x="60" y="300" width="140" height="2" fill="#6a6f76" />
-      <rect x="60" y="320" width="100" height="2" fill="#6a6f76" />
+      <rect x="60" y="290" width="140" height="2" fill="#6a6f76" />
+      <rect x="60" y="310" width="100" height="2" fill="#6a6f76" />
       <rect x="112" y="176" width="36" height="16" rx="3" fill="url(#bt-flex)" />
       <rect x="118" y="172" width="24" height="8" rx="1" fill="#1a1d22" />
     </svg>
@@ -216,6 +216,89 @@ export function BackGlass() {
       <circle cx="72" cy="48" r="13" fill="#0b0d12" stroke="#3a4150" strokeWidth="1.5" />
       <circle cx="46" cy="84" r="13" fill="#0b0d12" stroke="#3a4150" strokeWidth="1.5" />
       <circle cx="72" cy="84" r="6" fill="#0b0d12" stroke="#3a4150" strokeWidth="1" />
+    </svg>
+  );
+}
+
+export function DisplayAdhesive() {
+  return (
+    <svg viewBox={VB} className="part-svg">
+      <Defs id="da" />
+      <path
+        fillRule="evenodd"
+        d="M46 14 H214 A32 32 0 0 1 246 46 V494 A32 32 0 0 1 214 526 H46 A32 32 0 0 1 14 494 V46 A32 32 0 0 1 46 14 Z M46 22 A24 24 0 0 0 22 46 V494 A24 24 0 0 0 46 518 H214 A24 24 0 0 0 238 494 V46 A24 24 0 0 0 214 22 Z"
+        fill="#2a2d33"
+        stroke="#4a4e55"
+        strokeWidth="0.8"
+      />
+      <path d="M46 18 H214" stroke="#6b6f76" strokeWidth="1" strokeDasharray="3 3" />
+      <path d="M46 522 H214" stroke="#6b6f76" strokeWidth="1" strokeDasharray="3 3" />
+    </svg>
+  );
+}
+
+export function FrontCameraEarpiece() {
+  return (
+    <svg viewBox={VB} className="part-svg">
+      <Defs id="fc" />
+      <rect x="90" y="22" width="80" height="10" rx="5" fill="#15181c" stroke="#3a3f47" strokeWidth="1.2" />
+      <rect x="96" y="25" width="68" height="4" rx="2" fill="url(#fc-grille)" />
+      <rect x="118" y="34" width="24" height="22" rx="6" fill="#101317" stroke="#3a3f47" strokeWidth="1.2" />
+      <circle cx="130" cy="45" r="7" fill="url(#fc-lens)" stroke="#4a5160" strokeWidth="1" />
+      <circle cx="130" cy="45" r="2.5" fill="#070a10" />
+      <circle cx="128" cy="43" r="1" fill="#8fa4d6" />
+      <rect x="142" y="40" width="30" height="10" rx="2" fill="url(#fc-flex)" />
+      <rect x="60" y="24" width="30" height="7" rx="2" fill="url(#fc-flex)" />
+    </svg>
+  );
+}
+
+export function VibrationMotor() {
+  return (
+    <svg viewBox={VB} className="part-svg">
+      <Defs id="vm" />
+      <rect x="44" y="420" width="46" height="26" rx="6" fill="url(#vm-metal)" stroke="#4a4e55" strokeWidth="1" />
+      <rect x="50" y="426" width="34" height="14" rx="3" fill="#2a2e34" />
+      <circle cx="67" cy="433" r="4" fill="#4a4e55" />
+      <rect x="90" y="428" width="18" height="10" rx="2" fill="url(#vm-flex)" />
+    </svg>
+  );
+}
+
+export function WirelessCoil() {
+  return (
+    <svg viewBox={VB} className="part-svg">
+      <Defs id="wc" />
+      <rect x="40" y="150" width="180" height="200" rx="90" fill="#111418" fillOpacity="0.6" stroke="#3a3f47" strokeWidth="0.8" />
+      <g fill="none" stroke="#c8782a" strokeWidth="2.2">
+        <circle cx="130" cy="250" r="24" />
+        <circle cx="130" cy="250" r="31" />
+        <circle cx="130" cy="250" r="38" />
+        <circle cx="130" cy="250" r="45" />
+        <circle cx="130" cy="250" r="52" />
+        <circle cx="130" cy="250" r="59" />
+      </g>
+      <rect x="52" y="162" width="156" height="176" rx="78" fill="none" stroke="#d9b24a" strokeWidth="1.6" strokeDasharray="6 4" />
+      <path d="M130 309 V342" stroke="#c8782a" strokeWidth="2.2" />
+      <rect x="118" y="340" width="24" height="12" rx="2" fill="url(#wc-flex)" />
+    </svg>
+  );
+}
+
+export function PhoneCase() {
+  return (
+    <svg viewBox={VB} className="part-svg">
+      <Defs id="pc" />
+      <path
+        fillRule="evenodd"
+        d="M44 -2 H216 A44 44 0 0 1 260 42 V498 A44 44 0 0 1 216 542 H44 A44 44 0 0 1 0 498 V42 A44 44 0 0 1 44 -2 Z M38 16 A22 22 0 0 0 16 38 V116 A22 22 0 0 0 38 138 H86 A22 22 0 0 0 108 116 V38 A22 22 0 0 0 86 16 Z"
+        fill="#2f3b4c"
+      />
+      <path d="M44 -2 H216 A44 44 0 0 1 260 42 V498 A44 44 0 0 1 216 542 H44 A44 44 0 0 1 0 498 V42 A44 44 0 0 1 44 -2 Z" fill="url(#pc-sheen)" />
+      <path d="M44 -2 H216 A44 44 0 0 1 260 42 V498 A44 44 0 0 1 216 542 H44 A44 44 0 0 1 0 498 V42 A44 44 0 0 1 44 -2 Z" fill="none" stroke="#ffffff" strokeOpacity="0.14" />
+      <rect x="258" y="140" width="4" height="36" rx="2" fill="#3f4d60" />
+      <rect x="258" y="190" width="4" height="64" rx="2" fill="#3f4d60" />
+      <rect x="96" y="528" width="68" height="14" rx="7" fill="#1c232c" />
     </svg>
   );
 }

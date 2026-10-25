@@ -69,7 +69,12 @@ const LAYERS: Layer[] = [
 
 const TILT_X = 56; // degrees, final isometric tilt
 const TILT_Z = -24;
-const easeInOut = (t: number) => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t);
+// Ease-out: fastest at the start, so the first pixels of scroll already pull the parts apart.
+const easeOut = (t: number) => 1 - Math.pow(1 - t, 1.8);
+const EXPLODE_END = 0.8; // explosion completes at 80% of the hero scroll; the rest is a hold
+const TILT_END = 0.5;
+const REST_X = 16; // slight tilt at rest so depth reads from the first pixel of scroll
+const REST_Z = -6;
 
 const PERSPECTIVE = 1500;
 const PERSPECTIVE_ORIGIN_Y = -54; // 40% of 540, relative to centre
@@ -92,7 +97,7 @@ function PhoneLayer({
   // A hair of depth per layer keeps the stacking order right even when all
   // layers sit at z = 0 (resting phone), on every browser.
   const rest = (LAYERS.length - index) * 0.4;
-  const z = useTransform(progress, [0.08, 1], [rest, layer.depth + rest], { ease: easeInOut });
+  const z = useTransform(progress, [0, EXPLODE_END], [rest, layer.depth + rest], { ease: easeOut });
   const transform = useMotionTemplate`translateZ(${z}px)`;
   return (
     <motion.button
@@ -125,9 +130,10 @@ interface LabelPos {
 function projectAnchor(layer: Layer, p: number, rotXDeg: number, rotZDeg: number, sceneScale: number) {
   const a = (rotXDeg * Math.PI) / 180;
   const b = (rotZDeg * Math.PI) / 180;
-  const d = layer.depth * easeInOut(clamp01((p - 0.08) / 0.92));
-  const l = -30 * p;
-  const g = 1 + 0.12 * p;
+  const d = layer.depth * easeOut(clamp01(p / EXPLODE_END));
+  const q = clamp01(p / EXPLODE_END);
+  const l = -30 * q;
+  const g = 1 + 0.12 * q;
   const ax = layer.anchorX - SCENE_W / 2;
   const ay = layer.labelY - SCENE_H / 2;
   const x1 = ax * Math.cos(b) - ay * Math.sin(b);
@@ -184,7 +190,7 @@ function LabelOverlay({
     const [p, a, b] = v as number[];
     return layoutLabels(p, a, b, sceneScale, colX, maxY);
   });
-  const opacity = useTransform(progress, [0.62, 0.85], [0, 1]);
+  const opacity = useTransform(progress, [0.35, 0.6], [0, 1]);
   return (
     <motion.div className="plabels" style={{ opacity }} aria-hidden="true">
       <svg className="plabels__lines" width={stageW} height={stageH} viewBox={`${-stageW / 2} ${-stageH / 2} ${stageW} ${stageH}`}>
@@ -239,14 +245,14 @@ export default function ExplodedPhone() {
   const still = useTransform(() => 1);
   const progress = reduceMotion ? still : smooth;
 
-  const baseRotX = useTransform(progress, [0, 0.9], [0, TILT_X], { ease: easeInOut });
-  const baseRotZ = useTransform(progress, [0, 0.9], [0, TILT_Z], { ease: easeInOut });
+  const baseRotX = useTransform(progress, [0, TILT_END], [REST_X, TILT_X], { ease: easeOut });
+  const baseRotZ = useTransform(progress, [0, TILT_END], [REST_Z, TILT_Z], { ease: easeOut });
   // User rotation: yaw spins the exploded stack like a turntable (full 360),
   // pitch tilts it. Both fade in with the explosion so the resting phone
   // still faces the viewer squarely.
   const yaw = useMotionValue(0);
   const pitch = useMotionValue(0);
-  const userWeight = useTransform(progress, [0.3, 0.9], [0, 1]);
+  const userWeight = useTransform(progress, [0.2, 0.7], [0, 1]);
   const rotX = useTransform([baseRotX, pitch, userWeight], (v) => {
     const [b, pt, w] = v as number[];
     return Math.min(82, Math.max(8, b + pt * w));
@@ -255,10 +261,10 @@ export default function ExplodedPhone() {
     const [b, y, w] = v as number[];
     return b + y * w;
   });
-  const lift = useTransform(progress, [0, 1], [0, -30]);
-  const grow = useTransform(progress, [0, 1], [1, 1.12]);
+  const lift = useTransform(progress, [0, EXPLODE_END], [0, -30]);
+  const grow = useTransform(progress, [0, EXPLODE_END], [1, 1.12]);
   const stackTransform = useMotionTemplate`translateY(${lift}px) scale(${grow}) rotateX(${rotX}deg) rotateZ(${rotZ}deg)`;
-  const shadowOpacity = useTransform(progress, [0.1, 0.8], [0.15, 0.6]);
+  const shadowOpacity = useTransform(progress, [0, 0.6], [0.15, 0.6]);
   const shadowScale = useTransform(progress, [0, 1], [0.6, 1.25]);
 
   const phoneRef = useRef<HTMLDivElement>(null);
@@ -276,14 +282,14 @@ export default function ExplodedPhone() {
   }, []);
 
   const [opened, setOpened] = useState(false);
-  useMotionValueEvent(progress, 'change', (v) => setOpened(v > 0.15));
+  useMotionValueEvent(progress, 'change', (v) => setOpened(v > 0.08));
   useEffect(() => {
     if (reduceMotion) setOpened(true);
   }, [reduceMotion]);
 
-  const scrollHintOpacity = useTransform(progress, [0, 0.12], [1, 0]);
-  const pickHintOpacity = useTransform(progress, [0.75, 0.95], [0, 1]);
-  const pickHintY = useTransform(progress, [0.75, 0.95], [12, 0]);
+  const scrollHintOpacity = useTransform(progress, [0, 0.06], [1, 0]);
+  const pickHintOpacity = useTransform(progress, [0.55, 0.75], [0, 1]);
+  const pickHintY = useTransform(progress, [0.55, 0.75], [12, 0]);
 
   const dragging = useRef(false);
   const movedRef = useRef(false);
@@ -302,12 +308,12 @@ export default function ExplodedPhone() {
   const scheduleAutoSpin = () => {
     window.clearTimeout(idleTimer.current);
     idleTimer.current = window.setTimeout(() => {
-      if (progress.get() > 0.85) startAutoSpin();
+      if (progress.get() > 0.75) startAutoSpin();
     }, 4000);
   };
   // Auto-rotate slowly once the phone is fully open and nobody is touching it.
   useMotionValueEvent(progress, 'change', (v) => {
-    if (v > 0.85) {
+    if (v > 0.75) {
       if (!autoSpin.current && !dragging.current) scheduleAutoSpin();
     } else {
       stopAutoSpin();
